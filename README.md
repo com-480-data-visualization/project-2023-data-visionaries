@@ -48,14 +48,17 @@ After cleaning the datasets, the 2015-2023 dataset consists of the happiness sco
 The happiness scores in each year follow approximately normal distribution. Mean and the median of the happiness score in all the years is 5.44. The distribution of measured scores (generosity, perception of corruption, etc.) is generally skewed. Among countries, both positive and negative trends are observed. Overall, there is a positive trend in the happiness score among all countries in the period 2015-2023 with the median happiness score 5.23 in 2015 and 5.68 in 2023.
 
 ![](./Milestone1/img/23_hist.png)
+
 *Figure 1. Histogram of the happiness score for the 2023 dataset*
 
 ![](./Milestone1/img/23_regions.png)
+
 *Figure 2. Happiness score box-plot per region*
 
 Numbers of countries in the World Happiness report 2023 for each of the 10 regions vary from 2 (in North America and Australia and New Zealand) to 33 (in Sub-Saharan Africa). Out of all the regions, Australia and New Zealand is the “happiest” with median happiness score 7.11 and Southern-Asia and Sub-Saharan Africa are the “unhappiest” with median happiness score 4.36 and 4.43 respectively. Scatter plots are observed and they show positive correlation between factors GDP, social support, freedom, life expectancy and happiness score. Negative correlation is observed with perception of corruption and happiness score while no apparent correlation is observed with generosity and happiness score.
 
 ![](./Milestone1/img/15-23_boxplot.png)
+
 *Figure 3. Happiness score box-plot per year*
 
 ### Related work
