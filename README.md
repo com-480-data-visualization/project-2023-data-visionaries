@@ -20,13 +20,14 @@
 The dataset we have chosen to create visualizations for is the one supporting the “World Happiness Report”.
 The World Happiness Report is a publication that measures the subjective well-being of individuals across countries and regions. We source it from the Kaggle dataset [World Happiness Report up to 2022](https://www.kaggle.com/datasets/mathurinache/world-happiness-report), but the report itself is built using life evaluations from the Gallup World Poll.
 
-The dataset contains information about countries’ happiness score over the years 2015 to 2022, and is dependent on the following additional measures: GDP per capita, healthy life expectancy, social support, freedom to make life choices, generosity as well as corruption. Furthermore, the newest [2023 World Happiness Report](https://worldhappiness.report/ed/2023/) was added to the dataset so that the information is as new and complete as possible.
+The dataset contains information about countries’ happiness score over the years 2015 to 2022, and is dependent on the following additional measures: GDP per capita, healthy life expectancy, social support, freedom to make life choices, generosity as well as corruption. Furthermore, the newest [2023 World Happiness Report](https://worldhappiness.report/ed/2023/) was added to the dataset so that the information is as new and complete as possible. 
+Another dataset we are using for the project contains information about neighbouring countries and is available on [Country Borders](https://github.com/geodatasource/country-borders).
 
 #### Cleaning and preprocessing
 
-Due to the fact that the world happiness report varies from one year to another in terms of both countries and measured scores, the number of countries in the reports is variable. The dataset cleaning process was adapted from a [Kaggle notebook](https://www.kaggle.com/code/htester/exploratory-data-analysis). Countries that have changed their name in the period 2015-2023 have been renamed to the newest official name (e.g. Czech Republic to Czechia, Turkey to Turkiye, etc.). Region names for each country were added to the dataset. 
+Due to the fact that the world happiness report varies from one year to another in terms of both countries and measured scores, the number of countries in the reports is variable. The dataset cleaning process was adapted from a [Kaggle notebook](https://www.kaggle.com/code/htester/exploratory-data-analysis). Countries that have changed their name in the period 2015-2023 have been renamed to the newest official name (e.g. Czech Republic to Czechia, Turkey to Turkiye, etc.). Region names for each country were added to the dataset.
 
-Additional preprocessing such as adding geographical coordinates for each country or the list of neighboring countries, as well as introducing a second but smaller dataset containing significant events that could have affected a country’s happiness to increase or decrease, will need to be done.
+Additional preprocessing of the Country Borders dataset, in terms of extracting only countries that occur in the World Happiness Report datasets, has to be done.
 
 
 ### Problematic
