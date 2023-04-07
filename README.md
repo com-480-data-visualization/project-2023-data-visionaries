@@ -45,12 +45,12 @@ It also provides valuable insights into the factors that contribute to happiness
 
 After cleaning the datasets, the 2015-2023 dataset consists of the happiness score for more than 130 countries each year and the 2023 dataset consists of happiness score, GDP, perception of social support, healthy life expectancy, perception of freedom, generosity and perception for 137 countries. In the dataset, the majority of the countries are present and this is important for the visualization we plan to do.
 
-The happiness scores in each year follow approximately normal distribution. Mean and the median of the happiness score in all the years is 5.44. The distribution of measured scores (generosity, perception of corruption, etc.) is generally skewed. Among countries, both positive and negative trends are observed. Overall, there is a positive trend in the happiness score among all countries in the period 2015-2023 with the median happiness score 5.23 in 2015 and 5.68 in 2023.
+The happiness scores in each year follow approximately normal distribution. Mean and the median of the happiness score in all the years is 5.44. The distribution of measured scores (generosity, perception of corruption, etc.) is generally skewed. Among countries, both positive and negative trends are observed as shown on Figure 1. Overall, there is a positive trend in the happiness score among all countries in the period 2015-2023 with the median happiness score 5.23 in 2015 and 5.68 in 2023.
 
 
-![](./Milestone1/img/15-23_boxplot.png)
+![](./Milestone1/img/happiness_score_over_time.png)
 
-*Figure 1. Happiness score box-plot per year*
+*Figure 1. Happiness trends over 2015-2023 period*
 
 Numbers of countries in the World Happiness report 2023 for each of the 10 regions vary from 2 (in North America and Australia and New Zealand) to 33 (in Sub-Saharan Africa). Out of all the regions, Australia and New Zealand is the “happiest” with median happiness score 7.11 and Southern-Asia and Sub-Saharan Africa are the “unhappiest” with median happiness score 4.36 and 4.43 respectively. Scatter plots are observed and they show positive correlation between factors GDP, social support, freedom, life expectancy and happiness score. Negative correlation is observed with perception of corruption and happiness score while no apparent correlation is observed with generosity and happiness score.
 
