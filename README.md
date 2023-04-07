@@ -27,7 +27,7 @@ Another dataset we are using for the project contains information about neighbou
 
 Due to the fact that the world happiness report varies from one year to another in terms of both countries and measured scores, the number of countries in the reports is variable. The dataset cleaning process was adapted from a [Kaggle notebook](https://www.kaggle.com/code/htester/exploratory-data-analysis). Countries that have changed their name in the period 2015-2023 have been renamed to the newest official name (e.g. Czech Republic to Czechia, Turkey to Turkiye, etc.). Region names for each country were added to the dataset.
 
-Additional preprocessing of the Country Borders dataset, in terms of extracting only countries that occur in the World Happiness Report datasets, has to be done.
+Additional preprocessing of the Country Borders dataset, in terms of extracting only countries that occur in the World Happiness Report datasets, is required for making the links between countries.
 
 
 ### Problematic
@@ -46,7 +46,7 @@ It also provides valuable insights into the factors that contribute to happiness
 
 After cleaning the datasets, the 2015-2023 dataset consists of the happiness score for more than 130 countries each year and the 2023 dataset consists of happiness score, GDP, perception of social support, healthy life expectancy, perception of freedom, generosity and perception for 137 countries. In the dataset, the majority of the countries are present and this is important for the visualization we plan to do.
 
-The happiness scores in each year follow approximately normal distribution. Mean and the median of the happiness score in all the years is 5.44. The distribution of measured scores (generosity, perception of corruption, etc.) is generally skewed. Among countries, both positive and negative trends are observed, as shown on Figure 1. Overall, there is a positive trend in the happiness score among all countries in the period 2015-2023, with the median happiness score 5.23 in 2015 and 5.68 in 2023.
+The happiness scores in each year follow approximately normal distribution. The median of the happiness score in all the years is 5.44. The distribution of measured factors (generosity, perception of corruption, etc.) is generally skewed. Among countries, both positive and negative trends are observed, as shown on Figure 1. There is a positive trend in the total happiness score of all countries in the period 2015-2023, with the median happiness score 5.23 in 2015 and 5.68 in 2023.
 
 
 ![](./Milestone1/img/happiness_score_over_time.png)
@@ -67,7 +67,7 @@ More figures can be found in the Jupyter Notebook `Milestone1\EDA.ipynb`.
 
 ### Related work
 
-We found some existing visualizations of data from the World happiness report.
+We found some existing visualizations of data from the World Happiness report.
 
 Majority of visualizations include 2D graphs which depict correlation among various factors and happiness scores. 
 Some of existing work in that field is: [*Changing World Happiness* by World Happiness Report](https://worldhappiness.report/ed/2019/changing-world-happiness/) and [*Explore the 2017 World Happiness Report data via Tableau* by World Happiness Report](https://worldhappiness.report/news/explore-the-2017-world-happiness-report-data-via-tableau/).
