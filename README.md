@@ -27,7 +27,7 @@ Another dataset we are using for the project contains information about neighbou
 
 Due to the fact that the world happiness report varies from one year to another in terms of both countries and measured scores, the number of countries in the reports is variable. The dataset cleaning process was adapted from a [Kaggle notebook](https://www.kaggle.com/code/htester/exploratory-data-analysis). Countries that have changed their name in the period 2015-2023 have been renamed to the newest official name (e.g. Czech Republic to Czechia, Turkey to Turkiye, etc.). Region names for each country were added to the dataset.
 
-Additional preprocessing of the Country Borders dataset, in terms of extracting only countries that occur in the World Happiness Report datasets, has to be done.
+Additional preprocessing of the Country Borders dataset, in terms of extracting only countries that occur in the World Happiness Report datasets, is required for making the links between countries.
 
 
 ### Problematic
