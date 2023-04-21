@@ -1,0 +1,15 @@
+.card {
+    width: fit-content;
+    border: 1px solid gray;
+    border-radius: 8px;
+    box-shadow: 0px 5px 5px gainsboro;
+    margin: 20px;
+    padding: 8px;
+}
+
+.countryName {
+    margin: 0;
+    text-align: center;
+}
+
+

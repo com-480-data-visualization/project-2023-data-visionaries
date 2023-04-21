@@ -1,0 +1,60 @@
+.progressBarContainer {
+    width:fit-content;
+    border-radius: 32px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+}
+
+.yearButton {
+    background: none;
+    border: none; 
+    z-index: 2;   
+}
+
+.progress {
+    z-index: 1;
+    transition: width 0.5s ease-out;
+    position: absolute;
+    left: 0;
+    background-color: gainsboro;
+    height: 100%;
+    border-radius: 32px;
+}
+
+
+
+.button {
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    background: none;
+    transition: all .2s ease-in-out;
+    font-size: larger;
+    font-weight: 700;
+}
+
+.playButton {
+    width: fit-content;
+    height: fit-content;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+.button:hover, .playButton:hover {
+    color: blue;
+    transform: scale(1.1);
+}
+
+.controllContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

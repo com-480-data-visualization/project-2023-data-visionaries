@@ -1,0 +1,35 @@
+.test {
+    background-color: aqua;
+}
+
+.leaderboard {
+    position: relative;
+    transform: translate(25px);
+}
+
+.leaderboardItem {
+    border-radius: 4px;
+    padding: 2px;
+    transition: width 0.5s ease-out, background-color 0.3s ease-out;
+}
+
+.barColor {
+    background-color: blanchedalmond;
+}
+
+.countryContainer {
+    display: flex;
+    padding: 2px;
+}
+
+.testContainer {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    position: relative;
+    width: fit-content;
+}
+
+.position {
+    padding: 4px;
+}
