@@ -25,7 +25,6 @@
 .testContainer {
     display: flex;
     flex-direction: row;
-    margin: auto;
     position: relative;
     width: fit-content;
 }

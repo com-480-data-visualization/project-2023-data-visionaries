@@ -14,7 +14,6 @@ const Leaderboard = (props) => {
     const [data, setData] = useState(null)
 
     const div_height = height / 10
-    console.log(div_height)
 
     const transitions = useTransition(
         countries.map((item, i) => ({ item: item, index: i + 1, y: i * div_height })),

@@ -5,8 +5,12 @@ import ProgressBar from "./ProgressBar/ProgressBar";
 import ProgressController from "./ProgressBar/ProgressController";
 import style from "./index.module.css"
 import CorrelationGraph from "./Correlations/CorrelationGraph";
+import D3WorldMapVisualisation from "./D3WorldMapVisualisation/D3WorldMapVisualisation";
+import { useAtomValue } from "jotai";
+import { yearAtom } from "./state";
 
 function App() {
+  const year = useAtomValue(yearAtom);
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
@@ -14,9 +18,11 @@ function App() {
         <ProgressBar />
         <ProgressController />
       </div>
-      <Leaderboard width={400} height={400} />
-      <div style={{display:"flex"}}>
-        
+      <div style={{ display: "flex" }}>
+        <D3WorldMapVisualisation year={year} width={400} height={400} />
+        <Leaderboard width={400} height={400} />
+      </div>
+      <div style={{ display: "flex" }}>
         <CountryGraph name={"France"} />
         <CountryGraph name={"Slovenia"} />
         <CountryGraph name={"Netherlands"} />
