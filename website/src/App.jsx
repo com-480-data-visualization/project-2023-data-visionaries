@@ -6,6 +6,7 @@ import ProgressController from "./ProgressBar/ProgressController";
 import style from "./index.module.css"
 import CorrelationGraph from "./Correlations/CorrelationGraph";
 import D3WorldMapVisualisation from "./D3WorldMapVisualisation/D3WorldMapVisualisation";
+import GraphVisualization from "./GraphVisualization/GraphVisualization";
 import { useAtomValue } from "jotai";
 import { yearAtom } from "./state";
 
@@ -30,7 +31,7 @@ function App() {
       </div>
 
       <CorrelationGraph />
-
+	  <GraphVisualization />
     </div>
   );
 }
