@@ -25,7 +25,8 @@ const GraphVisualization = () => {
         const svg = d3
           .select(svgRef.current)
           .attr("width", width)
-          .attr("height", height);
+          .attr("height", height)
+          .html("");
 
         // Create a D3 selection for the links
         const link = svg

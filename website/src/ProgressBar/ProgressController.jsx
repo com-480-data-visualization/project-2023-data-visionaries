@@ -7,8 +7,6 @@ import { FaPlay, FaStop } from 'react-icons/fa';
 
 import style from "./ProgressBar.module.css";
 
-
-
 const ProgressController = () => {
     const [year, setYear] = useAtom(yearAtom);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -28,6 +26,12 @@ const ProgressController = () => {
         setYear(year + 1);
     };
 
+    const decreaseYear = () => {
+        const maxYear = Math.min(...years);
+        if (year == maxYear) return;
+        setYear(year - 1);
+    };
+
     const togglePlay = () => {
         if (isPlaying) {
             setIsPlaying(false);
@@ -36,24 +40,14 @@ const ProgressController = () => {
         }
     }
 
-    function nextYear() {
-        const newYear = Math.min(+year + 1, 2022)
-        setYear(newYear)
-    }
-
-    function previousYear() {
-        const newYear = Math.max(+year - 1, 2015)
-        setYear(newYear)
-    }
-
     return (<>
-    <div className={style.controllContainer}>
-    <button className={style.button} onClick={previousYear}>&lt;</button>
-        <div className={`${style.playButton} ${style.button}`} onClick={togglePlay}>{isPlaying ? <FaStop /> : <FaPlay />}</div>
-        <button className={style.button} onClick={nextYear}>&gt;</button>
-    </div>
-        
-        
+        <div className={style.controllContainer}>
+            <button className={style.button} onClick={decreaseYear}>&lt;</button>
+            <div className={`${style.playButton} ${style.button}`} onClick={togglePlay}>{isPlaying ? <FaStop /> : <FaPlay />}</div>
+            <button className={style.button} onClick={increaseYear}>&gt;</button>
+        </div>
+
+
     </>)
 }
 

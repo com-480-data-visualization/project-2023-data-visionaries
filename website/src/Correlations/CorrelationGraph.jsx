@@ -85,15 +85,13 @@ const CorrelationGraph = (props) => {
 
     return (<>
         <div className={style.buttonContainer}>
-            {Object.keys(colors).map(variable => <button style={{ backgroundColor: `${colors[variable]}` }} className={style.button} onClick={() => setVariable(variable)}>{variable}</button>)}
+            {Object.keys(colors).map(variable => <button key={variable} style={{ backgroundColor: `${colors[variable]}` }} className={style.button} onClick={() => setVariable(variable)}>{variable}</button>)}
         </div>
         <div className={style.graph}>
             <p className={style.graphTitle}>{variable}</p>
             <div ref={ref} className={style.svgGraph}>
             </div>
         </div>
-
-
     </>
     )
 }

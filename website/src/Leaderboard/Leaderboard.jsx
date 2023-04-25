@@ -1,19 +1,19 @@
 import { useRef, useEffect, useState } from "react";
 import style from "./Leaderboard.module.css";
-import { useTransition, animated, useSpring } from "react-spring";
+import { useTransition, animated } from "react-spring";
 
 import * as d3 from "d3";
 import { useAtom } from "jotai";
 import { yearAtom } from "../state";
 
 const Leaderboard = (props) => {
-    const { width, height } = props
-    const [year, setYear] = useAtom(yearAtom)
+    const { width, height } = props;
+    const [year, setYear] = useAtom(yearAtom);
     const ref = useRef();
-    const [countries, setCountries] = useState([])
-    const [data, setData] = useState(null)
+    const [countries, setCountries] = useState([]);
+    const [data, setData] = useState(null);
 
-    const div_height = height / 10
+    const div_height = height / 10;
 
     const transitions = useTransition(
         countries.map((item, i) => ({ item: item, index: i + 1, y: i * div_height })),
@@ -27,9 +27,21 @@ const Leaderboard = (props) => {
         }
     );
 
+    const preprocessData = (csv) => {
+        const ret = {};
+        for (let score of csv) {
+            if (!ret[score.year]) ret[score.year] = {};
+            ret[score.year][score.country] = { score: +score.happiness_score };
+        }
+        return ret;
+    };
+
     useEffect(() => {
-        fetch('/data.json').then((res) => res.json()).then((json) => setData(json)).catch((err) => console.log(err))
-    }, [])
+        d3.csv("/data_scores.csv")
+            .then((csv) => preprocessData(csv))
+            .then((json) => setData(json))
+            .catch((err) => console.error(err));
+    }, []);
 
     useEffect(() => {
         if (data == null) return
@@ -49,7 +61,7 @@ const Leaderboard = (props) => {
         <>
             <div className={style.testContainer}>
                 <div className={style.pos}>
-                    {pos.map(pos => <div className={style.position} style={{ position: "absolute", top: `${pos * div_height}px`}}>{pos + 1}</div>)}
+                    {pos.map(pos => <div key={pos} className={style.position} style={{ position: "absolute", top: `${pos * div_height}px` }}>{pos + 1}</div>)}
                 </div>
                 <div className={style.leaderboard} style={{ width: width + "px", height: height + "px" }}>
                     {data && transitions(({ y, ...rest }, item, { key }) => (

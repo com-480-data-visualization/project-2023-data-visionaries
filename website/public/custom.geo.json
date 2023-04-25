@@ -1,4 +1,3 @@
-const GeoJSONCountries =
 {
     "type": "FeatureCollection",
     "features": [
@@ -72089,5 +72088,3 @@ const GeoJSONCountries =
         }
     ]
 }
-
-export default GeoJSONCountries;

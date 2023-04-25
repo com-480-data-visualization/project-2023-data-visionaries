@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react"
 import style from "./CountryGraph.module.css"
-//import data from "../data"
 import * as d3 from "d3";
 
 const CountryGraph = (props) => {
@@ -12,8 +11,21 @@ const CountryGraph = (props) => {
     const width = 300 - margin.left - margin.right
     const height = 200 - margin.top - margin.bottom;
 
+
+    const preprocessData = (csv) => {
+        const ret = {};
+        for (let score of csv) {
+            if (!ret[score.year]) ret[score.year] = {};
+            ret[score.year][score.country] = { score: +score.happiness_score };
+        }
+        return ret;
+    };
+
     useEffect(() => {
-        fetch('/data.json').then((res) => res.json()).then((json) => setData(json)).catch((err) => console.log(err))
+        d3.csv('/data_scores.csv')
+            .then((csv) => preprocessData(csv))
+            .then((json) => setData(json))
+            .catch((err) => console.log(err))
     }, []);
 
     function getCountryScoreData(countryName) {
@@ -47,7 +59,7 @@ const CountryGraph = (props) => {
             .range([0, width]);
         svg.append("g")
             .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x).ticks(6).tickFormat(function(d) { return parseInt(d); }));
+            .call(d3.axisBottom(x).ticks(6).tickFormat(function (d) { return parseInt(d); }));
 
         var formatAxis = d3.format("0");
         var y = d3.scaleLinear()
