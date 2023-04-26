@@ -36,3 +36,7 @@ button {
     line-height: 100%;
     text-transform: uppercase;
 }
+
+a {
+    text-decoration: none;
+}

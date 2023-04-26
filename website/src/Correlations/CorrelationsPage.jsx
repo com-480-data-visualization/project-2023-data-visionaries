@@ -1,9 +1,9 @@
 import CorrelationGraph from "./CorrelationGraph";
 
 
-const CorrelationsPage = () => {
+const CorrelationsPage = ({id}) => {
     return (
-        <div>
+        <div id={id}>
             <div>
                 <h2>4. Correlations</h2>
                 <p>

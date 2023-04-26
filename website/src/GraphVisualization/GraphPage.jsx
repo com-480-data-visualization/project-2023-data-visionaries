@@ -1,8 +1,8 @@
 import GraphVisualization from "./GraphVisualization";
 
-const GraphPage = () => {
+const GraphPage = ({ id }) => {
     return (
-        <div>
+        <div id={id}>
             <div>
                 <h2>5. Graph visualisation</h2>
                 <p>

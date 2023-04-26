@@ -1,6 +1,6 @@
-const IntroductionPage = () => {
+const IntroductionPage = ({id}) => {
     return (
-        <div>
+        <div id={id}>
             <h2>1. Introduction</h2>
             <p>
                 Suspendisse sit amet nisi eu orci commodo condimentum. Aenean tincidunt facilisis tempus. Cras quis tempus magna. Aliquam et viverra diam. Cras ante massa, aliquam et dignissim in, aliquam eget elit. Praesent a urna justo. Nunc vulputate felis orci, eget consequat purus imperdiet nec.

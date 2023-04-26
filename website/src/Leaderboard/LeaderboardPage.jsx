@@ -1,8 +1,8 @@
 import Leaderboard from "./Leaderboard";
 
-const LeaderboardPage = () => {
+const LeaderboardPage = ({ id }) => {
     return (
-        <div style={{display: "flex", alignItems: "center"}}>
+        <div id={id} style={{ display: "flex", alignItems: "center" }}>
             <div>
                 <Leaderboard width={360} height={400} />
             </div>
