@@ -57,7 +57,7 @@ const CorrelationGraph = (props) => {
             .nice()
             .range([height, 0]);
         svg.append("g")
-            .attr("transform", variable == "generosity" ? "translate(" + x(0) + ", 0 )" : "none")
+            .attr("transform", variable == "generosity" ? "translate(" + x(0) + ", 0 )" : "")
             .call(d3.axisLeft(y));
 
         svg.selectAll("circle")
