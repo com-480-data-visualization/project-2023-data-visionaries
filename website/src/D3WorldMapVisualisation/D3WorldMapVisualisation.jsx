@@ -2,8 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import style from "./D3WorldMapVisualisation.module.css";
 
 import * as d3 from "d3";
+import { useAtomValue } from 'jotai';
+import { yearAtom } from '../state';
 
-const D3WorldMapVisualisation = ({ year, width, height }) => {
+const D3WorldMapVisualisation = ({ width, height }) => {
+    const year = useAtomValue(yearAtom);
     const [hoveredCountry, setHoveredCountry] = useState("");
     const [scores, setScores] = useState(null);
     const [geoJson, setGeoJson] = useState(null);
