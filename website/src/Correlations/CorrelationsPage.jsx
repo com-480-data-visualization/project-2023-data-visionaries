@@ -12,7 +12,7 @@ const CorrelationsPage = ({id}) => {
                 </p>
             </div>
             <div>
-                <CorrelationGraph />
+                <CorrelationGraph height={400} width={"100%"} />
             </div>
         </div>
     );

@@ -1,16 +1,11 @@
 import { useEffect, useRef, useState } from "react"
 import style from "./Correlation.module.css"
-//import data from "../data"
 import * as d3 from "d3";
 
-const CorrelationGraph = (props) => {
+const CorrelationGraph = ({ width, height }) => {
     const ref = useRef()
     const [data, setData] = useState(null)
     const [variable, setVariable] = useState("social_support")
-
-    const margin = { top: 10, right: 30, bottom: 30, left: 60 }
-    const width = 500 - margin.left - margin.right
-    const height = 400 - margin.top - margin.bottom;
 
     const colors = {
         "gdp": "#F9874E",
@@ -31,10 +26,11 @@ const CorrelationGraph = (props) => {
             coordinates = data.map(d => [d[variable], d['happiness_score']]).sort((a, b) => a[1] - b[1])
         }
 
+        const margin = { top: 10, right: 30, bottom: 30, left: 60 }
+        const height = 400 - margin.top - margin.bottom
+        const width = 500 - margin.left - margin.right
         var svg = d3.select(ref.current).html("")
-            .append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
+            .attr("viewBox", `0 0 500 400`)
             .append("g")
             .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
@@ -83,17 +79,16 @@ const CorrelationGraph = (props) => {
     }, [data, variable])
 
 
-    return (<>
+    return (
         <div>
-            {Object.keys(colors).map(variable => <button key={variable} style={{ backgroundColor: `${colors[variable]}` }} className={style.button} onClick={() => setVariable(variable)}>{variable}</button>)}
-        </div>
-        <div>
-            <p>{variable}</p>
-            <div ref={ref} className={style.svgGraph}>
+            <div>
+                {Object.keys(colors).map(variable => <button key={variable} style={{ backgroundColor: `${colors[variable]}` }} className={style.button} onClick={() => setVariable(variable)}>{variable}</button>)}
+            </div>
+            <div>
+                <svg height={height} width={width} ref={ref} />
             </div>
         </div>
-    </>
-    )
+    );
 }
 
 export default CorrelationGraph

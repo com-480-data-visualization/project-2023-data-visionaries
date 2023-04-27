@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import style from "./GraphVisualization.module.css";
 import * as d3 from "d3";
 
-const GraphVisualization = () => {
+const GraphVisualization = ({ width, height }) => {
   const svgRef = useRef(null);
 
   useEffect(() => {
@@ -11,21 +11,20 @@ const GraphVisualization = () => {
       .then((response) => response.json())
       .then((data) => {
         // Define the dimensions of the SVG container
-        const width = 1800;
-        const height = 800;
+        const width = 800;
+        const height = 400;
 
         // Create a new D3 force simulation
         const simulation = d3
           .forceSimulation()
           .force("link", d3.forceLink().id((d) => d.id))
-          .force("charge", d3.forceManyBody().strength(-10))
+          .force("charge", d3.forceManyBody().strength(-6))
           .force("center", d3.forceCenter(width / 2, height / 2));
 
         // Create an SVG container using D3
         const svg = d3
           .select(svgRef.current)
-          .attr("width", width)
-          .attr("height", height)
+          .attr("viewBox", `0 0 ${width} ${height}`)
           .html("");
 
         // Create a D3 selection for the links
@@ -89,17 +88,17 @@ const GraphVisualization = () => {
             .attr("x2", (d) => d.target.x)
             .attr("y2", (d) => d.target.y);
 
-            node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-          });
-  
-          simulation.force("link").links(data.links);
-        })
-        .catch((error) => {
-          console.error("Error loading data:", error);
+          node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
         });
-    }, []);
-  
-    return <svg ref={svgRef}></svg>;
-  };
-  
-  export default GraphVisualization;
+
+        simulation.force("link").links(data.links);
+      })
+      .catch((error) => {
+        console.error("Error loading data:", error);
+      });
+  }, []);
+
+  return <svg ref={svgRef} height={height} width={width} />;
+};
+
+export default GraphVisualization;

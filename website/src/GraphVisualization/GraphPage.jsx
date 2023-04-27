@@ -11,7 +11,7 @@ const GraphPage = ({ id }) => {
                 </p>
             </div>
             <div>
-                <GraphVisualization />
+                <GraphVisualization height={600} width={"100%"} />
             </div>
         </div>
     );

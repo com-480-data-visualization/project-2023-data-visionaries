@@ -30,11 +30,11 @@ const D3WorldMapVisualisation = ({ width, height }) => {
         fetch("/custom.geo.json")
             .then(res => res.json())
             .then(gj => setGeoJson(gj))
-            .catch(err => console.error("Error loading geoJson of countries."));
+            .catch(err => console.error("Error loading geoJson of countries.", err));
         d3.csv("/data_scores.csv")
             .then(scores => processScores(scores))
             .then(scores => setScores(scores))
-            .catch(err => console.error("Error loading scores."));
+            .catch(err => console.error("Error loading scores.", err));
     }, []);
 
     useEffect(() => {
@@ -43,13 +43,13 @@ const D3WorldMapVisualisation = ({ width, height }) => {
         const handleZoom = (e) => gElement.attr('transform', e.transform);
 
         const zoom = d3.zoom()
-            .scaleExtent([1, 6])
-            .translateExtent([[0, -200], [1000, 450]])
+            .scaleExtent([0.5, 3.3])
+            .translateExtent([[0, -90], [960, 320]])
             .on('zoom', handleZoom)
 
         svgElement
             .call(zoom)
-            .call(zoom.transform, d3.zoomIdentity.translate(-300, 100).scale(1));
+            .call(zoom.transform, d3.zoomIdentity.translate(-30, 30).scale(0.5));
     }, []);
 
     useEffect(() => {
@@ -91,7 +91,7 @@ const D3WorldMapVisualisation = ({ width, height }) => {
     }, [year, scores, geoJson]);
 
     return (
-        <svg width={width} height={height} ref={svgRef}>
+        <svg width={width} height={height} ref={svgRef} viewBox='0 0 400 200'>
             <g ref={gRef} />
         </svg>
     );
