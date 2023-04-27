@@ -54,36 +54,35 @@ const Leaderboard = (props) => {
 
     const scoreToWidth = d3.scaleLinear().domain([7.1, 7.8]).nice().range([width / 3, width - 80])
 
-    const color = d3.scaleSequential().domain([7.1, 7.9]).nice().interpolator(d3.interpolateBlues);
+    const color = d3.scaleSequential().domain([7, 7.9]).nice().interpolator(d3.interpolateInferno);
     const pos = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
     return (
-        <>
-            <div className={style.testContainer}>
-                <div className={style.pos}>
-                    {pos.map(pos => <div key={pos} className={style.position} style={{ position: "absolute", top: `${pos * div_height}px` }}>{pos + 1}</div>)}
-                </div>
-                <div className={style.leaderboard} style={{ width: width + "px", height: height + "px" }}>
-                    {data && transitions(({ y, ...rest }, item, { key }) => (
-                        <animated.div
-                            key={key}
-                            className={style.countryContainer}
-                            style={{
-                                transform: y.to((y) => `translate3d(0,${y}px,0)`),
-                                ...rest
-                            }}
-                        >
-                            <div className={`${style.leaderboardItem} ${style.barColor}`} style={{
-                                width: scoreToWidth(data[year][item.item].score),
-                                backgroundColor: color(data[year][item.item].score)
-                            }}>{item.item}</div>
-                            <div className={style.leaderboardItem}>{data[year][item.item].score.toFixed(2)}</div>
-                        </animated.div>
-                    ))}
-                </div >
+        <div className={style.container} style={{ width: width + "px", height: height + "px" }}>
+            <div className={style.pos}>
+                {pos.map(pos => <p key={pos} className={style.leaderboardPosition} style={{ position: "absolute", top: `${pos * div_height}px`}}>{pos + 1}.</p>)}
             </div>
-
-        </>
+            <div className={style.leaderboard}>
+                {data && transitions(({ y, ...rest }, item, { key }) => (
+                    <animated.div
+                        key={key}
+                        className={style.countryContainer}
+                        style={{
+                            transform: y.to((y) => `translate3d(0,${y}px,0)`),
+                            ...rest
+                        }}
+                    >
+                        <div className={style.leaderboardItem} style={{
+                            width: scoreToWidth(data[year][item.item].score),
+                            backgroundColor: color(data[year][item.item].score)
+                        }}>
+                            <p className={style.countryName}>{item.item}</p>
+                        </div>
+                        <p className={style.leaderboardScore}>{data[year][item.item].score.toFixed(2)}</p>
+                    </animated.div>
+                ))}
+            </div >
+        </div>
     );
 }
 

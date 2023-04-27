@@ -1,34 +1,45 @@
-.test {
-    background-color: aqua;
-}
-
 .leaderboard {
     position: relative;
     transform: translate(25px);
 }
 
 .leaderboardItem {
-    border-radius: 4px;
-    padding: 2px;
+    border-radius: 32px;
     transition: width 0.5s ease-out, background-color 0.3s ease-out;
 }
 
-.barColor {
-    background-color: blanchedalmond;
+.countryName {
+    color: white;
+    font-family: "IBM Plex Sans", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-block: 0;
+    margin-left: 8px;
+}
+
+.leaderboardScore {
+    margin: 0;
+    font-weight: bold;
+    font-family: "IBM Plex Sans", sans-serif;
+    margin-left: 6px;
+}
+
+.leaderboardPosition {
+    margin: 0;
+    text-align: right;
+    font-weight: bold;
+    font-family: "IBM Plex Sans", sans-serif;
+    width: 24px;
 }
 
 .countryContainer {
     display: flex;
-    padding: 2px;
+    margin: auto;
 }
 
-.testContainer {
+.container {
     display: flex;
     flex-direction: row;
     position: relative;
     width: fit-content;
-}
-
-.position {
-    padding: 4px;
 }
