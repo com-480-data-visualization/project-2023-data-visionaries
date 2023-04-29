@@ -37,13 +37,18 @@ const GraphVisualization = ({ width, height }) => {
           .attr("stroke-opacity", 0.6)
           .attr("stroke-width", (d) => Math.sqrt(d.value));
 
+        var r = d3.scaleLinear()
+          .domain([2, 8])
+          .nice()
+          .range([0, 15]);
+
         // Create a D3 selection for the nodes
         const node = svg
           .selectAll("circle")
           .data(data.nodes)
           .enter()
           .append("circle")
-          .attr("r", (d) => d.size) // Set radius based on "size" attribute
+          .attr("r", (d) => r(d.size)) // Set radius based on "size" attribute
           .attr("fill", "steelblue")
           .call(
             d3
