@@ -10,7 +10,7 @@ const GraphPage = ({ id }) => {
                     <br/><br/>
                     You can compare country's happiness score in comparison with it's neighbours.
                     <br/><br/>
-                    Can you find Israel? It is 4th happiest country in 2023 and is surrounded by 
+                    Can you find Israel? It is 4th happiest country in 2023 and is surrounded by not so happy countries.
                 </p>
             </div>
             <div>
