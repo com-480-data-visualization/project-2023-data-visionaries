@@ -40,15 +40,10 @@ const ProgressController = () => {
         }
     }
 
-    return (<>
-        <div className={style.controllContainer}>
-            <button className={style.button} onClick={decreaseYear}>&lt;</button>
-            <div className={`${style.playButton} ${style.button}`} onClick={togglePlay}>{isPlaying ? <FaStop /> : <FaPlay />}</div>
-            <button className={style.button} onClick={increaseYear}>&gt;</button>
-        </div>
+    return <div className={style.play} onClick={togglePlay}>
+        {isPlaying ? <FaStop /> : <FaPlay />}
+    </div>;
 
-
-    </>)
 }
 
 export default ProgressController;
