@@ -4,6 +4,7 @@ import style from "./D3WorldMapVisualisation.module.css";
 import * as d3 from "d3";
 import { useAtomValue } from 'jotai';
 import { yearAtom } from '../state';
+import { geoWinkel3 } from "https://cdn.skypack.dev/d3-geo-projection@4";
 
 const D3WorldMapVisualisation = ({ width, height }) => {
     const year = useAtomValue(yearAtom);
@@ -43,20 +44,20 @@ const D3WorldMapVisualisation = ({ width, height }) => {
         const handleZoom = (e) => gElement.attr('transform', e.transform);
 
         const zoom = d3.zoom()
-            .scaleExtent([0.5, 3.3])
-            .translateExtent([[0, -90], [960, 320]])
-            .on('zoom', handleZoom)
+            .translateExtent([[75, 40], [900, 400]])
+            .scaleExtent([0.55, 3.3])
+            .on('zoom', handleZoom);
 
         svgElement
             .call(zoom)
-            .call(zoom.transform, d3.zoomIdentity.translate(-30, 30).scale(0.5));
+            .call(zoom.transform, d3.zoomIdentity.translate(-85, -20).scale(0.55));
     }, []);
 
     useEffect(() => {
         if (!scores || !geoJson) return;
         const gElement = d3.select(gRef.current);
 
-        const projection = d3.geoMercator();
+        const projection = geoWinkel3();
         const pathGenerator = d3.geoPath().projection(projection);
 
         const getColorByScore = d3
