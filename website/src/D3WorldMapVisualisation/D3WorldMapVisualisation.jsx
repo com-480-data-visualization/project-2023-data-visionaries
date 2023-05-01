@@ -5,6 +5,8 @@ import * as d3 from "d3";
 import { useAtomValue } from 'jotai';
 import { yearAtom } from '../state';
 import { geoWinkel3 } from "https://cdn.skypack.dev/d3-geo-projection@4";
+import geoJsonUrl from "../data/custom.geo.json?url";
+import dataUrl from "../data/data_scores.csv?url";
 
 const D3WorldMapVisualisation = ({ width, height }) => {
     const year = useAtomValue(yearAtom);
@@ -28,11 +30,11 @@ const D3WorldMapVisualisation = ({ width, height }) => {
     }
 
     useEffect(() => {
-        fetch("/custom.geo.json")
+        fetch(geoJsonUrl)
             .then(res => res.json())
             .then(gj => setGeoJson(gj))
             .catch(err => console.error("Error loading geoJson of countries.", err));
-        d3.csv("/data_scores.csv")
+        d3.csv(dataUrl)
             .then(scores => processScores(scores))
             .then(scores => setScores(scores))
             .catch(err => console.error("Error loading scores.", err));

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import style from "./CountryGraph.module.css"
 import * as d3 from "d3";
+import dataUrl from "../data/data_scores.csv?url"
 
 const CountryGraph = (props) => {
     const countryName = props.name
@@ -22,7 +23,7 @@ const CountryGraph = (props) => {
     };
 
     useEffect(() => {
-        d3.csv('/data_scores.csv')
+        d3.csv(dataUrl)
             .then((csv) => preprocessData(csv))
             .then((json) => setData(json))
             .catch((err) => console.log(err))

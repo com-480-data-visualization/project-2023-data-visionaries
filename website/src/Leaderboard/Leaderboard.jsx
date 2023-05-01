@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import style from "./Leaderboard.module.css";
 import { useTransition, animated } from "react-spring";
+import dataUrl from "../data/data_scores.csv?url";
 
 import * as d3 from "d3";
 import { useAtom } from "jotai";
@@ -37,7 +38,7 @@ const Leaderboard = (props) => {
     };
 
     useEffect(() => {
-        d3.csv("/data_scores.csv")
+        d3.csv(dataUrl)
             .then((csv) => preprocessData(csv))
             .then((json) => setData(json))
             .catch((err) => console.error(err));
@@ -60,7 +61,7 @@ const Leaderboard = (props) => {
     return (
         <div className={style.container} style={{ width: width + "px", height: height + "px" }}>
             <div className={style.pos}>
-                {pos.map(pos => <p key={pos} className={style.leaderboardPosition} style={{ position: "absolute", top: `${pos * div_height}px`}}>{pos + 1}.</p>)}
+                {pos.map(pos => <p key={pos} className={style.leaderboardPosition} style={{ position: "absolute", top: `${pos * div_height}px` }}>{pos + 1}.</p>)}
             </div>
             <div className={style.leaderboard}>
                 {data && transitions(({ y, ...rest }, item, { key }) => (

@@ -1,13 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import style from "./GraphVisualization.module.css";
 import * as d3 from "d3";
+import dataUrl from "../data/graph.json?url"
 
 const GraphVisualization = ({ width, height }) => {
   const svgRef = useRef(null);
 
   useEffect(() => {
     // Fetch data from JSON file
-    fetch("/graph.json")
+    fetch(dataUrl)
       .then((response) => response.json())
       .then((data) => {
         // Define the dimensions of the SVG container

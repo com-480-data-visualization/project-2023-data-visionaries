@@ -2,8 +2,8 @@ const IntroductionPage = ({ id }) => {
     return (
         <div id={id}>
             <h2>1. Introduction</h2>
-            <p>
-                Welcome to our World Happiness Visualization.
+            <div>
+                <p>Welcome to our World Happiness Visualization.</p>
                 <br /><br />Here you can:
                 <ul>
                     <li>explore happiness levels all over the world</li>
@@ -13,7 +13,7 @@ const IntroductionPage = ({ id }) => {
                     <li>find out which factors contribute to countries' happiness</li>
                     <li>find out is there a secret to being happy</li>
                 </ul>
-            </p>
+            </div>
         </div>
     );
 };
