@@ -19,7 +19,7 @@ const NetworkGraph = ({ width, height }) => {
         const simulation = d3
           .forceSimulation()
           .force("link", d3.forceLink().id((d) => d.id))
-          .force("charge", d3.forceManyBody().strength(-6))
+          .force("charge", d3.forceManyBody().strength(-2))
           .force("center", d3.forceCenter(width / 2, height / 2));
 
         // Create an SVG container using D3
@@ -36,12 +36,12 @@ const NetworkGraph = ({ width, height }) => {
           .append("line")
           .attr("stroke", "#999")
           .attr("stroke-opacity", 0.6)
-          .attr("stroke-width", (d) => Math.sqrt(d.value));
+          .attr("stroke-width", (d) => d.value);
 
         var r = d3.scaleLinear()
           .domain([2, 8])
           .nice()
-          .range([0, 15]);
+          .range([1, 9]);
 
         // Create a D3 selection for the nodes
         const node = svg
@@ -83,7 +83,7 @@ const NetworkGraph = ({ width, height }) => {
           });
 
         // Add labels to the nodes
-        node.append("title").text((d) => d.id);
+        node.append("title").text((d) => d.name + ": " + d.happiness[2023]);
 
         // Update the simulation with the data
         simulation.nodes(data.nodes).on("tick", () => {
