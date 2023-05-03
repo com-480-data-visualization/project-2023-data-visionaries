@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import style from "./GraphVisualization.module.css";
+import style from "./NetworkGraph.module.css";
 import * as d3 from "d3";
-import dataUrl from "../data/graph.json?url"
+import dataUrl from "../data/network.json?url"
 
-const GraphVisualization = ({ width, height }) => {
+const NetworkGraph = ({ width, height }) => {
   const svgRef = useRef(null);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const GraphVisualization = ({ width, height }) => {
           .data(data.nodes)
           .enter()
           .append("circle")
-          .attr("r", (d) => r(d.size)) // Set radius based on "size" attribute
+          .attr("r", (d) => r(d.happiness[2023])) // Set node radius
           .attr("fill", "steelblue")
           .call(
             d3
@@ -107,4 +107,4 @@ const GraphVisualization = ({ width, height }) => {
   return <svg ref={svgRef} height={height} width={width} />;
 };
 
-export default GraphVisualization;
+export default NetworkGraph;
