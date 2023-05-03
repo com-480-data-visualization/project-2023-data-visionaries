@@ -4,9 +4,11 @@ import * as d3 from "d3";
 import dataUrl from "../data/network.json?url"
 
 const NetworkGraph = ({ width, height }) => {
-  const svgRef = useRef(null);
+  const svgRef = useRef();
 
   useEffect(() => {
+    const svgElement = d3.select(svgRef.current);
+    
     // Fetch data from JSON file
     fetch(dataUrl)
       .then((response) => response.json())
@@ -15,33 +17,63 @@ const NetworkGraph = ({ width, height }) => {
         const width = 800;
         const height = 400;
 
+        var radius = d3
+        .scaleLinear()
+        .domain([2, 8])
+        .nice()
+        .range([1, 9]);
+        
+        const drag = (simulation) => {
+          const dragstarted = (event, d) => {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+          };
+          
+          const dragged = (event, d) => {
+            d.fx = event.x;
+            d.fy = event.y;
+          };
+          
+          const dragended = (event, d) => {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+          };
+          
+          return d3
+          .drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended);
+        }
+
+        const color = () => { return "#70cfaa"; };
+        
         // Create a new D3 force simulation
         const simulation = d3
           .forceSimulation()
           .force("link", d3.forceLink().id((d) => d.id))
-          .force("charge", d3.forceManyBody().strength(-2))
+          .force("charge", d3.forceManyBody().strength(-5))
           .force("center", d3.forceCenter(width / 2, height / 2));
 
         // Create an SVG container using D3
-        const svg = d3
-          .select(svgRef.current)
+        const svg = svgElement
           .attr("viewBox", `0 0 ${width} ${height}`)
-          .html("");
+          .html("")
+          .call(d3.zoom().on("zoom", function () { // doesn't work
+            svg.attr("transform", d3.event.transform);
+          }));
 
         // Create a D3 selection for the links
         const link = svg
-          .selectAll("line")
-          .data(data.links)
-          .enter()
-          .append("line")
-          .attr("stroke", "#999")
-          .attr("stroke-opacity", 0.6)
-          .attr("stroke-width", (d) => d.value);
-
-        var r = d3.scaleLinear()
-          .domain([2, 8])
-          .nice()
-          .range([1, 9]);
+        .selectAll("line")
+        .data(data.links)
+        .enter()
+        .append("line")
+        .attr("stroke", "#999")
+        .attr("stroke-opacity", 0.6)
+        .attr("stroke-width", (d) => d.value);
 
         // Create a D3 selection for the nodes
         const node = svg
@@ -49,38 +81,11 @@ const NetworkGraph = ({ width, height }) => {
           .data(data.nodes)
           .enter()
           .append("circle")
-          .attr("r", (d) => r(d.happiness[2023])) // Set node radius
-          .attr("fill", "steelblue")
-          .call(
-            d3
-              .drag()
-              .on("start", (event, d) => {
-                if (!event.active) simulation.alphaTarget(0.1).restart();
-                d.fx = d.x;
-                d.fy = d.y;
-              })
-              .on("drag", (event, d) => {
-                d.fx = event.x;
-                d.fy = event.y;
-              })
-              .on("end", (event, d) => {
-                if (!event.active) simulation.alphaTarget(0);
-                d.fx = null;
-                d.fy = null;
-              })
-          )
-          .on("mouseover", (event, d) => {
-            // Show tooltip with node name and size on mouseover
-            d3.select("#tooltip")
-              .html(`Name: ${d.id}<br/>Size: ${d.size}`)
-              .style("opacity", 1)
-              .style("left", `${event.x + 10}px`)
-              .style("top", `${event.y - 10}px`);
-          })
-          .on("mouseout", () => {
-            // Hide tooltip on mouseout
-            d3.select("#tooltip").style("opacity", 0);
-          });
+          .attr("r", (d) => radius(d.happiness[2023])) // Set node radius
+          .attr("fill", color)
+          .attr("x", (d) => d.longitude)
+          .attr("y", (d) => d.latitude)
+          .call(drag(simulation))
 
         // Add labels to the nodes
         node.append("title").text((d) => d.name + ": " + d.happiness[2023]);
@@ -94,7 +99,9 @@ const NetworkGraph = ({ width, height }) => {
             .attr("x2", (d) => d.target.x)
             .attr("y2", (d) => d.target.y);
 
-          node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+          node
+          .attr("cx", (d) => d.x)
+          .attr("cy", (d) => d.y);
         });
 
         simulation.force("link").links(data.links);
