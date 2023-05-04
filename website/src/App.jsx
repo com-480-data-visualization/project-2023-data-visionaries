@@ -5,6 +5,7 @@ import Header from "./Header";
 import IntroductionPage from "./Introduction/IntroductionPage";
 import LeaderboardPage from "./Leaderboard/LeaderboardPage";
 import style from "./Styles.module.css";
+import ParallelCoordinatesPage from "./ParallelCoordinates/ParallelCoordinatesPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <WorldMapPage id="map" />
         <CorrelationsPage id="correlation" />
         <NetworkPage id="network" />
+        <ParallelCoordinatesPage />
       </div>
     </>
   );
