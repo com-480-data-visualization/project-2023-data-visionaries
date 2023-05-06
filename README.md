@@ -86,6 +86,8 @@ Moreover, what makes our project original is interactive visualization of the ha
 
 **10% of the final grade**
 
+PDF document for milestone 2 is available in the folder `Milestone2`.
+
 
 ## Milestone 3 (4th June, 5pm)
 
