@@ -4,12 +4,9 @@ import { useTransition, animated } from "react-spring";
 import dataUrl from "../data/data_scores.csv?url";
 
 import * as d3 from "d3";
-import { useAtom } from "jotai";
-import { yearAtom } from "../state";
 
 const Leaderboard = (props) => {
-    const { width, height } = props;
-    const [year, setYear] = useAtom(yearAtom);
+    const { width, height, year } = props;
     const ref = useRef();
     const [countries, setCountries] = useState([]);
     const [data, setData] = useState(null);
@@ -53,13 +50,13 @@ const Leaderboard = (props) => {
 
 
 
-    const scoreToWidth = d3.scaleLinear().domain([7.1, 7.8]).nice().range([width / 3, width - 80])
+    const scoreToWidth = d3.scaleLinear().domain([7.1, 7.8]).nice().range([width / 3 + 6, width - 80])
 
     const color = d3.scaleSequential().domain([7, 7.9]).nice().interpolator(d3.interpolateInferno);
     const pos = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
     return (
-        <div className={style.container} style={{ width: width + "px", height: height + "px" }}>
+        <div className={style.container} style={{ minWidth: width + "px", height: height + "px" }}>
             <div className={style.pos}>
                 {pos.map(pos => <p key={pos} className={style.leaderboardPosition} style={{ position: "absolute", top: `${pos * div_height}px` }}>{pos + 1}.</p>)}
             </div>

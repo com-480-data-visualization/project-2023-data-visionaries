@@ -1,14 +1,11 @@
-import { useAtom } from "jotai";
 import { useState } from "react";
-import { yearAtom } from "../state";
 import useInterval from "./useInterval";
 import { years } from "../const";
 import { FaPlay, FaStop } from 'react-icons/fa';
 
 import style from "./ProgressBar.module.css";
 
-const ProgressController = () => {
-    const [year, setYear] = useAtom(yearAtom);
+const ProgressController = ({ year, onYearChanged }) => {
     const [isPlaying, setIsPlaying] = useState(false);
 
     useInterval(() => {
@@ -23,13 +20,13 @@ const ProgressController = () => {
     const increaseYear = () => {
         const maxYear = Math.max(...years);
         if (year == maxYear) return;
-        setYear(year + 1);
+        onYearChanged(year + 1);
     };
 
     const decreaseYear = () => {
         const maxYear = Math.min(...years);
         if (year == maxYear) return;
-        setYear(year - 1);
+        onYearChanged(year - 1);
     };
 
     const togglePlay = () => {

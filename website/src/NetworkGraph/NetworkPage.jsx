@@ -1,12 +1,12 @@
-import GraphVisualization from "./GraphVisualization";
+import NetworkGraph from "./NetworkGraph";
 
-const GraphPage = ({ id }) => {
+const NetworkPage = ({ id }) => {
     return (
         <div id={id}>
             <div>
-                <h2>5. Graph visualisation</h2>
+                <h2>5. Network Graph</h2>
                 <p>
-                    Here is the graph of all the countries connected with their neighbours. The larger node signifies happier country while the smaller ones correspond to less happy ones.
+                    Here is the network graph of all the countries connected with their neighbours. The larger node signifies happier country while the smaller ones correspond to less happy ones.
                     <br/><br/>
                     You can compare country's happiness score in comparison with it's neighbours.
                     <br/><br/>
@@ -14,10 +14,10 @@ const GraphPage = ({ id }) => {
                 </p>
             </div>
             <div>
-                <GraphVisualization height={600} width={"100%"} />
+                <NetworkGraph height={600} width={"100%"} />
             </div>
         </div>
     );
 };
 
-export default GraphPage;
+export default NetworkPage;

@@ -2,19 +2,16 @@ import { useEffect, useRef, useState } from 'react';
 import style from "./D3WorldMapVisualisation.module.css";
 
 import * as d3 from "d3";
-import { useAtomValue } from 'jotai';
-import { yearAtom } from '../state';
 import { geoWinkel3 } from "https://cdn.skypack.dev/d3-geo-projection@4";
 import topoJsonUrl from "../data/countries-110m.json?url";
 import dataUrl from "../data/data_scores.csv?url";
 import iso3166CodesUrl from "../data/iso3166_codes.json?url";
 import * as tjson from "topojson-client";
 
-const D3WorldMapVisualisation = ({ width, height }) => {
+const D3WorldMapVisualisation = ({ width, height, year }) => {
     const [scores, setScores] = useState(null);
     const [topoJson, setTopoJson] = useState(null);
     const [iso3166Codes, setIso3166Codes] = useState(null);
-    const year = useAtomValue(yearAtom);
     const [hoveredCountry, setHoveredCountry] = useState("");
 
     const svgRef = useRef();

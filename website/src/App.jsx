@@ -1,10 +1,11 @@
 import CorrelationsPage from "./Correlations/CorrelationsPage";
 import WorldMapPage from "./D3WorldMapVisualisation/WorldMapPage";
-import GraphPage from "./GraphVisualization/GraphPage";
+import NetworkPage from "./NetworkGraph/NetworkPage";
 import Header from "./Header";
 import IntroductionPage from "./Introduction/IntroductionPage";
 import LeaderboardPage from "./Leaderboard/LeaderboardPage";
 import style from "./Styles.module.css";
+import ParallelCoordinatesPage from "./ParallelCoordinates/ParallelCoordinatesPage";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <LeaderboardPage id="leaderboard" />
         <WorldMapPage id="map" />
         <CorrelationsPage id="correlation" />
-        <GraphPage id="graph" />
+        <NetworkPage id="network" />
+        <ParallelCoordinatesPage />
       </div>
     </>
   );
