@@ -1,6 +1,4 @@
 import style from "./Header.module.css";
-import ProgressBar from "./ProgressBar/ProgressBar";
-import ProgressController from "./ProgressBar/ProgressController";
 
 const Header = () => {
     return (
@@ -10,10 +8,7 @@ const Header = () => {
             <a href="#map"><p>Mapping Happiness</p></a>
             <a href="#correlation"><p>Correlations</p></a>
             <a href="#network"><p>Network graph</p></a>
-            <div style={{display: "flex"}}>
-                <ProgressController />
-                <ProgressBar />
-            </div>
+            <a href="#parallel"><p>Parallel coordinates</p></a>
         </div>
     )
 }

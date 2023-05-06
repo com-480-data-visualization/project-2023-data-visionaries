@@ -3,11 +3,8 @@ const ParallelCoordinatesPage = ({ id }) => {
         <div>
             <h2>6. Parallel coordinates</h2>
             <p>
-                Todo: text...
+                TODO
             </p>
-        </div>
-        <div>
-            Todo: visualisation
         </div>
     </div>;
 }
