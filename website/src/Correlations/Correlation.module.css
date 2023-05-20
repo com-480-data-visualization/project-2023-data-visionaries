@@ -12,14 +12,15 @@
 
 .container {
     display: flex;
-    justify-content: space-between;
 }
 
 .text {
     width: 50%;
+    margin: auto;
 }
 
 .question {
     text-align: center;
     font-style: italic;
 }
+

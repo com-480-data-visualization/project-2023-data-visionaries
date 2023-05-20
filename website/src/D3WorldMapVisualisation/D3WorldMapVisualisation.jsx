@@ -41,10 +41,9 @@ const D3WorldMapVisualisation = ({ width, year }) => {
             return scores[year][country_code].happiness_score;
     }
 
-    const colorByScore = d3
-        .scaleLinear()
-        .domain([3, 5, 6, 7, 8])
-        .range(["red", "orange", "yellow", "green", "blue"]);
+    const colorByScore = d3.scaleSequential().domain([8, 3]).nice().interpolator(d3.interpolateInferno);
+
+    //d3.scaleLinear().domain([3, 5, 6, 7, 8]).range(["red", "orange", "yellow", "green", "blue"]);
 
     useEffect(() => {
         fetch(topoJsonUrl)
@@ -61,6 +60,8 @@ const D3WorldMapVisualisation = ({ width, year }) => {
             .then(scores => setScores(scores))
             .catch(err => console.error("Error loading scores.", err));
     }, []);
+
+    if (scores) console.log(hoveredCountry, scores[year][hoveredCountry])
 
     useEffect(() => {
         const width = 400, height = 200;
@@ -154,15 +155,15 @@ const D3WorldMapVisualisation = ({ width, year }) => {
             .on("mousemove", (d, f) => {
                 d3
                     .select(hoverRef.current)
-                    .style("top", `${d.layerY + 4}px`)
-                    .style("left", `${d.layerX + 4}px`);
+                    .style("top", `${d.clientY + 4}px`)
+                    .style("left", `${d.clientX + 4}px`);
             });
 
     }, [year, scores, topoJson, iso3166Codes]);
 
     return (
         <>
-            <div ref={hoverRef} style={{ position: "absolute", visibility: hoveredCountry ? "visible" : "hidden" }}>
+            <div ref={hoverRef} style={{ position: "absolute", visibility: "visible" }}>
                 {
                     scores
                     && scores[year]

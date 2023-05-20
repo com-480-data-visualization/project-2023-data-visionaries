@@ -19,6 +19,7 @@ h2 {
     font-weight: 700;
     font-size: 60px;
     line-height: 78px;
+    margin-top: 0;
 }
 
 p {
@@ -40,4 +41,8 @@ button {
 
 a {
     text-decoration: none;
+}
+
+.section {
+    height: 100vh;
 }

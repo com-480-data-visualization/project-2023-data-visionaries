@@ -48,7 +48,7 @@ const NetworkGraph = ({ width, height }) => {
           .on("end", dragended);
         }
 
-        const color = () => { return "#70cfaa"; };
+        const color = () => { return "#6C0096"; };
         
         // Create a new D3 force simulation
         const simulation = d3

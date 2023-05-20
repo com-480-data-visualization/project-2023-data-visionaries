@@ -1,0 +1,9 @@
+.introduction {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#71196E, #B1325A);
+    color: #EEE;
+    align-items: center;
+    justify-content: center;
+}

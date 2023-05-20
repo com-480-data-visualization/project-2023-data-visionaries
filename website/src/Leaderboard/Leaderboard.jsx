@@ -52,7 +52,7 @@ const Leaderboard = (props) => {
 
     const scoreToWidth = d3.scaleLinear().domain([7.1, 7.8]).nice().range([width / 3 + 6, width - 80])
 
-    const color = d3.scaleSequential().domain([7, 7.9]).nice().interpolator(d3.interpolateInferno);
+    const color = d3.scaleSequential().domain([7.9, 7]).nice().interpolator(d3.interpolateInferno);
     const pos = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
     return (

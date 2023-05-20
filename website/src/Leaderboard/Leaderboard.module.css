@@ -43,3 +43,7 @@
     position: relative;
     width: fit-content;
 }
+
+.halfDiv {
+    width: 60%;
+}

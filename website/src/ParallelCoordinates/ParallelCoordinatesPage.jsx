@@ -1,7 +1,7 @@
 const ParallelCoordinatesPage = ({ id }) => {
-    return <div id={id}>
+    return <div id={id} style={{ display: "flex", flexDirection: "column", height: "100vh", maxWidth:"70%", margin: "auto", justifyContent:"center"}}>
         <div>
-            <h2>6. Parallel coordinates</h2>
+            <h2>Parallel coordinates</h2>
             <p>
                 TODO
             </p>

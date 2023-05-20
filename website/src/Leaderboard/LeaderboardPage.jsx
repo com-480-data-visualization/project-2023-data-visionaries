@@ -2,20 +2,21 @@ import Leaderboard from "./Leaderboard";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import { years } from "../const";
 import { useState } from "react";
+import style from "./Leaderboard.module.css"
 
 const LeaderboardPage = ({ id }) => {
     const [year, setYear] = useState(Math.min(...years));
 
     return (
-        <div id={id} style={{ display: "flex", flexDirection: "column" }}>
-            <h2>2. Ranking over the years</h2>
-            <div style={{ display: "flex", flexDirection: "row" }}>
-                <div>
+        <div id={id} style={{ display: "flex", flexDirection: "column", height: "100vh", maxWidth:"70%", margin: "auto", justifyContent:"center"}}>
+            <h2>Ranking over the years</h2>
+            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+                <div >
                     <Leaderboard year={year} width={360} height={400} />
                     <ProgressBar year={year} onYearChanged={(year) => setYear(year)} />
                 </div>
-                <p>
-                    Check out leaderboard of top 10 countries over the years.
+                <p className={style.halfDiv}>
+                    Check out the leaderboard of top 10 countries over the years.
                     <br /><br />
                     Finland, Norway, Netherlands, Iceland, Switzerland, Sweden and Denmark successfully keep their place in top 10 happies countries over the years.
                     However, three places in top 10 still remain free and are occupied by different countries which change from one year to another.

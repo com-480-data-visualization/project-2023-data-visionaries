@@ -1,7 +1,9 @@
+import style from "./Introduction.module.css"
+
 const IntroductionPage = ({ id }) => {
     return (
-        <div id={id}>
-            <h2>1. Introduction</h2>
+        <div id={id} className={style.introduction}>
+            <h2>World happiness report</h2>
             <div>
                 <p>Welcome to our World Happiness Visualization.</p>
                 <br /><br />Here you can:

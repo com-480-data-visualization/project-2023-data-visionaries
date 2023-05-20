@@ -5,16 +5,19 @@ import dataUrl from "../data/data_2023.csv?url"
 
 const CorrelationGraph = ({ width, height }) => {
     const ref = useRef()
+    const hoveredCountryRef = useRef();
     const [data, setData] = useState(null)
     const [variable, setVariable] = useState("social_support")
+    const [hoveredCountry, setHoveredCountry] = useState(null);
 
+    
     const colors = {
-        "gdp": "#F9874E",
-        "social_support": "#FAC758",
-        "life_expectancy": "#8CC788",
-        "freedom": "#53B3A6",
-        "generosity": "#6691CC",
-        "corruption": "#C587C4"
+        "gdp": "#F8AD1A",
+        "social_support": "#F6810C",
+        "life_expectancy": "#E34D20",
+        "freedom": "#AA2243",
+        "generosity": "#6C0D59",
+        "corruption": "#3F0059"
     }
 
     const gdp = <p>Gross domestic product (GDP) per capita is a financial metric that breaks down a country's economic output per person. It is a global measure of the prosperity of nations and is used by economists, along with GDP, to analyze the prosperity of a country based on its economic growth. <br /><br />Since GDP per capita considers both a country's GDP and its population, small, rich countries and more developed industrial countries tend to have the highest GDP per capita.</p>;
@@ -51,10 +54,10 @@ const CorrelationGraph = ({ width, height }) => {
     useEffect(() => {
         var coordinates = []
         if (data !== null) {
-            coordinates = data.map(d => [d[variable], d['happiness_score']]).sort((a, b) => a[1] - b[1])
+            coordinates = data.map(d => [d[variable], d['happiness_score'], d['country']]).sort((a, b) => a[1] - b[1])
         }
 
-        const margin = { top: 10, right: 30, bottom: 30, left: 60 }
+        const margin = { top: 10, right: 30, bottom: 30, left: 30 }
         const height = 400 - margin.top - margin.bottom
         const width = 500 - margin.left - margin.right
         var svg = d3.select(ref.current).html("")
@@ -92,11 +95,16 @@ const CorrelationGraph = ({ width, height }) => {
             .attr("cy", function (d) { return y(d[1]); })
             .attr("r", "4")
             .style("fill", colors[variable])
-            .attr("class", function (d) { return style.circle; })
-            .on("mouseenter", function (d) {
+            .attr("className", function (d) { return style.circle; })
+            .on("mouseenter", function (d, i) {
+                setHoveredCountry(i[2]);
                 d3.select(this).style("r", 8).raise()
             })
+            .on("mousemove", (d, i) => {
+                d3.select(hoveredCountryRef.current).style("left", `${d.clientX}px`).style("top", `${d.clientY - 50}px`);
+            })
             .on("mouseleave", function (d) {
+                setHoveredCountry(null);
                 d3.select(this).style("r", 4)
             })
             .style("opacity", 0)
@@ -109,12 +117,13 @@ const CorrelationGraph = ({ width, height }) => {
 
     return (
         <div>
-            <div>
-                {Object.keys(colors).map(variable => <button key={variable} style={{ backgroundColor: `${colors[variable]}` }} className={style.button} onClick={() => setVariable(variable)}>{variable}</button>)}
-            </div>
+            <p style={{position: "absolute", background: "white", padding: "2px", border: "1px solid black", borderRadius: "5px", visibility: hoveredCountry ? "visible" : "hidden"}} ref={hoveredCountryRef}>{hoveredCountry ? hoveredCountry : null}</p>
             <div className={style.container}>
-                <svg height={height} width={width} ref={ref} />
+                <svg height={height} width={width} style={{width:"fit-content"}} ref={ref} />
                 <div className={style.text}>{texts[variable]}</div>
+            </div>
+            <div className={style.buttonsContainer}>
+                {Object.keys(colors).map(variable => <button key={variable} style={{ backgroundColor: `${colors[variable]}`, color:"white" }} className={style.button} onClick={() => setVariable(variable)}>{variable.replace("_", " ")}</button>)}
             </div>
         </div>
     );
