@@ -4,12 +4,12 @@ import * as d3 from "d3";
 import dataUrl from "../data/data_scores.csv?url"
 
 const CountryGraph = (props) => {
-    const countryName = props.name
+    const countryCode = props.countryCode;
     const ref = useRef()
-    const [data, setData] = useState(null)
+    const [data, setData] = useState(null);
 
-    const margin = { top: 10, right: 30, bottom: 30, left: 60 }
-    const width = 300 - margin.left - margin.right
+    const margin = { top: 10, right: 30, bottom: 30, left: 60 };
+    const width = 300 - margin.left - margin.right;
     const height = 200 - margin.top - margin.bottom;
 
 
@@ -17,7 +17,7 @@ const CountryGraph = (props) => {
         const ret = {};
         for (let score of csv) {
             if (!ret[score.year]) ret[score.year] = {};
-            ret[score.year][score.country] = { score: +score.happiness_score };
+            ret[score.year][score.country_code] = { score: +score.happiness_score };
         }
         return ret;
     };
@@ -25,27 +25,28 @@ const CountryGraph = (props) => {
     useEffect(() => {
         d3.csv(dataUrl)
             .then((csv) => preprocessData(csv))
-            .then((json) => setData(json))
+            .then((d) => setData(d))
             .catch((err) => console.log(err))
     }, []);
 
-    function getCountryScoreData(countryName) {
+    function getCountryScoreData(countryCode) {
         let countryScores = []
         if (data == undefined) return countryScores
-        for (let i = 2015; i <= 2022; i++) {
-            if (data[i][countryName] !== null) {
-                countryScores.push([i, data[i][countryName]['score']])
+        for (let i = 2015; i <= 2023; i++) {
+            if (data[i][countryCode]) {
+                countryScores.push([i, data[i][countryCode]['score']])
             }
         }
-        return countryScores
+        return countryScores;
     }
 
-    const countryScoreData = getCountryScoreData(countryName);
 
-    const domain_upper = Math.max(...countryScoreData.map(el => el[1])) + 0.1
-    const domain_lower = Math.min(...countryScoreData.map(el => el[1])) - 0.1
 
     useEffect(() => {
+        if (data == null) return;
+        const countryScoreData = getCountryScoreData(countryCode);
+        const domain_upper = Math.max(...countryScoreData.map(el => el[1])) + 0.1
+        const domain_lower = Math.min(...countryScoreData.map(el => el[1])) - 0.1
         var svg = d3.select(ref.current).html("")
             .append("svg")
             .attr("width", width + margin.left + margin.right)
@@ -55,7 +56,7 @@ const CountryGraph = (props) => {
                 "translate(" + margin.left + "," + margin.top + ")");
 
         var x = d3.scaleLinear()
-            .domain([2015, 2022])
+            .domain([2015, 2023])
             .nice()
             .range([0, width]);
         svg.append("g")
@@ -79,16 +80,17 @@ const CountryGraph = (props) => {
                 .x(function (d) { return x(d[0]) })
                 .y(function (d) { return y(d[1]) })
             )
-    }, [data])
+    }, [data, countryCode]);
 
-    return (
-        <div className={style.card}>
-            <p className={style.countryName}>{countryName}</p>
-            <div ref={ref} className={style.svgGraph}>
-
+    return (<>
+        {
+            data &&
+            <div className={style.card}>
+                <p>{props.title}</p>
+                <div ref={ref} className={style.svgGraph} />
             </div>
-        </div>
-    )
+        }
+    </>)
 }
 
 export default CountryGraph

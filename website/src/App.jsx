@@ -17,7 +17,7 @@ function App() {
         <WorldMapPage id="map" />
         <CorrelationsPage id="correlation" />
         <NetworkPage id="network" />
-        <ParallelCoordinatesPage />
+        <ParallelCoordinatesPage id="parallel" />
       </div>
     </>
   );

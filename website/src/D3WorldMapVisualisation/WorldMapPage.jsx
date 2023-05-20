@@ -18,7 +18,7 @@ const WorldMapPage = ({ id }) => {
                 Both North and majority of South America are becomming happier. Unfortunatelly, it can be seen that Africa doesn't follow their trend.
 
             </p>
-            <D3WorldMapVisualisation year={year} height={600} width={"100%"} />
+            <D3WorldMapVisualisation year={year} width={"100%"} />
             <ProgressBar year={year} onYearChanged={(year) => setYear(year)} />
         </div>
     );
