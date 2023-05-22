@@ -1,0 +1,15 @@
+.axis {
+    opacity: 0.4;
+    transition: all 0.2s;
+    stroke-width: 1px;
+}
+
+.axis:hover {
+    opacity: 1;
+}
+
+path {
+    stroke-linejoin: round;
+    stroke-miterlimit: 2;
+    stroke-linecap: round;
+}
