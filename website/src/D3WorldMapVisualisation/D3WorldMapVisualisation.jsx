@@ -61,8 +61,6 @@ const D3WorldMapVisualisation = ({ width, year }) => {
             .catch(err => console.error("Error loading scores.", err));
     }, []);
 
-    if (scores) console.log(hoveredCountry, scores[year][hoveredCountry])
-
     useEffect(() => {
         const width = 400, height = 200;
         const legendDims = {
@@ -95,7 +93,7 @@ const D3WorldMapVisualisation = ({ width, year }) => {
 
         linearGradient
             .selectAll("stop")
-            .data(colorByScore.ticks().map((t, i, n) => ({ offset: `${100 * i / (n.length - 1)}%`, color: colorByScore(t) })))
+            .data(colorByScore.ticks().reverse().map((t, i, n) => ({ offset: `${100 * i / (n.length - 1)}%`, color: colorByScore(t) })))
             .enter()
             .append("stop")
             .attr("offset", d => d.offset)
@@ -111,7 +109,7 @@ const D3WorldMapVisualisation = ({ width, year }) => {
             .style("fill", "url(#map-gradient)");
 
         const axisScale = d3.scaleLinear()
-            .domain([colorByScore.domain()[0], colorByScore.domain()[colorByScore.domain().length - 1]])
+            .domain([colorByScore.domain()[colorByScore.domain().length - 1], colorByScore.domain()[0]])
             .range([width - legendDims.width - legendDims.margin.h, width - legendDims.margin.h - 1])
         const axisBottom = g => g
             .attr("transform", `translate(0, ${height - legendDims.height - legendDims.margin.v})`)
@@ -119,9 +117,7 @@ const D3WorldMapVisualisation = ({ width, year }) => {
             .call(d3.axisBottom(axisScale)
                 .ticks(legendDims.width / 30)
                 .tickSize(2 * legendDims.height / 3))
-
         legendElement.append('g').call(axisBottom);
-
     }, []);
 
     useEffect(() => {

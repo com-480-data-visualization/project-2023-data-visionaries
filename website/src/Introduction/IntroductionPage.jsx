@@ -5,7 +5,7 @@ const IntroductionPage = ({ id }) => {
         <div id={id} className={style.introduction}>
             <h2>World happiness report</h2>
             <div>
-                <p>Welcome to our World Happiness Visualization.</p>
+                <p className={style.text}>Welcome to our World Happiness Visualization.</p>
                 <br /><br />Here you can:
                 <ul>
                     <li>explore happiness levels all over the world</li>
