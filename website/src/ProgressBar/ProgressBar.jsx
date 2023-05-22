@@ -6,7 +6,6 @@ const ProgressBar = ({ year, onYearChanged }) => {
     return (
         <div className={style.bar}>
             <ProgressController year={year} onYearChanged={onYearChanged} />
-            <p>{Math.min(...years)}</p>
             <input
                 type="range"
                 onChange={(e) => onYearChanged(+e.target.value)}
@@ -16,7 +15,7 @@ const ProgressBar = ({ year, onYearChanged }) => {
                 value={year}
                 className={style.scroller}
             />
-            <p>{Math.max(...years)}</p>
+            <p className={style.year}>{year}</p>
         </div>
     )
 }

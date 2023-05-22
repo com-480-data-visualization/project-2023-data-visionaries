@@ -2,10 +2,92 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 12px;
 }
 
 
 .play {
     display: flex;
     align-items: center;
+    transition: all 0.3s ease;
+}
+
+.play:hover {
+    transform: scale(1.15);
+}
+
+.year {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 700;
+}
+
+input[type="range"] {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="range"] {
+    /* ... */
+
+    /*  styling the track  */
+    height: 15px;
+    background: #ccc;
+    border-radius: 16px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 15px;
+    background: #ccc;
+    border-radius: 16px;
+}
+
+/* Track: Mozilla Firefox */
+input[type="range"]::-moz-range-track {
+    height: 15px;
+    background: #ccc;
+    border-radius: 16px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    height: 15px;
+    width: 15px;
+    background-color: purple;
+    border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: purple;
+    border-radius: 50%;
+}
+
+/* Thumb: webkit */
+input[type="range"]::-webkit-slider-thumb {
+    /*  ...  */
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px rgb(179, 143, 186);
+}
+
+/* Thumb: Firefox */
+input[type="range"]::-moz-range-thumb {
+    /*  ...  */
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px rgb(192, 113, 192);
+}
+
+input[type="range"] {
+    /*  ...  */
+    /*  slider progress trick  */
+    overflow: hidden;
+    border-radius: 16px;
 }
