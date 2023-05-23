@@ -7,10 +7,10 @@ const CorrelationGraph = ({ width, height }) => {
     const ref = useRef()
     const hoveredCountryRef = useRef();
     const [data, setData] = useState(null)
-    const [variable, setVariable] = useState("social_support")
+    const [variable, setVariable] = useState("gdp")
     const [hoveredCountry, setHoveredCountry] = useState(null);
 
-    
+
     const colors = {
         "gdp": "#F8AD1A",
         "social_support": "#F6810C",
@@ -117,13 +117,13 @@ const CorrelationGraph = ({ width, height }) => {
 
     return (
         <div>
-            <p style={{position: "absolute", background: "white", padding: "2px", border: "1px solid black", borderRadius: "5px", visibility: hoveredCountry ? "visible" : "hidden"}} ref={hoveredCountryRef}>{hoveredCountry ? hoveredCountry : null}</p>
+            <p style={{ position: "absolute", background: "white", padding: "2px", border: "1px solid black", borderRadius: "5px", visibility: hoveredCountry ? "visible" : "hidden" }} ref={hoveredCountryRef}>{hoveredCountry ? hoveredCountry : null}</p>
             <div className={style.container}>
-                <svg height={height} width={width} style={{width:"fit-content"}} ref={ref} />
+                <svg height={height} width={width} style={{ width: "fit-content" }} ref={ref} />
                 <div className={style.text}>{texts[variable]}</div>
             </div>
             <div className={style.buttonsContainer}>
-                {Object.keys(colors).map(variable => <button key={variable} style={{ backgroundColor: `${colors[variable]}`, color:"white" }} className={style.button} onClick={() => setVariable(variable)}>{variable.replace("_", " ")}</button>)}
+                {Object.keys(colors).map(variable => <button key={variable} style={{ backgroundColor: `${colors[variable]}`, color: "white" }} className={style.button} onClick={() => setVariable(variable)}>{variable.replace("_", " ")}</button>)}
             </div>
         </div>
     );

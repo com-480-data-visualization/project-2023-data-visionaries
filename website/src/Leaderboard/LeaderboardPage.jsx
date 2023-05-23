@@ -8,9 +8,9 @@ const LeaderboardPage = ({ id }) => {
     const [year, setYear] = useState(Math.min(...years));
 
     return (
-        <div id={id} style={{ display: "flex", flexDirection: "column", height: "100vh", maxWidth:"70%", margin: "auto", justifyContent:"center"}}>
+        <div id={id} style={{ display: "flex", flexDirection: "column", height: "100%", maxWidth: "70%", margin: "auto", justifyContent: "center" }}>
             <h2>Ranking over the years</h2>
-            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                 <div >
                     <Leaderboard year={year} width={360} height={400} />
                     <ProgressBar year={year} onYearChanged={(year) => setYear(year)} />
