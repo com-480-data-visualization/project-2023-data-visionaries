@@ -63,7 +63,7 @@ const CountryGraph = (props) => {
 
         var formatAxis = d3.format("0");
         var y = d3.scaleLinear()
-            .domain([1.5, 8])
+            .domain([0, 8])
             .nice()
             .range([height, 0]);
         svg.append("g")
@@ -72,7 +72,7 @@ const CountryGraph = (props) => {
         svg.append("path")
             .datum(countryScoreData)
             .attr("fill", "none")
-            .attr("stroke", "steelblue")
+            .attr("stroke", "purple")
             .attr("stroke-width", 1.5)
             .attr("d", d3.line()
                 .x(function (d) { return x(d[0]) })

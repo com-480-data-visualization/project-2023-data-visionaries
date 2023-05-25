@@ -8,7 +8,9 @@ const ParallelCoordinates = () => {
     const svgRef = useRef();
     const linesRef = useRef();
     const axesRef = useRef();
+    const hoverRef = useRef();
     const [data, setData] = useState(null);
+    const [hoveredCountry, setHoveredCountry] = useState(null);
     const [selections, setSelections] = useState({});
     const color = d3.scaleSequential().domain([8, 1]).nice().interpolator(d3.interpolateInferno);
     const margin = { top: 30, right: 80, bottom: 10, left: 80 },
@@ -21,6 +23,8 @@ const ParallelCoordinates = () => {
             .then((scores) => setData(scores))
             .catch((err) => console.error("Error loading 2023 data", err));
     }, []);
+
+    const isSelected = (d) => Object.keys(selections).every(key => d[key] >= selections[key][0] && d[key] <= selections[key][1]);
 
     useEffect(() => {
         if (!data) return;
@@ -46,16 +50,11 @@ const ParallelCoordinates = () => {
             .enter()
             .append("path")
             .attr("d", path)
+            .attr("class", style.path)
             .style("fill", "none")
             .style("stroke", d => color(d["happiness_score"]))
             .style("stroke-width", 1.5)
-            .style("opacity", 1)
-        //    .on("mouseover", function (e, d) {
-        //        d3.select(this).raise().style("stroke-width", 10).transition().duration(200).style("opacity", 1)
-        //    })
-        //    .on("mouseleave", function (e, d) {
-        //        d3.select(this).style("stroke-width", 2).transition().duration(200).style("opacity", 0.6)
-        //    });
+            .style("opacity", 1);
 
         const brushed = function (event, dim) {
             setSelections(oldSelections => {
@@ -71,8 +70,8 @@ const ParallelCoordinates = () => {
 
         const brush = d3.brushY()
             .extent([
-                [-brushWidth / 2, 0],
-                [brushWidth / 2, height]
+                [-brushWidth / 3, 0],
+                [brushWidth / 3, height]
             ])
             .on("start brush end", brushed);
 
@@ -94,20 +93,39 @@ const ParallelCoordinates = () => {
     }, [data]);
 
     useEffect(() => {
-        const isSelected = (d) => Object.keys(selections).every(key => d[key] >= selections[key][0] && d[key] <= selections[key][1]);
+        if (!data) return;
         d3.select(linesRef.current)
             .selectAll("path")
             .style("stroke", d => isSelected(d) ? color(d["happiness_score"]) : "grey")
-            .style("opacity", d => isSelected(d) ? 1 : 0.05);
-    }, [selections]);
+            .style("opacity", d => isSelected(d) ? 1 : 0.05)
+            .on("mouseover", function (e, d) {
+                if (isSelected(d)) {
+                    setHoveredCountry(d.country)
+                    d3.select(this).style("stroke", color(2)).style("stroke-width", 5).raise()
+                }
+            })
+            .on("mousemove", function (e, d) {
+                d3
+                    .select(hoverRef.current)
+                    .style("top", `${e.clientY - 30}px`)
+                    .style("left", `${e.clientX}px`)
+            })
+            .on("mouseleave", function (e, d) {
+                d3.select(this).style("stroke", isSelected(d) ? color(d["happiness_score"]) : "grey").style("stroke-width", 1.5)
+                setHoveredCountry(null);
+            })
+    }, [data, selections]);
 
     return (
-        <svg ref={svgRef} viewBox={`0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`}>
-            <g transform={`translate(${margin.left}, ${margin.top})`}>
-                <g ref={linesRef} />
-                <g ref={axesRef} />
-            </g>
-        </svg>
+        <>
+            <div ref={hoverRef} className={style.hover} style={{ visibility: hoveredCountry ? "visible" : "hidden" }}>{hoveredCountry}</div>
+            <svg ref={svgRef} viewBox={`0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`}>
+                <g transform={`translate(${margin.left}, ${margin.top})`}>
+                    <g ref={linesRef} />
+                    <g ref={axesRef} />
+                </g>
+            </svg>
+        </>
     );
 
 }
