@@ -45,8 +45,6 @@ const CountryGraph = (props) => {
     useEffect(() => {
         if (data == null) return;
         const countryScoreData = getCountryScoreData(countryCode);
-        const domain_upper = Math.max(...countryScoreData.map(el => el[1])) + 0.1
-        const domain_lower = Math.min(...countryScoreData.map(el => el[1])) - 0.1
         var svg = d3.select(ref.current).html("")
             .append("svg")
             .attr("width", width + margin.left + margin.right)
@@ -65,7 +63,7 @@ const CountryGraph = (props) => {
 
         var formatAxis = d3.format("0");
         var y = d3.scaleLinear()
-            .domain([domain_lower, domain_upper])
+            .domain([1.5, 8])
             .nice()
             .range([height, 0]);
         svg.append("g")

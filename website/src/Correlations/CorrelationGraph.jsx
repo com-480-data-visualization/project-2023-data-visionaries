@@ -99,6 +99,7 @@ const CorrelationGraph = ({ width, height }) => {
             .on("mouseenter", function (d, i) {
                 setHoveredCountry(i[2]);
                 d3.select(this).style("r", 8).raise()
+                d3.select(this).style("fill", "#999")
             })
             .on("mousemove", (d, i) => {
                 d3.select(hoveredCountryRef.current).style("left", `${d.clientX}px`).style("top", `${d.clientY - 50}px`);
@@ -106,6 +107,7 @@ const CorrelationGraph = ({ width, height }) => {
             .on("mouseleave", function (d) {
                 setHoveredCountry(null);
                 d3.select(this).style("r", 4)
+                d3.select(this).style("fill", colors[variable])
             })
             .style("opacity", 0)
             .transition()

@@ -6,6 +6,8 @@ import LeaderboardPage from "./Leaderboard/LeaderboardPage";
 import style from "./Styles.module.css";
 import ParallelCoordinatesPage from "./ParallelCoordinates/ParallelCoordinatesPage";
 import WorldMapPageSecond from "./D3WorldMapVisualisation/WorldMapPageSecond";
+import FinlandPage from "./Finland/FinlandPage";
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
       <div className={style.section}><CorrelationsPage /></div>
       <div className={style.section}><NetworkPage /></div>
       <div className={style.section}><ParallelCoordinatesPage /></div>
+      <div className={style.section}><FinlandPage /></div>
     </div>
   );
 }

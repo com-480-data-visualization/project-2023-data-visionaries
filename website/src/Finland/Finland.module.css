@@ -1,0 +1,16 @@
+.factsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.fact{
+    max-width: 30%;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid gray;
+    padding: 8px;
+    text-align: center;
+    height: fit-content;
+    
+}
