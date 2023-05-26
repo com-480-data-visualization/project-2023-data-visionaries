@@ -1,10 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import style from "./NetworkGraph.module.css";
 import * as d3 from "d3";
 import dataUrl from "../data/network.json?url"
 
 const NetworkGraph = ({ width, height, variable}) => {
   const svgRef = useRef();
+
+  const [minVar, setMinVar] = useState(0);
+  const [maxVar, setMaxVar] = useState(10);
+
+  const [minLink, setMinLink] = useState(0);
+  const [maxLink, setMaxLink] = useState(5);
 
   useEffect(() => {
     const svgElement = d3.select(svgRef.current);
@@ -17,25 +23,31 @@ const NetworkGraph = ({ width, height, variable}) => {
         const width = 800;
         const height = 800;
 
+        // Set the min and max values for the variable
+        setMinVar(d3.min(data.nodes, (d) => d[variable]));
+        setMaxVar(d3.max(data.nodes, (d) => d[variable]));
+
+        // Set the min and max values for the link
+        setMinLink(d3.min(data.links, (d) => d.value));
+        setMaxLink(d3.max(data.links, (d) => d.value));
+
+        console.log("minVar: " + minVar + " maxVar: " + maxVar + " minLink: " + minLink + " maxLink: " + maxLink);
+
         // Helper functions
         var radius = d3
         .scaleLinear()
-        .domain([2, 8])
+        .domain([minVar, maxVar])
         .nice()
-        .range([1, 9]);
+        .range([3, 12]);
         
         const color = () => { return "#6C0096"; };
 
         function linkColor(input) {
-          // Define the range for input values
-          const minValue = 0;
-          const maxValue = 4.604;
-        
           // Map the input value to the color range
-          const mappedValue = 1 - (input - minValue) / (maxValue - minValue);
+          const mappedValue = 1 - (input - minLink) / (maxLink - minLink);
         
           // Calculate the gray color value based on mapped value
-          const hue = Math.round(mappedValue * 100);
+          const hue = Math.round(mappedValue * 145);
         
           // Generate the hsl color string
           const color = `hsl(${hue}, 100%, 50%)`;
@@ -89,8 +101,8 @@ const NetworkGraph = ({ width, height, variable}) => {
 
         const nodeHoverTooltip = (d) => {
           return `<div>
-          ${d.target.getAttribute("name")} (${d.target.getAttribute("code")})\n
-          Happiness: ${d.target.getAttribute("happiness")}\n
+          ${d.target.getAttribute("name")} <br />
+          ${variable.charAt(0).toUpperCase() + variable.slice(1)}: ${d.target.getAttribute(variable)}\n
           </div>`;
         };
 
@@ -142,7 +154,7 @@ const NetworkGraph = ({ width, height, variable}) => {
           .enter()
           .append("circle")
           .attr("fill", color)
-          .attr("r", (d) => radius(d.happiness)) // Set node radius
+          .attr("r", (d) => radius(d[variable])) // Set node radius
           .attr("code", (d) => d.code)
           .attr("name", (d) => d.name)
           .attr("region", (d) => d.region)
