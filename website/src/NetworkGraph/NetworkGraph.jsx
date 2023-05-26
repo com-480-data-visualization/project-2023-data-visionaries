@@ -197,6 +197,7 @@ const NetworkGraph = ({ width, height, variable }) => {
       .text(d => flag(d.code))
       .attr("text-anchor", "middle")
       .attr("dominant-baseline", "hanging")
+      .attr("font-family", "sans-serif")
       .call(drag(simulation));
 
     node.on("mouseover", (d) => {
