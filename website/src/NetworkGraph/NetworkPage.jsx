@@ -14,7 +14,7 @@ const NetworkPage = ({ id }) => {
                 </p>
             </div>
             <div style={{ border: "2px solid gray", borderRadius: "10px", height: "fit-content" }}>
-                <NetworkGraph height={800} width={"100%"} />
+                <NetworkGraph height={800} width={"100%"} variable={"happiness"}/>
             </div>
         </div>
     );

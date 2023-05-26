@@ -3,7 +3,7 @@ import style from "./NetworkGraph.module.css";
 import * as d3 from "d3";
 import dataUrl from "../data/network.json?url"
 
-const NetworkGraph = ({ width, height }) => {
+const NetworkGraph = ({ width, height, variable}) => {
   const svgRef = useRef();
 
   useEffect(() => {
@@ -25,6 +25,23 @@ const NetworkGraph = ({ width, height }) => {
         .range([1, 9]);
         
         const color = () => { return "#6C0096"; };
+
+        function linkColor(input) {
+          // Define the range for input values
+          const minValue = 0;
+          const maxValue = 4.604;
+        
+          // Map the input value to the color range
+          const mappedValue = 1 - (input - minValue) / (maxValue - minValue);
+        
+          // Calculate the gray color value based on mapped value
+          const hue = Math.round(mappedValue * 100);
+        
+          // Generate the hsl color string
+          const color = `hsl(${hue}, 100%, 50%)`;
+        
+          return color;
+        }
 
         function flag(countryCode) {
           const codePoints = countryCode
@@ -115,8 +132,8 @@ const NetworkGraph = ({ width, height }) => {
         .data(data.links)
         .enter()
         .append("line")
-        .attr("stroke", "#999")
-        .attr("stroke-width", (d) => d.value);
+        .attr("stroke", (d) => linkColor(d.value))
+        .attr("stroke-width", (d) => 0.5 * d.value);
 
         // Create a D3 selection for the nodes
         const node = svg
