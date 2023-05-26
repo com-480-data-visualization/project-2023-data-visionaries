@@ -31,8 +31,6 @@ const NetworkGraph = ({ width, height, variable }) => {
     
     const gElement = d3
     .select(gRef.current)
-    //.append("g")
-    //.attr("cursor", "grab");
 
     const handleZoom = (e) => gElement.attr('transform', e.transform);
 
@@ -44,7 +42,7 @@ const NetworkGraph = ({ width, height, variable }) => {
     svgElement
     .attr("viewBox", [0, 0, width, height])
     .call(zoom)
-    .call(zoom.transform, d3.zoomIdentity.translate(0, 0).scale(0.55));
+    .call(zoom.transform, d3.zoomIdentity.translate(width/2, height/2).scale(0.55));
   }, []);
 
 
