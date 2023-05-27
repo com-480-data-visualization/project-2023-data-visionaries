@@ -14,7 +14,18 @@ div.tooltip {
     pointer-events: none;
 }
 
-.flag {
-    /* Other styles for flags */
-    clip-path: url(#clip-circle);
+.container {
+    display: flex;
+}
+
+.button {
+    border-radius: 10px;
+    margin: 5px;
+    outline: none;
+    border: 0;
+    padding: 4px;
+}
+
+.button:hover {
+    opacity: 0.8;
 }

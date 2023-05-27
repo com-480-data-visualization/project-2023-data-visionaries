@@ -3,17 +3,23 @@ import style from "./NetworkGraph.module.css";
 import * as d3 from "d3";
 import dataUrl from "../data/network.json?url";
 
-const NetworkGraph = ({ width, height, variable }) => {
+const NetworkGraph = ({ width, height }) => {
   const [data, setData] = useState(null);
 
-  const [minVar, setMinVar] = useState(0);
-  const [maxVar, setMaxVar] = useState(10);
-
-  const [minLink, setMinLink] = useState(0);
-  const [maxLink, setMaxLink] = useState(5);
+  const [variable, setVariable] = useState("corruption")
 
   const svgRef = useRef();
   const gRef = useRef();
+
+  const colors = {
+    "happiness": "#F8AD1A",
+    "gdp": "#F8AD1A",
+    "social_support": "#F6810C",
+    "life_expectancy": "#E34D20",
+    "freedom": "#AA2243",
+    "generosity": "#6C0D59",
+    "corruption": "#3F0059"
+  }
 
   useEffect(() => {
     fetch(dataUrl)
@@ -45,20 +51,17 @@ const NetworkGraph = ({ width, height, variable }) => {
       .call(zoom)
       .call(
         zoom.transform,
-        d3.zoomIdentity.translate(width / 2, height / 2).scale(0.55)
+        d3.zoomIdentity.translate(width / 2, height / 2).scale(1.0)
       );
   }, []);
 
   useEffect(() => {
     if (!data) return;
 
-    // Set the min and max values for the variable
-    setMinVar(d3.min(data.nodes, (d) => d[variable]));
-    setMaxVar(d3.max(data.nodes, (d) => d[variable]));
-
-    // Set the min and max values for the link
-    setMinLink(d3.min(data.links, (d) => d.value));
-    setMaxLink(d3.max(data.links, (d) => d.value));
+    const minVar = d3.min(data.nodes, (d) => d[variable]);
+    const maxVar = d3.max(data.nodes, (d) => d[variable]);
+    const minLink = d3.min(data.links, (d) => d.value);
+    const maxLink = d3.max(data.links, (d) => d.value);
 
     const gElement = d3.select(gRef.current);
 
@@ -70,14 +73,6 @@ const NetworkGraph = ({ width, height, variable }) => {
       const normalizedValue = 1 - (input - minLink) / (maxLink - minLink);
 
       return d3.interpolateInferno(normalizedValue);
-    }
-
-    function flag(countryCode) {
-      const codePoints = countryCode
-        .toUpperCase()
-        .split("")
-        .map((char) => 127397 + char.charCodeAt());
-      return String.fromCodePoint(...codePoints);
     }
 
     const drag = (simulation) => {
@@ -204,9 +199,14 @@ const NetworkGraph = ({ width, height, variable }) => {
   }, [variable, data]);
 
   return (
-    <svg width={width} height={height} ref={svgRef}>
-      <g ref={gRef} />
-    </svg>
+    <div>
+      <svg width={width} height={height} ref={svgRef}>
+        <g ref={gRef} />
+      </svg>
+      <div className={style.buttonsContainer}>
+        {Object.keys(colors).map(variable => <button key={variable} style={{ backgroundColor: `${colors[variable]}`, color: "white" }} className={style.button} onClick={() => setVariable(variable)}>{variable.replace("_", " ")}</button>)}
+      </div>
+    </div>
   );
 };
 
