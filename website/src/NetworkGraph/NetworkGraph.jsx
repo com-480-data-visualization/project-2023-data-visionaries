@@ -6,10 +6,11 @@ import dataUrl from "../data/network.json?url";
 const NetworkGraph = ({ width, height }) => {
   const [data, setData] = useState(null);
 
-  const [variable, setVariable] = useState("corruption")
+  const [variable, setVariable] = useState("happiness")
 
   const svgRef = useRef();
   const gRef = useRef();
+  const gLegendRef = useRef();
 
   const colors = {
     "happiness": "#F8AD1A",
@@ -29,21 +30,35 @@ const NetworkGraph = ({ width, height }) => {
   }, []);
 
   useEffect(() => {
-    const width = 800;
-    const height = 800;
+    if (!data) return;
 
-    const svgElement = d3
-    .select(svgRef.current);
-    
-    const gElement = d3
-    .select(gRef.current);
+    const width = 400;
+    const height = 200;
+
+    const minLink = d3.min(data.links, (d) => d.value);
+    const maxLink = d3.max(data.links, (d) => d.value);
+
+    const colorByScore = d3.scaleSequential().domain([maxLink, minLink]).nice().interpolator(d3.interpolateInferno);
+
+    const legendDims = {
+      width: 120,
+      height: 6,
+      margin: {
+          h: 6,
+          v: 10, 
+      }
+    };
+
+    const svgElement = d3.select(svgRef.current);
+    const gElement = d3.select(gRef.current);  
+    const legendElement = d3.select(gLegendRef.current);
 
     const handleZoom = (e) => gElement.attr("transform", e.transform);
 
     const zoom = d3
       .zoom()
-      .translateExtent([[-width / 2, -height / 2], [width / 2, height / 2]])
-      .scaleExtent([0.5, 5])
+      .translateExtent([[-width * 3, -height * 3], [width * 3, height * 3]])
+      .scaleExtent([0.15, 5])
       .on("zoom", handleZoom);
 
     svgElement
@@ -51,9 +66,42 @@ const NetworkGraph = ({ width, height }) => {
       .call(zoom)
       .call(
         zoom.transform,
-        d3.zoomIdentity.translate(width / 2, height / 2).scale(1.0)
+        d3.zoomIdentity.translate(width / 2, height / 2).scale(0.5)
       );
-  }, []);
+
+    legendElement.html("");
+    const linearGradient = legendElement
+      .append("linearGradient")
+      .attr("id", "map-gradient");
+
+    linearGradient
+      .selectAll("stop")
+      .data(colorByScore.ticks().reverse().map((t, i, n) => ({ offset: `${100 * i / (n.length - 1)}%`, color: colorByScore(t) })))
+      .enter()
+      .append("stop")
+      .attr("offset", d => d.offset)
+      .attr("stop-color", d => d.color);
+
+    legendElement
+      .append('g')
+      .attr("transform", `translate(0, ${height - legendDims.height - legendDims.margin.v})`)
+      .append("rect")
+      .attr('transform', `translate(${width - legendDims.width - legendDims.margin.h}, 0)`)
+      .attr("width", legendDims.width)
+      .attr("height", legendDims.height)
+      .style("fill", "url(#map-gradient)");
+
+    const axisScale = d3.scaleLinear()
+      .domain([colorByScore.domain()[colorByScore.domain().length - 1], colorByScore.domain()[0]])
+      .range([width - legendDims.width - legendDims.margin.h, width - legendDims.margin.h - 1])
+    const axisBottom = g => g
+      .attr("transform", `translate(0, ${height - legendDims.height - legendDims.margin.v})`)
+      .style("font-size", "8px")
+      .call(d3.axisBottom(axisScale)
+          .ticks(legendDims.width / 30)
+          .tickSize(2 * legendDims.height / 3))
+    legendElement.append('g').call(axisBottom);
+  }, [variable, data]);
 
   useEffect(() => {
     if (!data) return;
@@ -66,7 +114,7 @@ const NetworkGraph = ({ width, height }) => {
     const gElement = d3.select(gRef.current);
 
     // Helper functions
-    var radius = d3.scaleLinear().domain([minVar, maxVar]).nice().range([3, 20]);
+    var radius = d3.scaleLinear().domain([minVar, maxVar]).nice().range([2, 18]);
 
     function linkColor(input) {
       // Map the input value to the color range
@@ -152,7 +200,7 @@ const NetworkGraph = ({ width, height }) => {
       .enter()
       .append("line")
       .attr("stroke", (d) => linkColor(d.value))
-      .attr("stroke-width", (d) => 0.5 * d.value);
+      .attr("stroke-width", (d) => d.value);
 
     // Create a D3 selection for the nodes
     const node = gElement
@@ -202,9 +250,10 @@ const NetworkGraph = ({ width, height }) => {
     <div>
       <svg width={width} height={height} ref={svgRef}>
         <g ref={gRef} />
+        <g ref={gLegendRef} />
       </svg>
       <div className={style.buttonsContainer}>
-        {Object.keys(colors).map(variable => <button key={variable} style={{ backgroundColor: `${colors[variable]}`, color: "white" }} className={style.button} onClick={() => setVariable(variable)}>{variable.replace("_", " ")}</button>)}
+        {Object.keys(colors).map(key => <button key={key} style={{ backgroundColor: `${colors[key]}`, color: "white" }} className={style.button} onClick={() => setVariable(key)}>{key.replace("_", " ")}</button>)}
       </div>
     </div>
   );
