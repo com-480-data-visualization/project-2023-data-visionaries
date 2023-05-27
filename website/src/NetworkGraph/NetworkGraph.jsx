@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import style from "./NetworkGraph.module.css";
 import * as d3 from "d3";
-import dataUrl from "../data/network.json?url"
+import dataUrl from "../data/network.json?url";
 
 const NetworkGraph = ({ width, height, variable }) => {
   const [data, setData] = useState(null);
@@ -17,10 +17,10 @@ const NetworkGraph = ({ width, height, variable }) => {
 
   useEffect(() => {
     fetch(dataUrl)
-        .then((response) => response.json())
-        .then((data) => setData(data))
-        .catch((error) => console.error("Error loading data:", error));
-}, []);
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((error) => console.error("Error loading data:", error));
+  }, []);
 
   useEffect(() => {
     const width = 800;
@@ -30,21 +30,24 @@ const NetworkGraph = ({ width, height, variable }) => {
     .select(svgRef.current);
     
     const gElement = d3
-    .select(gRef.current)
+    .select(gRef.current);
 
-    const handleZoom = (e) => gElement.attr('transform', e.transform);
+    const handleZoom = (e) => gElement.attr("transform", e.transform);
 
-    const zoom = d3.zoom()
-    .translateExtent([[-width/2, -height/2], [width/2, height/2]])
-    .scaleExtent([0.5, 5])
-    .on('zoom', handleZoom);
+    const zoom = d3
+      .zoom()
+      .translateExtent([[-width / 2, -height / 2], [width / 2, height / 2]])
+      .scaleExtent([0.5, 5])
+      .on("zoom", handleZoom);
 
     svgElement
-    .attr("viewBox", [0, 0, width, height])
-    .call(zoom)
-    .call(zoom.transform, d3.zoomIdentity.translate(width/2, height/2).scale(0.55));
+      .attr("viewBox", [0, 0, width, height])
+      .call(zoom)
+      .call(
+        zoom.transform,
+        d3.zoomIdentity.translate(width / 2, height / 2).scale(0.55)
+      );
   }, []);
-
 
   useEffect(() => {
     if (!data) return;
@@ -60,32 +63,20 @@ const NetworkGraph = ({ width, height, variable }) => {
     const gElement = d3.select(gRef.current);
 
     // Helper functions
-    var radius = d3
-    .scaleLinear()
-    .domain([minVar, maxVar])
-    .nice()
-    .range([3, 12]);
-    
-    const color = () => { return "#6C0096"; };
+    var radius = d3.scaleLinear().domain([minVar, maxVar]).nice().range([3, 20]);
 
     function linkColor(input) {
       // Map the input value to the color range
-      const mappedValue = 1 - (input - minLink) / (maxLink - minLink);
-    
-      // Calculate the gray color value based on mapped value
-      const hue = Math.round(mappedValue * 145);
-    
-      // Generate the hsl color string
-      const color = `hsl(${hue}, 100%, 50%)`;
-    
-      return color;
+      const normalizedValue = 1 - (input - minLink) / (maxLink - minLink);
+
+      return d3.interpolateInferno(normalizedValue);
     }
 
     function flag(countryCode) {
       const codePoints = countryCode
         .toUpperCase()
-        .split('')
-        .map(char =>  127397 + char.charCodeAt());
+        .split("")
+        .map((char) => 127397 + char.charCodeAt());
       return String.fromCodePoint(...codePoints);
     }
 
@@ -95,24 +86,24 @@ const NetworkGraph = ({ width, height, variable }) => {
         d.fx = d.x;
         d.fy = d.y;
       };
-      
+
       const dragged = (event, d) => {
         d.fx = event.x;
         d.fy = event.y;
       };
-      
+
       const dragended = (event, d) => {
         if (!event.active) simulation.alphaTarget(0);
         d.fx = null;
         d.fy = null;
       };
-      
-      return d3
+
+    return d3
       .drag()
       .on("start", dragstarted)
       .on("drag", dragged)
       .on("end", dragended);
-    }
+    };
 
     // Add the tooltip element to the graph
     const tooltip = document.querySelector("#graph-tooltip");
@@ -145,9 +136,9 @@ const NetworkGraph = ({ width, height, variable }) => {
 
     const removeTooltip = () => {
       div
-        .transition()
-        .duration(200)
-        .style("opacity", 0);
+      .transition()
+      .duration(200)
+      .style("opacity", 0);
     };
 
     // Create a new D3 force simulation
@@ -155,57 +146,47 @@ const NetworkGraph = ({ width, height, variable }) => {
       .forceSimulation()
       .force("link", d3.forceLink().id((d) => d.id))
       .force("charge", d3.forceManyBody().strength(-100))
-      .force("center", d3.forceCenter(0,0))
+      .force("center", d3.forceCenter(0, 0))
       .force("x", d3.forceX())
       .force("y", d3.forceY());
 
     // Create a D3 selection for the links
     const link = gElement
-    .selectAll("line")
-    .data(data.links)
-    .enter()
-    .append("line")
-    .attr("stroke", (d) => linkColor(d.value))
-    .attr("stroke-width", (d) => 0.5 * d.value);
+      .selectAll("line")
+      .data(data.links)
+      .enter()
+      .append("line")
+      .attr("stroke", (d) => linkColor(d.value))
+      .attr("stroke-width", (d) => 0.5 * d.value);
 
     // Create a D3 selection for the nodes
     const node = gElement
-      .selectAll("circle")
-      .data(data.nodes)
-      .enter()
-      .append("circle")
-      .attr("fill", color)
-      .attr("r", (d) => radius(d[variable])) // Set node radius
-      .attr("code", (d) => d.code)
-      .attr("name", (d) => d.name)
-      .attr("region", (d) => d.region)
-      .attr("happiness", (d) => d.happiness)
-      .attr("gdp", (d) => d.gdp)
-      .attr("social_support", (d) => d.social_support)
-      .attr("life_expectancy", (d) => d.life_expectancy)
-      .attr("freedom", (d) => d.freedom)
-      .attr("generosity", (d) => d.generosity)
-      .attr("corruption", (d) => d.corruption)
-      .call(drag(simulation))
-
-    const label = gElement
-      .attr("class", "labels")
-      .selectAll("text")
-      .data(data.nodes)
-      .enter()
-      .append("text")
-      .text(d => flag(d.code))
-      .attr("text-anchor", "middle")
-      .attr("dominant-baseline", "hanging")
-      .attr("font-family", "sans-serif")
-      .call(drag(simulation));
+    .selectAll("image")
+    .data(data.nodes)
+    .enter()
+    .append("image")
+    .attr("href", (d) => "src/resources/1x1/" + d.code.toLowerCase() + ".svg")
+    .attr("width", (d) => radius(d[variable])) // Set node width based on radius
+    .attr("height", (d) => radius(d[variable])) // Set node height based on radius
+    .attr("x", (d) => -radius(d[variable]) / 2) // Set x position of the top-left corner of the image
+    .attr("y", (d) => -radius(d[variable]) / 2) // Set y position of the top-left corner of the image
+    .attr("code", (d) => d.code)
+    .attr("name", (d) => d.name)
+    .attr("region", (d) => d.region)
+    .attr("happiness", (d) => d.happiness)
+    .attr("gdp", (d) => d.gdp)
+    .attr("social_support", (d) => d.social_support)
+    .attr("life_expectancy", (d) => d.life_expectancy)
+    .attr("freedom", (d) => d.freedom)
+    .attr("generosity", (d) => d.generosity)
+    .attr("corruption", (d) => d.corruption)
+    .call(drag(simulation));
 
     node.on("mouseover", (d) => {
       addTooltip(d);
-    })
-      .on("mouseout", () => {
-        removeTooltip();
-      });
+    }).on("mouseout", () => {
+      removeTooltip();
+    });
 
     // Update the simulation with the data
     simulation.nodes(data.nodes).on("tick", () => {
@@ -216,22 +197,17 @@ const NetworkGraph = ({ width, height, variable }) => {
         .attr("x2", (d) => d.target.x)
         .attr("y2", (d) => d.target.y);
 
-      node
-      .attr("cx", (d) => d.x)
-      .attr("cy", (d) => d.y);
-      
-    // update label positions
-    label
-      .attr("x", d => { return d.x; })
-      .attr("y", d => { return d.y; })
+      node.attr("transform", (d) => `translate(${d.x},${d.y})`);
     });
 
     simulation.force("link").links(data.links);
   }, [variable, data]);
 
-  return <svg width={width} ref={svgRef}>
-          <g ref={gRef} />
-        </svg>
+  return (
+    <svg width={width} height={height} ref={svgRef}>
+      <g ref={gRef} />
+    </svg>
+  );
 };
 
 export default NetworkGraph;
