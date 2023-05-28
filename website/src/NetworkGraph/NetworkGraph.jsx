@@ -208,7 +208,7 @@ const NetworkGraph = ({ width, height }) => {
     .data(data.nodes)
     .enter()
     .append("image")
-    .attr("href", (d) => "src/resources/1x1/" + d.code.toLowerCase() + ".svg")
+    .attr("href", (d) => "src/resources/circular/" + d.code.toLowerCase() + ".svg")
     .attr("width", (d) => radius(d[variable])) // Set node width based on radius
     .attr("height", (d) => radius(d[variable])) // Set node height based on radius
     .attr("x", (d) => -radius(d[variable]) / 2) // Set x position of the top-left corner of the image
