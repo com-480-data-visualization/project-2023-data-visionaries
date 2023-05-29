@@ -35,8 +35,8 @@ const NetworkGraph = ({ width, height }) => {
     const width = 400;
     const height = 200;
 
-    const minLink = d3.min(data.links, (d) => d.value);
-    const maxLink = d3.max(data.links, (d) => d.value);
+    const minLink = d3.min(data.links, (d) => d[variable]);
+    const maxLink = d3.max(data.links, (d) => d[variable]);
 
     const colorByScore = d3.scaleSequential().domain([maxLink, minLink]).nice().interpolator(d3.interpolateInferno);
 
@@ -199,7 +199,7 @@ const NetworkGraph = ({ width, height }) => {
       .data(data.links)
       .enter()
       .append("line")
-      .attr("stroke", (d) => linkColor(d.value))
+      .attr("stroke", (d) => linkColor(d[variable]))
       .attr("stroke-width", 2);
 
     // Create a D3 selection for the nodes
