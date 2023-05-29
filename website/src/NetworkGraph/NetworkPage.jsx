@@ -1,18 +1,19 @@
 import { useState } from "react";
 import NetworkGraph from "./NetworkGraph";
 import style from "./NetworkGraph.module.css";
+import * as d3 from "d3"
 
 const NetworkPage = ({ id }) => {
 
     const [variable, setVariable] = useState("happiness")
     const colors = {
-        "happiness": "#F8AD1A",
-        "gdp": "#F8AD1A",
-        "social_support": "#F6810C",
-        "life_expectancy": "#E34D20",
-        "freedom": "#AA2243",
-        "generosity": "#6C0D59",
-        "corruption": "#3F0059"
+        "happiness": d3.interpolateInferno(6 / 7),
+        "gdp": d3.interpolateInferno(5 / 7),
+        "social_support": d3.interpolateInferno(4 / 7),
+        "life_expectancy": d3.interpolateInferno(3 / 7),
+        "freedom": d3.interpolateInferno(2 / 7),
+        "generosity": d3.interpolateInferno(1 / 7),
+        "corruption": d3.interpolateInferno(0 / 7),
     }
     return (
         <div id={id} style={{ display: "flex", flexDirection: "column", height: "100%", maxWidth: "70%", margin: "auto", justifyContent: "center", alignItems: "stretch" }}>
