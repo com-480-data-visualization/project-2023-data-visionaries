@@ -7,6 +7,7 @@ import style from "./Styles.module.css";
 import ParallelCoordinatesPage from "./ParallelCoordinates/ParallelCoordinatesPage";
 import WorldMapPageSecond from "./D3WorldMapVisualisation/WorldMapPageSecond";
 import FinlandPage from "./Finland/FinlandPage";
+import NetworkPageStory from "./NetworkGraph/NetworkPageStory";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <div className={style.section}><WorldMapPage /></div>
       <div className={style.section}><WorldMapPageSecond /></div>
       <div className={style.section}><CorrelationsPage /></div>
+      <div className={style.section}><NetworkPageStory /></div>
       <div className={style.section}><NetworkPage /></div>
       <div className={style.section}><ParallelCoordinatesPage /></div>
       <div className={style.section}><FinlandPage /></div>

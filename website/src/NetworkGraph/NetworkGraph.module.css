@@ -29,3 +29,9 @@ div.tooltip {
 .button:hover {
     opacity: 0.8;
 }
+
+.buttonsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

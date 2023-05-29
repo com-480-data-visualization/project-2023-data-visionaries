@@ -24,3 +24,11 @@
     font-style: italic;
 }
 
+.buttonsContainer {
+    margin: auto;
+}
+
+.correlationContainer {
+    display: flex;
+    flex-direction: column;
+}

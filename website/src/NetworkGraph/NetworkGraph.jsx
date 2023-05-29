@@ -3,24 +3,15 @@ import style from "./NetworkGraph.module.css";
 import * as d3 from "d3";
 import dataUrl from "../data/network.json?url";
 
-const NetworkGraph = ({ width, height }) => {
+const NetworkGraph = ({ width, height, variable }) => {
   const [data, setData] = useState(null);
 
-  const [variable, setVariable] = useState("happiness")
 
   const svgRef = useRef();
   const gRef = useRef();
   const gLegendRef = useRef();
 
-  const colors = {
-    "happiness": "#F8AD1A",
-    "gdp": "#F8AD1A",
-    "social_support": "#F6810C",
-    "life_expectancy": "#E34D20",
-    "freedom": "#AA2243",
-    "generosity": "#6C0D59",
-    "corruption": "#3F0059"
-  }
+
 
   useEffect(() => {
     fetch(dataUrl)
@@ -66,7 +57,7 @@ const NetworkGraph = ({ width, height }) => {
       .call(zoom)
       .call(
         zoom.transform,
-        d3.zoomIdentity.translate(width / 2, height / 2).scale(0.5)
+        d3.zoomIdentity.translate(width / 2, height / 2).scale(0.4)
       );
 
     legendElement.html("");
@@ -112,7 +103,7 @@ const NetworkGraph = ({ width, height }) => {
     const maxLink = d3.max(data.links, (d) => d.value);
 
     // Helper functions
-    const radius = d3.scaleLinear().domain([minVar, maxVar]).nice().range([2, 18]);
+    const radius = d3.scaleLinear().domain([minVar, maxVar]).nice().range([2, 25]);
 
     const gElement = d3.select(gRef.current);
 
@@ -274,10 +265,9 @@ const NetworkGraph = ({ width, height }) => {
         <g ref={gRef} />
         <g ref={gLegendRef} />
       </svg>
-      <div className={style.buttonsContainer}>
-        {Object.keys(colors).map(key => <button key={key} style={{ backgroundColor: `${colors[key]}`, color: "white" }} className={style.button} onClick={() => setVariable(key)}>{key.replace("_", " ")}</button>)}
-      </div>
+
     </div>
+
   );
 };
 
