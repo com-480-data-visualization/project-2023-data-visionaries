@@ -97,8 +97,8 @@ const NetworkGraph = ({ width, height, variable }) => {
 
     const minVar = d3.min(data.nodes, (d) => d[variable]);
     const maxVar = d3.max(data.nodes, (d) => d[variable]);
-    const minLink = d3.min(data.links, (d) => d.value);
-    const maxLink = d3.max(data.links, (d) => d.value);
+    const minLink = d3.min(data.links, (d) => d[variable]);
+    const maxLink = d3.max(data.links, (d) => d[variable]);
 
     // Helper functions
     const radius = d3.scaleLinear().domain([minVar, maxVar]).nice().range([2, 25]);
