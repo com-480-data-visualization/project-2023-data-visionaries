@@ -5,8 +5,8 @@ import dataUrl from "../data/network.json?url";
 
 const NetworkGraph = ({ width, height, variable }) => {
   const [data, setData] = useState(null);
-
-
+  const [hoveredCountry, setHoveredCountry] = useState(null);
+  const hoveredCountryRef = useRef();
   const svgRef = useRef();
   const gRef = useRef();
   const gLegendRef = useRef();
@@ -137,41 +137,6 @@ const NetworkGraph = ({ width, height, variable }) => {
         .on("end", dragended);
     };
 
-    // Add the tooltip element to the graph
-    const tooltip = document.querySelector("#graph-tooltip");
-    if (!tooltip) {
-      const tooltipDiv = document.createElement("div");
-      tooltipDiv.classList.add(style.tooltip);
-      tooltipDiv.style.opacity = "0";
-      tooltipDiv.id = "graph-tooltip";
-      document.body.appendChild(tooltipDiv);
-    }
-    const div = d3.select("#graph-tooltip");
-
-    const nodeHoverTooltip = (d) => {
-      return `<div>
-      ${d.target.getAttribute("name")} <br />
-      ${variable.charAt(0).toUpperCase() + variable.slice(1)}: ${d.target.getAttribute(variable)}\n
-      </div>`;
-    };
-
-    const addTooltip = (d) => {
-      div
-        .transition()
-        .duration(200)
-        .style("opacity", 0.9);
-      div
-        .html(nodeHoverTooltip(d))
-        .style("left", `${d.x - 50}px`)
-        .style("top", `${d.y - 50}px`);
-    };
-
-    const removeTooltip = () => {
-      div
-        .transition()
-        .duration(200)
-        .style("opacity", 0);
-    };
 
     // Create a new D3 force simulation
     const simulation = d3
@@ -212,15 +177,16 @@ const NetworkGraph = ({ width, height, variable }) => {
       .attr("freedom", (d) => d.freedom)
       .attr("generosity", (d) => d.generosity)
       .attr("corruption", (d) => d.corruption)
-      .call(drag(simulation));
-
-    node
-      .on("mouseover", (d) => {
-        addTooltip(d);
+      .call(drag(simulation))
+      .on("mouseenter", (e, d) => {
+        setHoveredCountry(d.name);
       })
-      .on("mouseout", () => {
-        removeTooltip();
-      });
+      .on("mousemove", (e, d) => {
+        d3.select(hoveredCountryRef.current).style("top", `${e.clientY - 60}px`).style("left", `${e.clientX - 15}px`);
+      })
+      .on("mouseleave", (e, d) => {
+        setHoveredCountry(null);
+      })
 
     // Update the simulation with the data
     simulation.nodes(data.nodes).on("tick", () => {
@@ -236,7 +202,6 @@ const NetworkGraph = ({ width, height, variable }) => {
 
     simulation.force("link").links(data.links);
   }, [data]);
-
 
   useEffect(() => {
     if (!data) return;
@@ -267,16 +232,26 @@ const NetworkGraph = ({ width, height, variable }) => {
       .attr("y", (d) => -radius(d[variable]) / 2) // Set y position of the top-left corner of the image
 
     gElement
-    .selectAll("line")
-    .transition()
-    .duration(400)
-    .attr("stroke", (d) => linkColor(d[variable]))
-    
+      .selectAll("line")
+      .transition()
+      .duration(400)
+      .attr("stroke", (d) => linkColor(d[variable]))
+
 
   }, [data, variable]);
 
+  const getHoveredCountryScore = () => {
+    const country = data.nodes.filter(d => d.name == hoveredCountry)[0]
+    if (country != undefined)
+      return country[variable].toFixed(2);
+  }
+
   return (
     <div>
+      <div className={style.tooltip} style={{ visibility: hoveredCountry ? "visible" : "hidden" }} ref={hoveredCountryRef}>
+        <p>{hoveredCountry}</p>
+        <p>{variable.charAt(0).toUpperCase() + variable.slice(1).replace("_", " ")}: {data && getHoveredCountryScore()}</p>
+      </div>
       <svg width={width} height={height} ref={svgRef}>
         <g ref={gRef} />
         <g ref={gLegendRef} />
