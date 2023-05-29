@@ -44,13 +44,13 @@ const NetworkGraph = ({ width, height }) => {
       width: 120,
       height: 6,
       margin: {
-          h: 6,
-          v: 10, 
+        h: 6,
+        v: 10,
       }
     };
 
     const svgElement = d3.select(svgRef.current);
-    const gElement = d3.select(gRef.current);  
+    const gElement = d3.select(gRef.current);
     const legendElement = d3.select(gLegendRef.current);
 
     const handleZoom = (e) => gElement.attr("transform", e.transform);
@@ -98,10 +98,10 @@ const NetworkGraph = ({ width, height }) => {
       .attr("transform", `translate(0, ${height - legendDims.height - legendDims.margin.v})`)
       .style("font-size", "8px")
       .call(d3.axisBottom(axisScale)
-          .ticks(legendDims.width / 30)
-          .tickSize(2 * legendDims.height / 3))
+        .ticks(legendDims.width / 30)
+        .tickSize(2 * legendDims.height / 3))
     legendElement.append('g').call(axisBottom);
-  }, [variable, data]);
+  }, [data]);
 
   useEffect(() => {
     if (!data) return;
@@ -111,10 +111,10 @@ const NetworkGraph = ({ width, height }) => {
     const minLink = d3.min(data.links, (d) => d.value);
     const maxLink = d3.max(data.links, (d) => d.value);
 
-    const gElement = d3.select(gRef.current);
-
     // Helper functions
-    var radius = d3.scaleLinear().domain([minVar, maxVar]).nice().range([2, 18]);
+    const radius = d3.scaleLinear().domain([minVar, maxVar]).nice().range([2, 18]);
+
+    const gElement = d3.select(gRef.current);
 
     function linkColor(input) {
       // Map the input value to the color range
@@ -141,11 +141,11 @@ const NetworkGraph = ({ width, height }) => {
         d.fy = null;
       };
 
-    return d3
-      .drag()
-      .on("start", dragstarted)
-      .on("drag", dragged)
-      .on("end", dragended);
+      return d3
+        .drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended);
     };
 
     // Add the tooltip element to the graph
@@ -179,9 +179,9 @@ const NetworkGraph = ({ width, height }) => {
 
     const removeTooltip = () => {
       div
-      .transition()
-      .duration(200)
-      .style("opacity", 0);
+        .transition()
+        .duration(200)
+        .style("opacity", 0);
     };
 
     // Create a new D3 force simulation
@@ -204,26 +204,26 @@ const NetworkGraph = ({ width, height }) => {
 
     // Create a D3 selection for the nodes
     const node = gElement
-    .selectAll("image")
-    .data(data.nodes)
-    .enter()
-    .append("image")
-    .attr("href", (d) => "src/resources/circular/" + d.code.toLowerCase() + ".svg")
-    .attr("width", (d) => radius(d[variable])) // Set node width based on radius
-    .attr("height", (d) => radius(d[variable])) // Set node height based on radius
-    .attr("x", (d) => -radius(d[variable]) / 2) // Set x position of the top-left corner of the image
-    .attr("y", (d) => -radius(d[variable]) / 2) // Set y position of the top-left corner of the image
-    .attr("code", (d) => d.code)
-    .attr("name", (d) => d.name)
-    .attr("region", (d) => d.region)
-    .attr("happiness", (d) => d.happiness)
-    .attr("gdp", (d) => d.gdp)
-    .attr("social_support", (d) => d.social_support)
-    .attr("life_expectancy", (d) => d.life_expectancy)
-    .attr("freedom", (d) => d.freedom)
-    .attr("generosity", (d) => d.generosity)
-    .attr("corruption", (d) => d.corruption)
-    .call(drag(simulation));
+      .selectAll("image")
+      .data(data.nodes)
+      .enter()
+      .append("image")
+      .attr("href", (d) => new URL("../resources/circular/" + d.code.toLowerCase() + ".svg", import.meta.url).href)
+      .attr("width", (d) => radius(d[variable])) // Set node width based on radius
+      .attr("height", (d) => radius(d[variable])) // Set node height based on radius
+      .attr("x", (d) => -radius(d[variable]) / 2) // Set x position of the top-left corner of the image
+      .attr("y", (d) => -radius(d[variable]) / 2) // Set y position of the top-left corner of the image
+      .attr("code", (d) => d.code)
+      .attr("name", (d) => d.name)
+      .attr("region", (d) => d.region)
+      .attr("happiness", (d) => d.happiness)
+      .attr("gdp", (d) => d.gdp)
+      .attr("social_support", (d) => d.social_support)
+      .attr("life_expectancy", (d) => d.life_expectancy)
+      .attr("freedom", (d) => d.freedom)
+      .attr("generosity", (d) => d.generosity)
+      .attr("corruption", (d) => d.corruption)
+      .call(drag(simulation));
 
     node.on("mouseover", (d) => {
       addTooltip(d);
@@ -244,7 +244,29 @@ const NetworkGraph = ({ width, height }) => {
     });
 
     simulation.force("link").links(data.links);
-  }, [variable, data]);
+  }, [data]);
+
+
+  useEffect(() => {
+    if (!data) return;
+
+    const minVar = d3.min(data.nodes, (d) => d[variable]);
+    const maxVar = d3.max(data.nodes, (d) => d[variable]);
+
+    // Helper functions
+    const radius = d3.scaleLinear().domain([minVar, maxVar]).nice().range([2, 18]);
+
+    const gElement = d3.select(gRef.current)
+    gElement
+      .selectAll("image")
+      .transition()
+      .duration(400)
+      .attr("width", (d) => radius(d[variable])) // Set node width based on radius
+      .attr("height", (d) => radius(d[variable])) // Set node height based on radius 
+      .attr("x", (d) => -radius(d[variable]) / 2) // Set x position of the top-left corner of the image
+      .attr("y", (d) => -radius(d[variable]) / 2) // Set y position of the top-left corner of the image
+
+  }, [data, variable]);
 
   return (
     <div>
