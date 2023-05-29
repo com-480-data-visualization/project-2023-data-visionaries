@@ -13,13 +13,13 @@ const NetworkGraph = ({ width, height }) => {
   const gLegendRef = useRef();
 
   const colors = {
-    "happiness": "#F8AD1A",
-    "gdp": "#F8AD1A",
-    "social_support": "#F6810C",
-    "life_expectancy": "#E34D20",
-    "freedom": "#AA2243",
-    "generosity": "#6C0D59",
-    "corruption": "#3F0059"
+    "happiness": d3.interpolateInferno(6/7),
+    "gdp": d3.interpolateInferno(5/7),
+    "social_support": d3.interpolateInferno(4/7),
+    "life_expectancy": d3.interpolateInferno(3/7),
+    "freedom": d3.interpolateInferno(2/7),
+    "generosity": d3.interpolateInferno(1/7),
+    "corruption": d3.interpolateInferno(0/7),
   }
 
   useEffect(() => {
@@ -200,7 +200,7 @@ const NetworkGraph = ({ width, height }) => {
       .enter()
       .append("line")
       .attr("stroke", (d) => linkColor(d.value))
-      .attr("stroke-width", (d) => d.value);
+      .attr("stroke-width", 2);
 
     // Create a D3 selection for the nodes
     const node = gElement
@@ -225,9 +225,11 @@ const NetworkGraph = ({ width, height }) => {
       .attr("corruption", (d) => d.corruption)
       .call(drag(simulation));
 
-    node.on("mouseover", (d) => {
+    node
+    .on("mouseover", (d) => {
       addTooltip(d);
-    }).on("mouseout", () => {
+    })
+    .on("mouseout", () => {
       removeTooltip();
     });
 
