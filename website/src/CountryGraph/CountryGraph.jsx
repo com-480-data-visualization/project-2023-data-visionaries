@@ -8,7 +8,7 @@ const CountryGraph = (props) => {
     const ref = useRef()
     const [data, setData] = useState(null);
 
-    const margin = { top: 10, right: 30, bottom: 30, left: 60 };
+    const margin = { top: 10, right: 30, bottom: 40, left: 60 };
     const width = 300 - margin.left - margin.right;
     const height = 200 - margin.top - margin.bottom;
 
@@ -68,6 +68,21 @@ const CountryGraph = (props) => {
             .range([height, 0]);
         svg.append("g")
             .call(d3.axisLeft(y));
+
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -margin.left + 35)
+            .attr("x", -margin.top + 10)
+            .style("font-size", "12px")
+            .text("Happiness score")
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", width)
+            .attr("y", height + margin.top + 25)
+            .style("font-size", "12px")
+            .text("Year");
+
 
         svg.append("path")
             .datum(countryScoreData)

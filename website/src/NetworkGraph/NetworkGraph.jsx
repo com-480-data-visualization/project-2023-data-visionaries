@@ -53,7 +53,7 @@ const NetworkGraph = ({ width, height, variable }) => {
     const maxLink = d3.max(data.links, (d) => d[variable]);
 
     // Helper functions
-    const radius = d3.scaleLinear().domain([minVar, maxVar]).nice().range([2, 25]);
+    const radius = d3.scaleLinear().domain([minVar, maxVar]).nice().range([2, 40]);
 
     const gElement = d3.select(gRef.current);
 
@@ -111,7 +111,7 @@ const NetworkGraph = ({ width, height, variable }) => {
     // Create a D3 selection for the nodes
     const node = gElement
       .selectAll("image")
-      .data(data.nodes)
+      .data(data.nodes.sort((a, b) => b.generosity - a.generosity))
       .enter()
       .append("image")
       .attr("href", (d) => new URL("../resources/circular/" + d.code.toLowerCase() + ".svg", import.meta.url).href)

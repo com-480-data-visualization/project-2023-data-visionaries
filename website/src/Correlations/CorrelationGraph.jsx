@@ -57,7 +57,7 @@ const CorrelationGraph = ({ width, height }) => {
             coordinates = data.map(d => [d[variable], d['happiness_score'], d['country']]).sort((a, b) => a[1] - b[1])
         }
 
-        const margin = { top: 10, right: 30, bottom: 30, left: 30 }
+        const margin = { top: 10, right: 30, bottom: 50, left: 50 }
         const height = 400 - margin.top - margin.bottom
         const width = 500 - margin.left - margin.right
         var svg = d3.select(ref.current).html("")
@@ -86,6 +86,19 @@ const CorrelationGraph = ({ width, height }) => {
         svg.append("g")
             .attr("transform", variable == "generosity" ? "translate(" + x(0) + ", 0 )" : "")
             .call(d3.axisLeft(y));
+
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -margin.left + 20)
+            .attr("x", -margin.top)
+            .text("Happiness score")
+
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("x", width)
+            .attr("y", height + margin.top + 30)
+            .text(`${variable == "gdp" ? "GDP" : variable.charAt(0).toUpperCase() + variable.slice(1).replace("_", " ")}`);
 
         svg.selectAll("circle")
             .data(coordinates)

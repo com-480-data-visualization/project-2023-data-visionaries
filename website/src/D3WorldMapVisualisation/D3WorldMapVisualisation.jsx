@@ -44,8 +44,6 @@ const D3WorldMapVisualisation = ({ width, year }) => {
 
     const colorByScore = d3.scaleSequential().domain([8, 3]).nice().interpolator(d3.interpolateInferno);
 
-    //d3.scaleLinear().domain([3, 5, 6, 7, 8]).range(["red", "orange", "yellow", "green", "blue"]);
-
     useEffect(() => {
         fetch(topoJsonUrl)
             .then(res => res.json())
@@ -69,7 +67,7 @@ const D3WorldMapVisualisation = ({ width, year }) => {
             height: 6,
             margin: {
                 h: 6,
-                v: 0
+                v: 8
             }
         };
         const svgElement = d3.select(svgRef.current);
