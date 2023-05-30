@@ -171,7 +171,7 @@ const D3WorldMapVisualisation = ({ width, year }) => {
                     && <CountryGraph countryCode={hoveredCountry} title={`${scores[year][hoveredCountry].country} (${scores[year][hoveredCountry].happiness_score.toFixed(2)} in ${year})`} />
                 }
             </div>
-            <svg width={width} height={"70%"} ref={svgRef} style={{ border: "1px solid grey", borderRadius: "12px" }}>
+            <svg width={width} ref={svgRef} style={{ border: "1px solid grey", borderRadius: "12px" }}>
                 <g ref={gRef} />
                 <g ref={gLegendRef} />
             </svg>
