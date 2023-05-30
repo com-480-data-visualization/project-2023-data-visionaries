@@ -8,6 +8,7 @@ import ParallelCoordinatesPage from "./ParallelCoordinates/ParallelCoordinatesPa
 import WorldMapPageSecond from "./D3WorldMapVisualisation/WorldMapPageSecond";
 import FinlandPage from "./Finland/FinlandPage";
 import NetworkPageStory from "./NetworkGraph/NetworkPageStory";
+import ParallelCoordinatesStory from "./ParallelCoordinates/ParallelCoordinatesStory";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <div className={style.section}><CorrelationsPage /></div>
       <div className={style.section}><NetworkPageStory /></div>
       <div className={style.section}><NetworkPage /></div>
+      <div className={style.section}><ParallelCoordinatesStory /></div>
       <div className={style.section}><ParallelCoordinatesPage /></div>
       <div className={style.section}><FinlandPage /></div>
     </div>

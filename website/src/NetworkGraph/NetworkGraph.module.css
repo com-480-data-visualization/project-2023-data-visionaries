@@ -27,6 +27,7 @@ div.tooltip p {
     outline: none;
     border: 0;
     padding: 4px;
+    background-color: #6C0D59;
 }
 
 .button:hover {
@@ -38,4 +39,8 @@ div.tooltip p {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.buttonActive {
+    background-color: #F6810C;
 }

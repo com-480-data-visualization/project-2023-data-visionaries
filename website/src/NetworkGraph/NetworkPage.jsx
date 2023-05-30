@@ -22,7 +22,7 @@ const NetworkPage = () => {
                 <NetworkGraph variable={variable} />
             </div>
             <div className={style.buttonsContainer}>
-                {Object.keys(colors).map(key => <button key={key} style={{ backgroundColor: `${colors[key]}`, color: "white" }} className={style.button} onClick={() => setVariable(key)}>{key.replace("_", " ")}</button>)}
+                {Object.keys(colors).map(key => <button key={key} style={{ color: "white" }} className={`${style.button} ${variable == key ? style.buttonActive : ""}`} onClick={() => setVariable(key)}>{key.replace("_", " ")}</button>)}
             </div>
         </div>
     );

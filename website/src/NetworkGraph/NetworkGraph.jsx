@@ -24,23 +24,8 @@ const NetworkGraph = ({ width, height, variable }) => {
     const width = 400;
     const height = 200;
 
-    const minLink = d3.min(data.links, (d) => d[variable]);
-    const maxLink = d3.max(data.links, (d) => d[variable]);
-
-    const colorByScore = d3.scaleSequential().domain([maxLink, minLink]).nice().interpolator(d3.interpolateInferno);
-
-    const legendDims = {
-      width: 120,
-      height: 6,
-      margin: {
-        h: 6,
-        v: 10,
-      }
-    };
-
     const svgElement = d3.select(svgRef.current);
     const gElement = d3.select(gRef.current);
-    const legendElement = d3.select(gLegendRef.current);
 
     const handleZoom = (e) => gElement.attr("transform", e.transform);
 
@@ -57,39 +42,6 @@ const NetworkGraph = ({ width, height, variable }) => {
         zoom.transform,
         d3.zoomIdentity.translate(width / 2, height / 2).scale(0.4)
       );
-
-    legendElement.html("");
-    const linearGradient = legendElement
-      .append("linearGradient")
-      .attr("id", "map-gradient");
-
-    linearGradient
-      .selectAll("stop")
-      .data(colorByScore.ticks().reverse().map((t, i, n) => ({ offset: `${100 * i / (n.length - 1)}%`, color: colorByScore(t) })))
-      .enter()
-      .append("stop")
-      .attr("offset", d => d.offset)
-      .attr("stop-color", d => d.color);
-
-    legendElement
-      .append('g')
-      .attr("transform", `translate(0, ${height - legendDims.height - legendDims.margin.v})`)
-      .append("rect")
-      .attr('transform', `translate(${width - legendDims.width - legendDims.margin.h}, 0)`)
-      .attr("width", legendDims.width)
-      .attr("height", legendDims.height)
-      .style("fill", "url(#map-gradient)");
-
-    const axisScale = d3.scaleLinear()
-      .domain([colorByScore.domain()[colorByScore.domain().length - 1], colorByScore.domain()[0]])
-      .range([width - legendDims.width - legendDims.margin.h, width - legendDims.margin.h - 1])
-    const axisBottom = g => g
-      .attr("transform", `translate(0, ${height - legendDims.height - legendDims.margin.v})`)
-      .style("font-size", "8px")
-      .call(d3.axisBottom(axisScale)
-        .ticks(legendDims.width / 30)
-        .tickSize(2 * legendDims.height / 3))
-    legendElement.append('g').call(axisBottom);
   }, [data]);
 
   useEffect(() => {
@@ -206,6 +158,9 @@ const NetworkGraph = ({ width, height, variable }) => {
   useEffect(() => {
     if (!data) return;
 
+    const width = 400;
+    const height = 200;
+
     const minVar = d3.min(data.nodes, (d) => d[variable]);
     const maxVar = d3.max(data.nodes, (d) => d[variable]);
     const minLink = d3.min(data.links, (d) => d[variable]);
@@ -236,6 +191,52 @@ const NetworkGraph = ({ width, height, variable }) => {
       .transition()
       .duration(400)
       .attr("stroke", (d) => linkColor(d[variable]))
+
+    const colorByScore = d3.scaleSequential().domain([maxLink, minLink]).interpolator(d3.interpolateInferno);
+
+    const legendDims = {
+      width: 120,
+      height: 6,
+      margin: {
+        h: 6,
+        v: 10,
+      }
+    };
+    const legendElement = d3.select(gLegendRef.current);
+
+    legendElement.html("");
+
+    const linearGradient = legendElement
+      .append("linearGradient")
+      .attr("id", "map-gradient");
+
+    linearGradient
+      .selectAll("stop")
+      .data(colorByScore.ticks().reverse().map((t, i, n) => ({ offset: `${100 * i / (n.length - 1)}%`, color: colorByScore(t) })))
+      .enter()
+      .append("stop")
+      .attr("offset", d => d.offset)
+      .attr("stop-color", d => d.color);
+
+    legendElement
+      .append('g')
+      .attr("transform", `translate(0, ${height - legendDims.height - legendDims.margin.v})`)
+      .append("rect")
+      .attr('transform', `translate(${width - legendDims.width - legendDims.margin.h}, 0)`)
+      .attr("width", legendDims.width)
+      .attr("height", legendDims.height)
+      .style("fill", "url(#map-gradient)");
+
+    const axisScale = d3.scaleLinear()
+      .domain([0, colorByScore.domain()[0]])
+      .range([width - legendDims.width - legendDims.margin.h, width - legendDims.margin.h])
+    const axisBottom = g => g
+      .attr("transform", `translate(0, ${height - legendDims.height - legendDims.margin.v})`)
+      .style("font-size", "8px")
+      .call(d3.axisBottom(axisScale)
+        .ticks(legendDims.width / 30)
+        .tickSize(2 * legendDims.height / 3))
+    legendElement.append('g').call(axisBottom).style("color", "#777");
 
 
   }, [data, variable]);

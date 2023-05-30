@@ -69,7 +69,7 @@ const D3WorldMapVisualisation = ({ width, year }) => {
             height: 6,
             margin: {
                 h: 6,
-                v: 8
+                v: 0
             }
         };
         const svgElement = d3.select(svgRef.current);
@@ -114,14 +114,14 @@ const D3WorldMapVisualisation = ({ width, year }) => {
 
         const axisScale = d3.scaleLinear()
             .domain([colorByScore.domain()[colorByScore.domain().length - 1], colorByScore.domain()[0]])
-            .range([width - legendDims.width - legendDims.margin.h, width - legendDims.margin.h - 1])
+            .range([width - legendDims.width - legendDims.margin.h, width - legendDims.margin.h])
         const axisBottom = g => g
             .attr("transform", `translate(0, ${height - legendDims.height - legendDims.margin.v})`)
             .style("font-size", "8px")
             .call(d3.axisBottom(axisScale)
                 .ticks(legendDims.width / 30)
                 .tickSize(2 * legendDims.height / 3))
-        legendElement.append('g').call(axisBottom);
+        legendElement.append('g').call(axisBottom).style("color", "#444");
     }, []);
 
     useEffect(() => {

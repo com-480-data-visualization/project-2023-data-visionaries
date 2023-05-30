@@ -21,7 +21,7 @@ const LeaderboardPage = () => {
                     Finland, Norway, Netherlands, Iceland, Switzerland, Sweden and Denmark successfully keep their place in top 10 happies countries over the years.
                     However, three places in top 10 still remain free and are occupied by different countries which change from one year to another.
                     <br /><br />
-                    Do you see Finland? If you observe closely you can see that Finland jumped from 5th place in 2017 to 1st place in 2018 and remained happiest country in the world for 6 years in a row! Is there a secret to their happiness?
+                    Do you see Finland? If you observe closely you can see that Finland jumped from 5th place in 2017 to 1st place in 2018 and remained happiest country in the world for 6 years in a row! Is there a secret to their happiness? Find out below.
                 </p>
             </div>
         </div>
