@@ -121,7 +121,7 @@ const CorrelationGraph = ({ width, height }) => {
         <div className={style.correlationContainer}>
             <p style={{ position: "absolute", background: "white", padding: "2px", border: "1px solid black", borderRadius: "5px", visibility: hoveredCountry ? "visible" : "hidden" }} ref={hoveredCountryRef}>{hoveredCountry ? hoveredCountry : null}</p>
             <div className={style.container}>
-                <svg height={height} width={width} style={{ width: "fit-content" }} ref={ref} />
+                <svg height={height} width={width} ref={ref} />
                 <div className={style.text}>{texts[variable]}</div>
             </div>
             <div className={style.buttonsContainer}>

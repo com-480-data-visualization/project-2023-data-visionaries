@@ -1,8 +1,8 @@
 import style from "./Introduction.module.css"
 
-const IntroductionPage = ({ id }) => {
+const IntroductionPage = () => {
     return (
-        <div id={id} className={style.introduction}>
+        <div className={style.introduction}>
             <h2>World happiness report</h2>
             <div>
                 <p className={style.text}>Welcome to our World Happiness Visualization.</p>

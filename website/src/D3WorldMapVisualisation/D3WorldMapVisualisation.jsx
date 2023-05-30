@@ -14,6 +14,7 @@ const D3WorldMapVisualisation = ({ width, year }) => {
     const [topoJson, setTopoJson] = useState(null);
     const [iso3166Codes, setIso3166Codes] = useState(null);
     const [hoveredCountry, setHoveredCountry] = useState("");
+    const [isScrolling, setIsScrolling] = useState(false);
     const hoverRef = useRef();
     const svgRef = useRef();
     const gRef = useRef();
@@ -74,7 +75,10 @@ const D3WorldMapVisualisation = ({ width, year }) => {
         const svgElement = d3.select(svgRef.current);
         const gElement = d3.select(gRef.current);
         const legendElement = d3.select(gLegendRef.current);
-        const handleZoom = (e) => gElement.attr('transform', e.transform);
+        const handleZoom = (e) => {
+            setHoveredCountry(null);
+            gElement.attr('transform', e.transform)
+        };
 
         const zoom = d3.zoom()
             .translateExtent([[75, 0], [900, 420]])
@@ -159,7 +163,7 @@ const D3WorldMapVisualisation = ({ width, year }) => {
 
     return (
         <>
-            <div ref={hoverRef} style={{ position: "absolute", visibility: "visible" }}>
+            <div ref={hoverRef} style={{ position: "absolute", visibility: hoveredCountry ? "visible" : "hidden", pointerEvents: "none" }}>
                 {
                     scores
                     && scores[year]
@@ -167,7 +171,7 @@ const D3WorldMapVisualisation = ({ width, year }) => {
                     && <CountryGraph countryCode={hoveredCountry} title={`${scores[year][hoveredCountry].country} (${scores[year][hoveredCountry].happiness_score.toFixed(2)} in ${year})`} />
                 }
             </div>
-            <svg width={width} ref={svgRef} style={{ border: "1px solid grey", borderRadius: "12px" }}>
+            <svg width={width} height={"70%"} ref={svgRef} style={{ border: "1px solid grey", borderRadius: "12px" }}>
                 <g ref={gRef} />
                 <g ref={gLegendRef} />
             </svg>

@@ -1,9 +1,9 @@
 import CorrelationGraph from "./CorrelationGraph";
 
 
-const CorrelationsPage = ({ id }) => {
+const CorrelationsPage = () => {
     return (
-        <div id={id} style={{ display: "flex", flexDirection: "column", height: "100%", maxWidth: "70%", margin: "auto", justifyContent: "center" }}>
+        <div style={{ display: "flex", flexDirection: "column", height: "100%", maxWidth: "70%", margin: "auto", justifyContent: "center" }}>
             <div>
                 <h2>Correlations</h2>
                 <p>
@@ -11,7 +11,7 @@ const CorrelationsPage = ({ id }) => {
                 </p>
             </div>
             <div>
-                <CorrelationGraph height={400} width={"80%"} />
+                <CorrelationGraph width={"40%"} />
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import ParallelCoordinates from "./ParallelCoordinates";
 
-const ParallelCoordinatesPage = ({ id }) => {
-    return <div id={id} style={{ display: "flex", flexDirection: "column", height: "100%", maxWidth: "70%", margin: "auto", justifyContent: "center" }}>
+const ParallelCoordinatesPage = () => {
+    return <div style={{ display: "flex", flexDirection: "column", height: "100%", maxWidth: "70%", margin: "auto", justifyContent: "center" }}>
         <div>
             <h2>Parallel coordinates</h2>
             <p>This is the visualization of all factors measured for each country. The graph shows trends and patterns of coutntries' scores. You can select specific ranges for one or multiple factors to see trends for countries that satisfy the constraints.</p>

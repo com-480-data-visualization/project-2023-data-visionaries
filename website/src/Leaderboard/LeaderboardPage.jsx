@@ -4,11 +4,11 @@ import { years } from "../const";
 import { useState } from "react";
 import style from "./Leaderboard.module.css"
 
-const LeaderboardPage = ({ id }) => {
+const LeaderboardPage = () => {
     const [year, setYear] = useState(Math.min(...years));
 
     return (
-        <div id={id} style={{ display: "flex", flexDirection: "column", height: "100%", maxWidth: "70%", margin: "auto", justifyContent: "center" }}>
+        <div style={{ display: "flex", flexDirection: "column", height: "100%", maxWidth: "70%", margin: "auto", justifyContent: "center" }}>
             <h2>Ranking over the years</h2>
             <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                 <div >

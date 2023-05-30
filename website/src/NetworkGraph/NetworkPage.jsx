@@ -3,7 +3,7 @@ import NetworkGraph from "./NetworkGraph";
 import style from "./NetworkGraph.module.css";
 import * as d3 from "d3"
 
-const NetworkPage = ({ id }) => {
+const NetworkPage = () => {
 
     const [variable, setVariable] = useState("happiness")
     const colors = {
@@ -16,10 +16,10 @@ const NetworkPage = ({ id }) => {
         "corruption": d3.interpolateInferno(0 / 7),
     }
     return (
-        <div id={id} style={{ display: "flex", flexDirection: "column", height: "100%", maxWidth: "70%", margin: "auto", justifyContent: "center", alignItems: "stretch" }}>
+        <div style={{ display: "flex", flexDirection: "column", height: "100%", maxWidth: "70%", margin: "auto", justifyContent: "center", alignItems: "stretch" }}>
 
-            <div style={{ border: "2px solid gray", borderRadius: "10px", height: "fit-content" }}>
-                <NetworkGraph variable={variable} width={"100%"} />
+            <div style={{ border: "2px solid gray", borderRadius: "10px" }}>
+                <NetworkGraph variable={variable} />
             </div>
             <div className={style.buttonsContainer}>
                 {Object.keys(colors).map(key => <button key={key} style={{ backgroundColor: `${colors[key]}`, color: "white" }} className={style.button} onClick={() => setVariable(key)}>{key.replace("_", " ")}</button>)}
