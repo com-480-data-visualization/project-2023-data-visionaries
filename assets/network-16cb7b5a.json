@@ -2060,1107 +2060,2433 @@
         {
             "source": 25,
             "target": 29,
-            "value": 0.10799999999999965
+            "happiness": 0.10799999999999965,
+            "gdp": 0.4299999999999997,
+            "social_support": 0.05800000000000005,
+            "life_expectancy": 1.843999999999994,
+            "freedom": 0.04799999999999993,
+            "generosity": 0.177,
+            "corruption": 0.10699999999999998
         },
         {
             "source": 136,
             "target": 63,
-            "value": 3.9589999999999996
+            "happiness": 3.9589999999999996,
+            "gdp": 2.4139999999999997,
+            "social_support": 0.49499999999999994,
+            "life_expectancy": 13.97699999999999,
+            "freedom": 0.5,
+            "generosity": 0.04,
+            "corruption": 0.12
         },
         {
             "source": 136,
             "target": 100,
-            "value": 3.0170000000000003
+            "happiness": 3.0170000000000003,
+            "gdp": 2.2859999999999996,
+            "social_support": 0.437,
+            "life_expectancy": 11.887999999999991,
+            "freedom": 0.21099999999999997,
+            "generosity": 0.254,
+            "corruption": 0.09999999999999998
         },
         {
             "source": 136,
             "target": 107,
-            "value": 2.6959999999999997
+            "happiness": 2.6959999999999997,
+            "gdp": 1.2159999999999993,
+            "social_support": 0.25999999999999995,
+            "life_expectancy": 2.600999999999999,
+            "freedom": 0.384,
+            "generosity": 0.089,
+            "corruption": 0.05999999999999994
         },
         {
             "source": 136,
             "target": 79,
-            "value": 3.471
+            "happiness": 3.471,
+            "gdp": 0.9130000000000003,
+            "social_support": 0.49499999999999994,
+            "life_expectancy": 7.513999999999996,
+            "freedom": 0.44999999999999996,
+            "generosity": 0.021000000000000005,
+            "corruption": 0.32499999999999996
         },
         {
             "source": 136,
             "target": 53,
-            "value": 4.155
+            "happiness": 4.155,
+            "gdp": 1.6240000000000006,
+            "social_support": 0.534,
+            "life_expectancy": 10.588999999999999,
+            "freedom": 0.5559999999999999,
+            "generosity": 0.311,
+            "corruption": 0.20899999999999996
         },
         {
             "source": 82,
             "target": 57,
-            "value": 0.6539999999999999
+            "happiness": 0.6539999999999999,
+            "gdp": 0.7210000000000001,
+            "social_support": 0.11699999999999999,
+            "life_expectancy": 2.0,
+            "freedom": 0.2260000000000001,
+            "generosity": 0.23299999999999998,
+            "corruption": 0.08499999999999996
         },
         {
             "source": 82,
             "target": 66,
-            "value": 0.4450000000000003
+            "happiness": 0.4450000000000003,
+            "gdp": 0.24600000000000044,
+            "social_support": 0.17200000000000004,
+            "life_expectancy": 2.0500000000000114,
+            "freedom": 0.01100000000000001,
+            "generosity": 0.07,
+            "corruption": 0.03400000000000003
         },
         {
             "source": 82,
             "target": 86,
-            "value": 0.023000000000000576
+            "happiness": 0.023000000000000576,
+            "gdp": 0.13599999999999923,
+            "social_support": 0.08700000000000008,
+            "life_expectancy": 2.6500000000000057,
+            "freedom": 0.025000000000000022,
+            "generosity": 0.138,
+            "corruption": 0.02400000000000002
         },
         {
             "source": 82,
             "target": 44,
-            "value": 0.867
+            "happiness": 0.867,
+            "gdp": 0.28699999999999903,
+            "social_support": 0.15500000000000003,
+            "life_expectancy": 2.062000000000012,
+            "freedom": 0.050999999999999934,
+            "generosity": 0.211,
+            "corruption": 0.062000000000000055
         },
         {
             "source": 78,
             "target": 89,
-            "value": 0.23299999999999965
+            "happiness": 0.23299999999999965,
+            "gdp": 0.031000000000000583,
+            "social_support": 0.07400000000000007,
+            "life_expectancy": 2.8389999999999986,
+            "freedom": 0.010000000000000009,
+            "generosity": 0.099,
+            "corruption": 0.05599999999999994
         },
         {
             "source": 78,
             "target": 100,
-            "value": 0.4659999999999993
+            "happiness": 0.4659999999999993,
+            "gdp": 0.005000000000000782,
+            "social_support": 0.01200000000000001,
+            "life_expectancy": 1.1890000000000072,
+            "freedom": 0.20300000000000007,
+            "generosity": 0.32799999999999996,
+            "corruption": 0.04200000000000004
         },
         {
             "source": 78,
             "target": 105,
-            "value": 0.7279999999999998
+            "happiness": 0.7279999999999998,
+            "gdp": 0.6920000000000002,
+            "social_support": 0.006000000000000005,
+            "life_expectancy": 0.8739999999999952,
+            "freedom": 0.32100000000000006,
+            "generosity": 0.078,
+            "corruption": 0.09000000000000008
         },
         {
             "source": 51,
             "target": 68,
-            "value": 0.33999999999999986
+            "happiness": 0.33999999999999986,
+            "gdp": 0.9740000000000002,
+            "social_support": 0.07999999999999996,
+            "life_expectancy": 3.601000000000006,
+            "freedom": 0.04500000000000004,
+            "generosity": 0.025999999999999995,
+            "corruption": 0.03200000000000003
         },
         {
             "source": 51,
             "target": 48,
-            "value": 0.10099999999999998
+            "happiness": 0.10099999999999998,
+            "gdp": 0.3769999999999989,
+            "social_support": 0.05500000000000005,
+            "life_expectancy": 1.4510000000000076,
+            "freedom": 0.02199999999999991,
+            "generosity": 0.08,
+            "corruption": 0.07599999999999996
         },
         {
             "source": 51,
             "target": 34,
-            "value": 0.3099999999999996
+            "happiness": 0.3099999999999996,
+            "gdp": 0.15500000000000114,
+            "social_support": 0.0020000000000000018,
+            "life_expectancy": 3.0999999999999943,
+            "freedom": 0.030999999999999917,
+            "generosity": 0.078,
+            "corruption": 0.009000000000000008
         },
         {
             "source": 51,
             "target": 65,
-            "value": 0.2859999999999996
+            "happiness": 0.2859999999999996,
+            "gdp": 0.44899999999999984,
+            "social_support": 0.015000000000000013,
+            "life_expectancy": 1.2999999999999972,
+            "freedom": 0.06800000000000006,
+            "generosity": 0.11,
+            "corruption": 0.029000000000000026
         },
         {
             "source": 51,
             "target": 27,
-            "value": 0.46999999999999975
+            "happiness": 0.46999999999999975,
+            "gdp": 0.07800000000000118,
+            "social_support": 0.02200000000000002,
+            "life_expectancy": 0.29999999999999716,
+            "freedom": 0.07200000000000006,
+            "generosity": 0.023999999999999994,
+            "corruption": 0.239
         },
         {
             "source": 10,
             "target": 17,
-            "value": 0.25200000000000067
+            "happiness": 0.25200000000000067,
+            "gdp": 0.2879999999999985,
+            "social_support": 0.06499999999999995,
+            "life_expectancy": 2.1000000000000085,
+            "freedom": 0.04800000000000004,
+            "generosity": 0.06199999999999999,
+            "corruption": 0.362
         },
         {
             "source": 10,
             "target": 15,
-            "value": 0.20500000000000007
+            "happiness": 0.20500000000000007,
+            "gdp": 0.019999999999999574,
+            "social_support": 0.008000000000000007,
+            "life_expectancy": 0.14999999999999147,
+            "freedom": 0.009000000000000008,
+            "generosity": 0.072,
+            "corruption": 0.07700000000000001
         },
         {
             "source": 10,
             "target": 50,
-            "value": 1.056
+            "happiness": 1.056,
+            "gdp": 0.47999999999999865,
+            "social_support": 0.05499999999999994,
+            "life_expectancy": 3.6500000000000057,
+            "freedom": 0.09699999999999998,
+            "generosity": 0.16099999999999998,
+            "corruption": 0.34199999999999997
         },
         {
             "source": 10,
             "target": 32,
-            "value": 0.6920000000000002
+            "happiness": 0.6920000000000002,
+            "gdp": 0.2649999999999988,
+            "social_support": 0.006000000000000005,
+            "life_expectancy": 0.8999999999999915,
+            "freedom": 0.14400000000000002,
+            "generosity": 0.176,
+            "corruption": 0.345
         },
         {
             "source": 10,
             "target": 28,
-            "value": 0.6280000000000001
+            "happiness": 0.6280000000000001,
+            "gdp": 0.5459999999999994,
+            "social_support": 0.06499999999999995,
+            "life_expectancy": 2.312000000000012,
+            "freedom": 0.10199999999999998,
+            "generosity": 0.118,
+            "corruption": 0.401
         },
         {
             "source": 10,
             "target": 21,
-            "value": 0.44700000000000006
+            "happiness": 0.44700000000000006,
+            "gdp": 0.31099999999999994,
+            "social_support": 0.06299999999999994,
+            "life_expectancy": 0.09799999999999898,
+            "freedom": 0.05800000000000005,
+            "generosity": 0.088,
+            "corruption": 0.274
         },
         {
             "source": 10,
             "target": 7,
-            "value": 0.1429999999999998
+            "happiness": 0.1429999999999998,
+            "gdp": 0.26500000000000057,
+            "social_support": 0.03200000000000003,
+            "life_expectancy": 1.75,
+            "freedom": 0.03600000000000003,
+            "generosity": 0.075,
+            "corruption": 0.23099999999999998
         },
         {
             "source": 70,
             "target": 47,
-            "value": 0.492
+            "happiness": 0.492,
+            "gdp": 0.7249999999999996,
+            "social_support": 0.03700000000000003,
+            "life_expectancy": 1.6749999999999972,
+            "freedom": 0.01100000000000001,
+            "generosity": 0.299,
+            "corruption": 0.007000000000000006
         },
         {
             "source": 70,
             "target": 66,
-            "value": 0.08900000000000041
+            "happiness": 0.08900000000000041,
+            "gdp": 0.19700000000000095,
+            "social_support": 0.010000000000000009,
+            "life_expectancy": 0.17500000000001137,
+            "freedom": 0.05900000000000005,
+            "generosity": 0.143,
+            "corruption": 0.07400000000000007
         },
         {
             "source": 70,
             "target": 44,
-            "value": 0.5110000000000001
+            "happiness": 0.5110000000000001,
+            "gdp": 0.23799999999999955,
+            "social_support": 0.007000000000000006,
+            "life_expectancy": 0.18700000000001182,
+            "freedom": 0.09899999999999998,
+            "generosity": 0.0020000000000000018,
+            "corruption": 0.10200000000000009
         },
         {
             "source": 117,
             "target": 125,
-            "value": 0.24600000000000044
+            "happiness": 0.24600000000000044,
+            "gdp": 0.07399999999999984,
+            "social_support": 0.06399999999999995,
+            "life_expectancy": 3.771000000000001,
+            "freedom": 0.052000000000000046,
+            "generosity": 0.06699999999999999,
+            "corruption": 0.07600000000000007
         },
         {
             "source": 117,
             "target": 116,
-            "value": 0.08999999999999986
+            "happiness": 0.08999999999999986,
+            "gdp": 0.2810000000000006,
+            "social_support": 0.243,
+            "life_expectancy": 3.1600000000000037,
+            "freedom": 0.118,
+            "generosity": 0.486,
+            "corruption": 0.039999999999999925
         },
         {
             "source": 16,
             "target": 20,
-            "value": 0.1980000000000004
+            "happiness": 0.1980000000000004,
+            "gdp": 0.1429999999999989,
+            "social_support": 0.006000000000000005,
+            "life_expectancy": 1.4009999999999962,
+            "freedom": 0.006000000000000005,
+            "generosity": 0.101,
+            "corruption": 0.0040000000000000036
         },
         {
             "source": 16,
             "target": 15,
-            "value": 0.03300000000000036
+            "happiness": 0.03300000000000036,
+            "gdp": 0.03500000000000014,
+            "social_support": 0.019000000000000017,
+            "life_expectancy": 0.40099999999999625,
+            "freedom": 0.02100000000000002,
+            "generosity": 0.028999999999999998,
+            "corruption": 0.12900000000000006
         },
         {
             "source": 16,
             "target": 8,
-            "value": 0.3689999999999998
+            "happiness": 0.3689999999999998,
+            "gdp": 0.8160000000000007,
+            "social_support": 0.03600000000000003,
+            "life_expectancy": 0.7759999999999962,
+            "freedom": 0.09000000000000008,
+            "generosity": 0.023,
+            "corruption": 0.20400000000000007
         },
         {
             "source": 16,
             "target": 4,
-            "value": 0.5439999999999996
+            "happiness": 0.5439999999999996,
+            "gdp": 0.09800000000000075,
+            "social_support": 0.015000000000000013,
+            "life_expectancy": 0.6509999999999962,
+            "freedom": 0.062000000000000055,
+            "generosity": 0.212,
+            "corruption": 0.17000000000000004
         },
         {
             "source": 103,
             "target": 115,
-            "value": 0.26400000000000023
+            "happiness": 0.26400000000000023,
+            "gdp": 0.43599999999999994,
+            "social_support": 0.22600000000000003,
+            "life_expectancy": 0.6340000000000003,
+            "freedom": 0.04700000000000004,
+            "generosity": 0.138,
+            "corruption": 0.19500000000000006
         },
         {
             "source": 103,
             "target": 92,
-            "value": 0.41500000000000004
+            "happiness": 0.41500000000000004,
+            "gdp": 0.9090000000000007,
+            "social_support": 0.09100000000000008,
+            "life_expectancy": 0.49200000000000443,
+            "freedom": 0.03700000000000003,
+            "generosity": 0.092,
+            "corruption": 0.025000000000000022
         },
         {
             "source": 103,
             "target": 106,
-            "value": 0.032999999999999474
+            "happiness": 0.032999999999999474,
+            "gdp": 0.9290000000000003,
+            "social_support": 0.02200000000000002,
+            "life_expectancy": 3.3019999999999996,
+            "freedom": 0.08100000000000007,
+            "generosity": 0.04400000000000001,
+            "corruption": 0.10999999999999999
         },
         {
             "source": 103,
             "target": 119,
-            "value": 0.4399999999999995
+            "happiness": 0.4399999999999995,
+            "gdp": 0.011999999999999567,
+            "social_support": 0.07000000000000006,
+            "life_expectancy": 0.05799999999999983,
+            "freedom": 0.017000000000000015,
+            "generosity": 0.123,
+            "corruption": 0.07499999999999996
         },
         {
             "source": 103,
             "target": 108,
-            "value": 0.13699999999999957
+            "happiness": 0.13699999999999957,
+            "gdp": 0.5759999999999996,
+            "social_support": 0.07300000000000006,
+            "life_expectancy": 1.0889999999999986,
+            "freedom": 0.09200000000000008,
+            "generosity": 0.063,
+            "corruption": 0.03700000000000003
         },
         {
             "source": 103,
             "target": 121,
-            "value": 0.5010000000000003
+            "happiness": 0.5010000000000003,
+            "gdp": 0.006000000000000227,
+            "social_support": 0.06800000000000006,
+            "life_expectancy": 1.9879999999999995,
+            "freedom": 0.038999999999999924,
+            "generosity": 0.07100000000000001,
+            "corruption": 0.031000000000000028
         },
         {
             "source": 76,
             "target": 57,
-            "value": 0.46499999999999986
+            "happiness": 0.46499999999999986,
+            "gdp": 0.2010000000000005,
+            "social_support": 0.08300000000000007,
+            "life_expectancy": 4.650000000000006,
+            "freedom": 0.2330000000000001,
+            "generosity": 0.183,
+            "corruption": 0.118
         },
         {
             "source": 76,
             "target": 86,
-            "value": 0.21200000000000063
+            "happiness": 0.21200000000000063,
+            "gdp": 0.38400000000000034,
+            "social_support": 0.11299999999999999,
+            "life_expectancy": 0.0,
+            "freedom": 0.03200000000000003,
+            "generosity": 0.188,
+            "corruption": 0.009000000000000008
         },
         {
             "source": 76,
             "target": 23,
-            "value": 1.1230000000000002
+            "happiness": 1.1230000000000002,
+            "gdp": 0.25200000000000067,
+            "social_support": 0.07000000000000006,
+            "life_expectancy": 0.5510000000000019,
+            "freedom": 0.05499999999999994,
+            "generosity": 0.11499999999999999,
+            "corruption": 0.018000000000000016
         },
         {
             "source": 76,
             "target": 44,
-            "value": 0.6779999999999999
+            "happiness": 0.6779999999999999,
+            "gdp": 0.23300000000000054,
+            "social_support": 0.04500000000000004,
+            "life_expectancy": 0.5879999999999939,
+            "freedom": 0.04399999999999993,
+            "generosity": 0.261,
+            "corruption": 0.09500000000000008
         },
         {
             "source": 76,
             "target": 105,
-            "value": 0.8520000000000003
+            "happiness": 0.8520000000000003,
+            "gdp": 0.22000000000000064,
+            "social_support": 0.122,
+            "life_expectancy": 2.1629999999999967,
+            "freedom": 0.32600000000000007,
+            "generosity": 0.019999999999999997,
+            "corruption": 0.11599999999999999
         },
         {
             "source": 115,
             "target": 108,
-            "value": 0.12700000000000067
+            "happiness": 0.12700000000000067,
+            "gdp": 1.0119999999999996,
+            "social_support": 0.15299999999999997,
+            "life_expectancy": 0.4549999999999983,
+            "freedom": 0.04500000000000004,
+            "generosity": 0.075,
+            "corruption": 0.15800000000000003
         },
         {
             "source": 115,
             "target": 94,
-            "value": 0.6070000000000002
+            "happiness": 0.6070000000000002,
+            "gdp": 0.3930000000000007,
+            "social_support": 0.303,
+            "life_expectancy": 1.2040000000000006,
+            "freedom": 0.025000000000000022,
+            "generosity": 0.11599999999999999,
+            "corruption": 0.3350000000000001
         },
         {
             "source": 115,
             "target": 121,
-            "value": 0.2370000000000001
+            "happiness": 0.2370000000000001,
+            "gdp": 0.4299999999999997,
+            "social_support": 0.15799999999999997,
+            "life_expectancy": 1.3539999999999992,
+            "freedom": 0.08599999999999997,
+            "generosity": 0.067,
+            "corruption": 0.16400000000000003
         },
         {
             "source": 68,
             "target": 48,
-            "value": 0.44099999999999984
+            "happiness": 0.44099999999999984,
+            "gdp": 0.5970000000000013,
+            "social_support": 0.02499999999999991,
+            "life_expectancy": 2.1499999999999986,
+            "freedom": 0.06699999999999995,
+            "generosity": 0.054,
+            "corruption": 0.10799999999999998
         },
         {
             "source": 68,
             "target": 34,
-            "value": 0.6499999999999995
+            "happiness": 0.6499999999999995,
+            "gdp": 1.1290000000000013,
+            "social_support": 0.07799999999999996,
+            "life_expectancy": 6.7010000000000005,
+            "freedom": 0.07599999999999996,
+            "generosity": 0.052000000000000005,
+            "corruption": 0.02300000000000002
         },
         {
             "source": 68,
             "target": 65,
-            "value": 0.05400000000000027
+            "happiness": 0.05400000000000027,
+            "gdp": 0.5250000000000004,
+            "social_support": 0.09499999999999997,
+            "life_expectancy": 2.301000000000009,
+            "freedom": 0.02300000000000002,
+            "generosity": 0.084,
+            "corruption": 0.0030000000000000027
         },
         {
             "source": 68,
             "target": 74,
-            "value": 0.15800000000000036
+            "happiness": 0.15800000000000036,
+            "gdp": 0.4169999999999998,
+            "social_support": 0.013000000000000012,
+            "life_expectancy": 6.250999999999998,
+            "freedom": 0.07399999999999995,
+            "generosity": 0.055999999999999994,
+            "corruption": 0.04600000000000004
         },
         {
             "source": 48,
             "target": 71,
-            "value": 0.4950000000000001
+            "happiness": 0.4950000000000001,
+            "gdp": 0.0019999999999988916,
+            "social_support": 0.014000000000000012,
+            "life_expectancy": 3.600999999999999,
+            "freedom": 0.0030000000000000027,
+            "generosity": 0.095,
+            "corruption": 0.09599999999999997
         },
         {
             "source": 48,
             "target": 65,
-            "value": 0.38699999999999957
+            "happiness": 0.38699999999999957,
+            "gdp": 0.07200000000000095,
+            "social_support": 0.07000000000000006,
+            "life_expectancy": 0.15100000000001046,
+            "freedom": 0.08999999999999997,
+            "generosity": 0.03,
+            "corruption": 0.10499999999999998
         },
         {
             "source": 48,
             "target": 74,
-            "value": 0.5990000000000002
+            "happiness": 0.5990000000000002,
+            "gdp": 0.1800000000000015,
+            "social_support": 0.03799999999999992,
+            "life_expectancy": 4.100999999999999,
+            "freedom": 0.007000000000000006,
+            "generosity": 0.11,
+            "corruption": 0.15400000000000003
         },
         {
             "source": 48,
             "target": 27,
-            "value": 0.3689999999999998
+            "happiness": 0.3689999999999998,
+            "gdp": 0.45500000000000007,
+            "social_support": 0.07700000000000007,
+            "life_expectancy": 1.7510000000000048,
+            "freedom": 0.09399999999999997,
+            "generosity": 0.056,
+            "corruption": 0.16300000000000003
         },
         {
             "source": 48,
             "target": 87,
-            "value": 0.9139999999999997
+            "happiness": 0.9139999999999997,
+            "gdp": 4.055000000000001,
+            "social_support": 0.0030000000000000027,
+            "life_expectancy": 1.698999999999998,
+            "freedom": 0.14200000000000002,
+            "generosity": 0.137,
+            "corruption": 0.07300000000000006
         },
         {
             "source": 131,
             "target": 104,
-            "value": 1.1960000000000002
+            "happiness": 1.1960000000000002,
+            "gdp": 0.5079999999999991,
+            "social_support": 0.03400000000000003,
+            "life_expectancy": 2.1259999999999977,
+            "freedom": 0.07299999999999995,
+            "generosity": 0.089,
+            "corruption": 0.0
         },
         {
             "source": 131,
             "target": 84,
-            "value": 1.8400000000000003
+            "happiness": 1.8400000000000003,
+            "gdp": 0.1509999999999998,
+            "social_support": 0.15400000000000003,
+            "life_expectancy": 2.263999999999996,
+            "freedom": 0.01200000000000001,
+            "generosity": 0.128,
+            "corruption": 0.07200000000000006
         },
         {
             "source": 131,
             "target": 127,
-            "value": 0.5470000000000002
+            "happiness": 0.5470000000000002,
+            "gdp": 1.5549999999999997,
+            "social_support": 0.05900000000000005,
+            "life_expectancy": 0.30699999999999505,
+            "freedom": 0.049000000000000044,
+            "generosity": 0.313,
+            "corruption": 0.01200000000000001
         },
         {
             "source": 131,
             "target": 133,
-            "value": 0.23099999999999987
+            "happiness": 0.23099999999999987,
+            "gdp": 1.9879999999999995,
+            "social_support": 0.06300000000000006,
+            "life_expectancy": 0.6750000000000043,
+            "freedom": 0.08799999999999997,
+            "generosity": 0.16899999999999998,
+            "corruption": 0.06399999999999995
         },
         {
             "source": 12,
             "target": 14,
-            "value": 0.06700000000000017
+            "happiness": 0.06700000000000017,
+            "gdp": 0.27500000000000036,
+            "social_support": 0.010000000000000009,
+            "life_expectancy": 5.550000000000011,
+            "freedom": 0.07399999999999995,
+            "generosity": 0.015999999999999986,
+            "corruption": 0.26899999999999996
         },
         {
             "source": 132,
             "target": 85,
-            "value": 2.0600000000000005
+            "happiness": 2.0600000000000005,
+            "gdp": 1.088000000000001,
+            "social_support": 0.04700000000000004,
+            "life_expectancy": 1.4750000000000014,
+            "freedom": 0.06599999999999995,
+            "generosity": 0.09,
+            "corruption": 0.09499999999999997
         },
         {
             "source": 132,
             "target": 128,
-            "value": 0.4870000000000001
+            "happiness": 0.4870000000000001,
+            "gdp": 0.8500000000000005,
+            "social_support": 0.0010000000000000009,
+            "life_expectancy": 4.026000000000003,
+            "freedom": 0.17399999999999993,
+            "generosity": 0.096,
+            "corruption": 0.2799999999999999
         },
         {
             "source": 132,
             "target": 112,
-            "value": 1.2250000000000005
+            "happiness": 1.2250000000000005,
+            "gdp": 0.7090000000000005,
+            "social_support": 0.14200000000000002,
+            "life_expectancy": 3.5379999999999967,
+            "freedom": 0.03699999999999992,
+            "generosity": 0.02800000000000001,
+            "corruption": 0.02300000000000002
         },
         {
             "source": 132,
             "target": 127,
-            "value": 0.7750000000000004
+            "happiness": 0.7750000000000004,
+            "gdp": 1.0670000000000002,
+            "social_support": 0.041999999999999926,
+            "life_expectancy": 0.3430000000000035,
+            "freedom": 0.127,
+            "generosity": 0.01200000000000001,
+            "corruption": 0.016000000000000014
         },
         {
             "source": 85,
             "target": 95,
-            "value": 0.2940000000000005
+            "happiness": 0.2940000000000005,
+            "gdp": 0.12199999999999989,
+            "social_support": 0.08100000000000007,
+            "life_expectancy": 1.0030000000000001,
+            "freedom": 0.04399999999999993,
+            "generosity": 0.019,
+            "corruption": 0.10699999999999998
         },
         {
             "source": 85,
             "target": 93,
-            "value": 0.2320000000000002
+            "happiness": 0.2320000000000002,
+            "gdp": 1.4420000000000002,
+            "social_support": 0.14100000000000001,
+            "life_expectancy": 1.402000000000001,
+            "freedom": 0.08799999999999997,
+            "generosity": 0.183,
+            "corruption": 0.04700000000000004
         },
         {
             "source": 7,
             "target": 20,
-            "value": 0.5790000000000006
+            "happiness": 0.5790000000000006,
+            "gdp": 0.4629999999999992,
+            "social_support": 0.01100000000000001,
+            "life_expectancy": 0.6000000000000085,
+            "freedom": 0.07200000000000006,
+            "generosity": 0.127,
+            "corruption": 0.28700000000000003
         },
         {
             "source": 7,
             "target": 15,
-            "value": 0.34799999999999986
+            "happiness": 0.34799999999999986,
+            "gdp": 0.28500000000000014,
+            "social_support": 0.02400000000000002,
+            "life_expectancy": 1.6000000000000085,
+            "freedom": 0.04500000000000004,
+            "generosity": 0.002999999999999999,
+            "corruption": 0.15399999999999997
         },
         {
             "source": 7,
             "target": 32,
-            "value": 0.835
+            "happiness": 0.835,
+            "gdp": 0.5299999999999994,
+            "social_support": 0.038000000000000034,
+            "life_expectancy": 0.8500000000000085,
+            "freedom": 0.18000000000000005,
+            "generosity": 0.10099999999999999,
+            "corruption": 0.576
         },
         {
             "source": 92,
             "target": 106,
-            "value": 0.4479999999999995
+            "happiness": 0.4479999999999995,
+            "gdp": 0.019999999999999574,
+            "social_support": 0.06900000000000006,
+            "life_expectancy": 2.809999999999995,
+            "freedom": 0.04400000000000004,
+            "generosity": 0.136,
+            "corruption": 0.135
         },
         {
             "source": 92,
             "target": 90,
-            "value": 0.019000000000000128
+            "happiness": 0.019000000000000128,
+            "gdp": 0.6960000000000006,
+            "social_support": 0.07700000000000007,
+            "life_expectancy": 1.7680000000000007,
+            "freedom": 0.07399999999999995,
+            "generosity": 0.122,
+            "corruption": 0.041000000000000036
         },
         {
             "source": 92,
             "target": 124,
-            "value": 1.0110000000000001
+            "happiness": 1.0110000000000001,
+            "gdp": 1.2990000000000004,
+            "social_support": 0.02400000000000002,
+            "life_expectancy": 0.7469999999999999,
+            "freedom": 0.0020000000000000018,
+            "generosity": 0.151,
+            "corruption": 0.08399999999999996
         },
         {
             "source": 92,
             "target": 119,
-            "value": 0.8549999999999995
+            "happiness": 0.8549999999999995,
+            "gdp": 0.9210000000000003,
+            "social_support": 0.02100000000000002,
+            "life_expectancy": 0.5500000000000043,
+            "freedom": 0.020000000000000018,
+            "generosity": 0.031,
+            "corruption": 0.09999999999999998
         },
         {
             "source": 34,
             "target": 74,
-            "value": 0.8079999999999998
+            "happiness": 0.8079999999999998,
+            "gdp": 0.7120000000000015,
+            "social_support": 0.09099999999999997,
+            "life_expectancy": 0.45000000000000284,
+            "freedom": 0.0020000000000000018,
+            "generosity": 0.108,
+            "corruption": 0.06900000000000006
         },
         {
             "source": 95,
             "target": 113,
-            "value": 0.5759999999999996
+            "happiness": 0.5759999999999996,
+            "gdp": 0.9560000000000004,
+            "social_support": 0.03599999999999992,
+            "life_expectancy": 2.7220000000000013,
+            "freedom": 0.009000000000000008,
+            "generosity": 0.20600000000000002,
+            "corruption": 0.038999999999999924
         },
         {
             "source": 95,
             "target": 93,
-            "value": 0.06200000000000028
+            "happiness": 0.06200000000000028,
+            "gdp": 1.3200000000000003,
+            "social_support": 0.05999999999999994,
+            "life_expectancy": 2.405000000000001,
+            "freedom": 0.04400000000000004,
+            "generosity": 0.202,
+            "corruption": 0.05999999999999994
         },
         {
             "source": 95,
             "target": 94,
-            "value": 0.008000000000000007
+            "happiness": 0.008000000000000007,
+            "gdp": 0.2789999999999999,
+            "social_support": 0.05399999999999994,
+            "life_expectancy": 0.9560000000000031,
+            "freedom": 0.03199999999999992,
+            "generosity": 0.057999999999999996,
+            "corruption": 0.06500000000000006
         },
         {
             "source": 63,
             "target": 81,
-            "value": 0.5099999999999998
+            "happiness": 0.5099999999999998,
+            "gdp": 1.2279999999999998,
+            "social_support": 0.019000000000000017,
+            "life_expectancy": 8.591000000000008,
+            "freedom": 0.19499999999999995,
+            "generosity": 0.015000000000000003,
+            "corruption": 0.34199999999999997
         },
         {
             "source": 63,
             "target": 125,
-            "value": 1.782
+            "happiness": 1.782,
+            "gdp": 0.9789999999999992,
+            "social_support": 0.22799999999999998,
+            "life_expectancy": 7.911999999999992,
+            "freedom": 0.015000000000000013,
+            "generosity": 0.11299999999999999,
+            "corruption": 0.04700000000000004
         },
         {
             "source": 63,
             "target": 43,
-            "value": 0.3260000000000005
+            "happiness": 0.3260000000000005,
+            "gdp": 0.4280000000000008,
+            "social_support": 0.09500000000000008,
+            "life_expectancy": 2.8869999999999862,
+            "freedom": 0.029000000000000026,
+            "generosity": 0.041,
+            "corruption": 0.006000000000000005
         },
         {
             "source": 63,
             "target": 61,
-            "value": 0.007000000000000561
+            "happiness": 0.007000000000000561,
+            "gdp": 1.251999999999999,
+            "social_support": 0.07500000000000007,
+            "life_expectancy": 1.836999999999989,
+            "freedom": 0.052000000000000046,
+            "generosity": 0.222,
+            "corruption": 0.17700000000000005
         },
         {
             "source": 63,
             "target": 88,
-            "value": 0.7069999999999999
+            "happiness": 0.7069999999999999,
+            "gdp": 0.7759999999999998,
+            "social_support": 0.15699999999999992,
+            "life_expectancy": 7.742999999999995,
+            "freedom": 0.03700000000000003,
+            "generosity": 0.132,
+            "corruption": 0.02400000000000002
         },
         {
             "source": 63,
             "target": 60,
-            "value": 0.02200000000000024
+            "happiness": 0.02200000000000024,
+            "gdp": 0.36599999999999966,
+            "social_support": 0.09700000000000009,
+            "life_expectancy": 8.188999999999993,
+            "freedom": 0.18100000000000005,
+            "generosity": 0.231,
+            "corruption": 0.122
         },
         {
             "source": 63,
             "target": 116,
-            "value": 1.4459999999999997
+            "happiness": 1.4459999999999997,
+            "gdp": 1.3339999999999996,
+            "social_support": 0.04899999999999993,
+            "life_expectancy": 7.300999999999995,
+            "freedom": 0.15500000000000003,
+            "generosity": 0.532,
+            "corruption": 0.06899999999999995
         },
         {
             "source": 63,
             "target": 77,
-            "value": 0.4579999999999993
+            "happiness": 0.4579999999999993,
+            "gdp": 1.4819999999999993,
+            "social_support": 0.08799999999999997,
+            "life_expectancy": 6.841999999999992,
+            "freedom": 0.07399999999999995,
+            "generosity": 0.187,
+            "corruption": 0.05600000000000005
         },
         {
             "source": 63,
             "target": 107,
-            "value": 1.263
+            "happiness": 1.263,
+            "gdp": 1.1980000000000004,
+            "social_support": 0.235,
+            "life_expectancy": 11.37599999999999,
+            "freedom": 0.11599999999999999,
+            "generosity": 0.049,
+            "corruption": 0.06000000000000005
         },
         {
             "source": 63,
             "target": 69,
-            "value": 0.15700000000000003
+            "happiness": 0.15700000000000003,
+            "gdp": 0.4720000000000013,
+            "social_support": 0.05300000000000005,
+            "life_expectancy": 3.7419999999999902,
+            "freedom": 0.16300000000000003,
+            "generosity": 0.011000000000000003,
+            "corruption": 0.07400000000000007
         },
         {
             "source": 63,
             "target": 79,
-            "value": 0.48799999999999955
+            "happiness": 0.48799999999999955,
+            "gdp": 1.5009999999999994,
+            "social_support": 0.0,
+            "life_expectancy": 6.462999999999994,
+            "freedom": 0.050000000000000044,
+            "generosity": 0.018999999999999996,
+            "corruption": 0.20499999999999996
         },
         {
             "source": 63,
             "target": 64,
-            "value": 0.054999999999999716
+            "happiness": 0.054999999999999716,
+            "gdp": 0.45099999999999874,
+            "social_support": 0.015000000000000013,
+            "life_expectancy": 3.1869999999999976,
+            "freedom": 0.05699999999999994,
+            "generosity": 0.037000000000000005,
+            "corruption": 0.03200000000000003
         },
         {
             "source": 71,
             "target": 73,
-            "value": 0.07099999999999973
+            "happiness": 0.07099999999999973,
+            "gdp": 0.31400000000000006,
+            "social_support": 0.015999999999999903,
+            "life_expectancy": 0.3499999999999943,
+            "freedom": 0.0020000000000000018,
+            "generosity": 0.0040000000000000036,
+            "corruption": 0.0010000000000000009
         },
         {
             "source": 71,
             "target": 37,
-            "value": 0.6349999999999998
+            "happiness": 0.6349999999999998,
+            "gdp": 0.7210000000000001,
+            "social_support": 0.07400000000000007,
+            "life_expectancy": 0.3999999999999915,
+            "freedom": 0.050999999999999934,
+            "generosity": 0.029000000000000012,
+            "corruption": 0.04400000000000004
         },
         {
             "source": 71,
             "target": 74,
-            "value": 0.10400000000000009
+            "happiness": 0.10400000000000009,
+            "gdp": 0.18200000000000038,
+            "social_support": 0.02399999999999991,
+            "life_expectancy": 0.5,
+            "freedom": 0.010000000000000009,
+            "generosity": 0.015,
+            "corruption": 0.05800000000000005
         },
         {
             "source": 71,
             "target": 87,
-            "value": 0.4189999999999996
+            "happiness": 0.4189999999999996,
+            "gdp": 4.0569999999999995,
+            "social_support": 0.017000000000000015,
+            "life_expectancy": 5.299999999999997,
+            "freedom": 0.14500000000000002,
+            "generosity": 0.23199999999999998,
+            "corruption": 0.02299999999999991
         },
         {
             "source": 22,
             "target": 39,
-            "value": 0.34999999999999964
+            "happiness": 0.34999999999999964,
+            "gdp": 1.3339999999999996,
+            "social_support": 0.019000000000000017,
+            "life_expectancy": 4.349999999999994,
+            "freedom": 0.018000000000000016,
+            "generosity": 0.09100000000000001,
+            "corruption": 0.14300000000000002
         },
         {
             "source": 22,
             "target": 37,
-            "value": 0.3440000000000003
+            "happiness": 0.3440000000000003,
+            "gdp": 0.35299999999999976,
+            "social_support": 0.02400000000000002,
+            "life_expectancy": 1.0499999999999972,
+            "freedom": 0.040000000000000036,
+            "generosity": 0.063,
+            "corruption": 0.10999999999999999
         },
         {
             "source": 17,
             "target": 15,
-            "value": 0.0470000000000006
+            "happiness": 0.0470000000000006,
+            "gdp": 0.2679999999999989,
+            "social_support": 0.05699999999999994,
+            "life_expectancy": 2.25,
+            "freedom": 0.05700000000000005,
+            "generosity": 0.010000000000000002,
+            "corruption": 0.439
         },
         {
             "source": 17,
             "target": 38,
-            "value": 0.585
+            "happiness": 0.585,
+            "gdp": 0.15800000000000125,
+            "social_support": 0.027999999999999914,
+            "life_expectancy": 0.000999999999990564,
+            "freedom": 0.138,
+            "generosity": 0.07100000000000001,
+            "corruption": 0.123
         },
         {
             "source": 17,
             "target": 28,
-            "value": 0.37599999999999945
+            "happiness": 0.37599999999999945,
+            "gdp": 0.2580000000000009,
+            "social_support": 0.0,
+            "life_expectancy": 0.2120000000000033,
+            "freedom": 0.15000000000000002,
+            "generosity": 0.056,
+            "corruption": 0.039000000000000035
         },
         {
             "source": 15,
             "target": 1,
-            "value": 0.694
+            "happiness": 0.694,
+            "gdp": 0.08300000000000018,
+            "social_support": 0.05799999999999994,
+            "life_expectancy": 0.04999999999999716,
+            "freedom": 0.08800000000000008,
+            "generosity": 0.10400000000000001,
+            "corruption": 0.22399999999999998
         },
         {
             "source": 15,
             "target": 20,
-            "value": 0.23100000000000076
+            "happiness": 0.23100000000000076,
+            "gdp": 0.17799999999999905,
+            "social_support": 0.013000000000000012,
+            "life_expectancy": 1.0,
+            "freedom": 0.027000000000000024,
+            "generosity": 0.13,
+            "corruption": 0.13300000000000006
         },
         {
             "source": 15,
             "target": 8,
-            "value": 0.3359999999999994
+            "happiness": 0.3359999999999994,
+            "gdp": 0.7810000000000006,
+            "social_support": 0.017000000000000015,
+            "life_expectancy": 0.375,
+            "freedom": 0.06900000000000006,
+            "generosity": 0.005999999999999998,
+            "corruption": 0.07500000000000001
         },
         {
             "source": 15,
             "target": 4,
-            "value": 0.5109999999999992
+            "happiness": 0.5109999999999992,
+            "gdp": 0.06300000000000061,
+            "social_support": 0.03400000000000003,
+            "life_expectancy": 0.25,
+            "freedom": 0.041000000000000036,
+            "generosity": 0.183,
+            "corruption": 0.04099999999999998
         },
         {
             "source": 15,
             "target": 38,
-            "value": 0.6320000000000006
+            "happiness": 0.6320000000000006,
+            "gdp": 0.42600000000000016,
+            "social_support": 0.029000000000000026,
+            "life_expectancy": 2.2509999999999906,
+            "freedom": 0.08099999999999996,
+            "generosity": 0.061,
+            "corruption": 0.316
         },
         {
             "source": 80,
             "target": 119,
-            "value": 1.1309999999999993
+            "happiness": 1.1309999999999993,
+            "gdp": 1.6450000000000005,
+            "social_support": 0.262,
+            "life_expectancy": 11.146000000000008,
+            "freedom": 0.14200000000000002,
+            "generosity": 0.08900000000000001,
+            "corruption": 0.129
         },
         {
             "source": 80,
             "target": 102,
-            "value": 0.6049999999999995
+            "happiness": 0.6049999999999995,
+            "gdp": 0.7090000000000014,
+            "social_support": 0.21099999999999997,
+            "life_expectancy": 6.074000000000005,
+            "freedom": 0.051000000000000045,
+            "generosity": 0.10400000000000001,
+            "corruption": 0.05999999999999994
         },
         {
             "source": 80,
             "target": 99,
-            "value": 0.42600000000000016
+            "happiness": 0.42600000000000016,
+            "gdp": 0.32699999999999996,
+            "social_support": 0.30199999999999994,
+            "life_expectancy": 2.6480000000000032,
+            "freedom": 0.21600000000000008,
+            "generosity": 0.114,
+            "corruption": 0.09400000000000008
         },
         {
             "source": 80,
             "target": 108,
-            "value": 0.8279999999999994
+            "happiness": 0.8279999999999994,
+            "gdp": 2.2090000000000005,
+            "social_support": 0.265,
+            "life_expectancy": 9.99900000000001,
+            "freedom": 0.21700000000000008,
+            "generosity": 0.14900000000000002,
+            "corruption": 0.017000000000000015
         },
         {
             "source": 80,
             "target": 109,
-            "value": 0.8319999999999999
+            "happiness": 0.8319999999999999,
+            "gdp": 0.05600000000000094,
+            "social_support": 0.125,
+            "life_expectancy": 0.4509999999999934,
+            "freedom": 0.0050000000000000044,
+            "generosity": 0.09599999999999999,
+            "corruption": 0.19000000000000006
         },
         {
             "source": 73,
             "target": 74,
-            "value": 0.03300000000000036
+            "happiness": 0.03300000000000036,
+            "gdp": 0.13199999999999967,
+            "social_support": 0.008000000000000007,
+            "life_expectancy": 0.8499999999999943,
+            "freedom": 0.008000000000000007,
+            "generosity": 0.010999999999999996,
+            "corruption": 0.05900000000000005
         },
         {
             "source": 30,
             "target": 40,
-            "value": 0.242
+            "happiness": 0.242,
+            "gdp": 0.17100000000000115,
+            "social_support": 0.008999999999999897,
+            "life_expectancy": 3.25,
+            "freedom": 0.1110000000000001,
+            "generosity": 0.088,
+            "corruption": 0.421
         },
         {
             "source": 30,
             "target": 69,
-            "value": 0.7940000000000005
+            "happiness": 0.7940000000000005,
+            "gdp": 0.3309999999999995,
+            "social_support": 0.05699999999999994,
+            "life_expectancy": 4.703000000000003,
+            "freedom": 0.21000000000000008,
+            "generosity": 0.062,
+            "corruption": 0.39200000000000007
         },
         {
             "source": 120,
             "target": 3,
-            "value": 3.303
+            "happiness": 3.303,
+            "gdp": 1.2719999999999985,
+            "social_support": 0.21699999999999997,
+            "life_expectancy": 9.194000000000003,
+            "freedom": 0.07700000000000007,
+            "generosity": 0.16,
+            "corruption": 0.128
         },
         {
             "source": 120,
             "target": 98,
-            "value": 0.7380000000000004
+            "happiness": 0.7380000000000004,
+            "gdp": 0.6510000000000016,
+            "social_support": 0.133,
+            "life_expectancy": 10.897000000000006,
+            "freedom": 0.038000000000000034,
+            "generosity": 0.05099999999999999,
+            "corruption": 0.256
         },
         {
             "source": 31,
             "target": 20,
-            "value": 0.22499999999999964
+            "happiness": 0.22499999999999964,
+            "gdp": 0.16100000000000136,
+            "social_support": 0.02300000000000002,
+            "life_expectancy": 0.04999999999999716,
+            "freedom": 0.03699999999999992,
+            "generosity": 0.034,
+            "corruption": 0.15799999999999992
         },
         {
             "source": 31,
             "target": 99,
-            "value": 1.5330000000000004
+            "happiness": 1.5330000000000004,
+            "gdp": 1.5669999999999984,
+            "social_support": 0.379,
+            "life_expectancy": 8.448999999999991,
+            "freedom": 0.0050000000000000044,
+            "generosity": 0.165,
+            "corruption": 0.10000000000000009
         },
         {
             "source": 31,
             "target": 55,
-            "value": 0.46799999999999997
+            "happiness": 0.46799999999999997,
+            "gdp": 0.11099999999999888,
+            "social_support": 0.05400000000000005,
+            "life_expectancy": 1.0999999999999943,
+            "freedom": 0.12,
+            "generosity": 0.13,
+            "corruption": 0.16700000000000004
         },
         {
             "source": 123,
             "target": 110,
-            "value": 0.3959999999999999
+            "happiness": 0.3959999999999999,
+            "gdp": 0.7190000000000003,
+            "social_support": 0.09200000000000008,
+            "life_expectancy": 2.198999999999998,
+            "freedom": 0.02400000000000002,
+            "generosity": 0.014999999999999958,
+            "corruption": 0.06299999999999994
         },
         {
             "source": 0,
             "target": 6,
-            "value": 0.4889999999999999
+            "happiness": 0.4889999999999999,
+            "gdp": 0.2959999999999994,
+            "social_support": 0.026000000000000023,
+            "life_expectancy": 0.3499999999999943,
+            "freedom": 0.014000000000000012,
+            "generosity": 0.15999999999999998,
+            "corruption": 0.10099999999999998
         },
         {
             "source": 0,
             "target": 69,
-            "value": 2.1430000000000007
+            "happiness": 2.1430000000000007,
+            "gdp": 0.581999999999999,
+            "social_support": 0.07999999999999996,
+            "life_expectancy": 6.203000000000003,
+            "freedom": 0.242,
+            "generosity": 0.011,
+            "corruption": 0.619
         },
         {
             "source": 0,
             "target": 5,
-            "value": 0.4090000000000007
+            "happiness": 0.4090000000000007,
+            "gdp": 0.0909999999999993,
+            "social_support": 0.030000000000000027,
+            "life_expectancy": 1.0,
+            "freedom": 0.013000000000000012,
+            "generosity": 0.184,
+            "corruption": 0.020000000000000018
         },
         {
             "source": 20,
             "target": 32,
-            "value": 0.25599999999999934
+            "happiness": 0.25599999999999934,
+            "gdp": 0.06700000000000017,
+            "social_support": 0.027000000000000024,
+            "life_expectancy": 0.25,
+            "freedom": 0.10799999999999998,
+            "generosity": 0.02600000000000001,
+            "corruption": 0.2889999999999999
         },
         {
             "source": 20,
             "target": 8,
-            "value": 0.5670000000000002
+            "happiness": 0.5670000000000002,
+            "gdp": 0.9589999999999996,
+            "social_support": 0.030000000000000027,
+            "life_expectancy": 0.625,
+            "freedom": 0.09600000000000009,
+            "generosity": 0.124,
+            "corruption": 0.20800000000000007
         },
         {
             "source": 18,
             "target": 13,
-            "value": 0.11499999999999932
+            "happiness": 0.11499999999999932,
+            "gdp": 0.8229999999999986,
+            "social_support": 0.02300000000000002,
+            "life_expectancy": 1.0,
+            "freedom": 0.02200000000000002,
+            "generosity": 0.161,
+            "corruption": 0.09600000000000003
         },
         {
             "source": 89,
             "target": 69,
-            "value": 0.5519999999999996
+            "happiness": 0.5519999999999996,
+            "gdp": 0.5640000000000001,
+            "social_support": 0.17300000000000004,
+            "life_expectancy": 0.0030000000000001137,
+            "freedom": 0.06700000000000006,
+            "generosity": 0.224,
+            "corruption": 0.15200000000000002
         },
         {
             "source": 89,
             "target": 105,
-            "value": 0.4950000000000001
+            "happiness": 0.4950000000000001,
+            "gdp": 0.6609999999999996,
+            "social_support": 0.08000000000000007,
+            "life_expectancy": 3.712999999999994,
+            "freedom": 0.31100000000000005,
+            "generosity": 0.177,
+            "corruption": 0.14600000000000002
         },
         {
             "source": 106,
             "target": 121,
-            "value": 0.46800000000000086
+            "happiness": 0.46800000000000086,
+            "gdp": 0.923,
+            "social_support": 0.04600000000000004,
+            "life_expectancy": 1.314,
+            "freedom": 0.12,
+            "generosity": 0.11500000000000002,
+            "corruption": 0.14100000000000001
         },
         {
             "source": 118,
             "target": 101,
-            "value": 0.5760000000000005
+            "happiness": 0.5760000000000005,
+            "gdp": 0.5069999999999997,
+            "social_support": 0.04500000000000004,
+            "life_expectancy": 2.0990000000000038,
+            "freedom": 0.17600000000000005,
+            "generosity": 0.353,
+            "corruption": 0.03700000000000003
         },
         {
             "source": 90,
             "target": 124,
-            "value": 1.0300000000000002
+            "happiness": 1.0300000000000002,
+            "gdp": 0.6029999999999998,
+            "social_support": 0.05300000000000005,
+            "life_expectancy": 2.5150000000000006,
+            "freedom": 0.07599999999999996,
+            "generosity": 0.028999999999999998,
+            "corruption": 0.04299999999999993
         },
         {
             "source": 90,
             "target": 119,
-            "value": 0.8739999999999997
+            "happiness": 0.8739999999999997,
+            "gdp": 0.22499999999999964,
+            "social_support": 0.05600000000000005,
+            "life_expectancy": 1.2179999999999964,
+            "freedom": 0.05399999999999994,
+            "generosity": 0.153,
+            "corruption": 0.05899999999999994
         },
         {
             "source": 90,
             "target": 101,
-            "value": 0.21699999999999964
+            "happiness": 0.21699999999999964,
+            "gdp": 0.27499999999999947,
+            "social_support": 0.020000000000000018,
+            "life_expectancy": 5.814,
+            "freedom": 0.11299999999999999,
+            "generosity": 0.114,
+            "corruption": 0.05899999999999994
         },
         {
             "source": 90,
             "target": 134,
-            "value": 1.9340000000000002
+            "happiness": 1.9340000000000002,
+            "gdp": 0.48599999999999977,
+            "social_support": 0.09399999999999997,
+            "life_expectancy": 0.7149999999999963,
+            "freedom": 0.0010000000000000009,
+            "generosity": 0.020000000000000004,
+            "corruption": 0.07099999999999995
         },
         {
             "source": 57,
             "target": 86,
-            "value": 0.6770000000000005
+            "happiness": 0.6770000000000005,
+            "gdp": 0.5850000000000009,
+            "social_support": 0.029999999999999916,
+            "life_expectancy": 4.650000000000006,
+            "freedom": 0.20100000000000007,
+            "generosity": 0.371,
+            "corruption": 0.10899999999999999
         },
         {
             "source": 57,
             "target": 105,
-            "value": 1.3170000000000002
+            "happiness": 1.3170000000000002,
+            "gdp": 0.019000000000000128,
+            "social_support": 0.038999999999999924,
+            "life_expectancy": 2.487000000000009,
+            "freedom": 0.09299999999999997,
+            "generosity": 0.16299999999999998,
+            "corruption": 0.0020000000000000018
         },
         {
             "source": 42,
             "target": 49,
-            "value": 0.02800000000000047
+            "happiness": 0.02800000000000047,
+            "gdp": 0.026999999999999247,
+            "social_support": 0.05700000000000005,
+            "life_expectancy": 2.6969999999999956,
+            "freedom": 0.062000000000000055,
+            "generosity": 0.051,
+            "corruption": 0.21699999999999997
         },
         {
             "source": 42,
             "target": 52,
-            "value": 0.12700000000000067
+            "happiness": 0.12700000000000067,
+            "gdp": 0.48099999999999987,
+            "social_support": 0.04600000000000004,
+            "life_expectancy": 1.1630000000000038,
+            "freedom": 0.013000000000000012,
+            "generosity": 0.154,
+            "corruption": 0.006000000000000005
         },
         {
             "source": 42,
             "target": 35,
-            "value": 0.17999999999999972
+            "happiness": 0.17999999999999972,
+            "gdp": 0.734,
+            "social_support": 0.008000000000000007,
+            "life_expectancy": 2.8999999999999986,
+            "freedom": 0.0,
+            "generosity": 0.037,
+            "corruption": 0.06899999999999995
         },
         {
             "source": 52,
             "target": 49,
-            "value": 0.0990000000000002
+            "happiness": 0.0990000000000002,
+            "gdp": 0.4540000000000006,
+            "social_support": 0.01100000000000001,
+            "life_expectancy": 1.5339999999999918,
+            "freedom": 0.07500000000000007,
+            "generosity": 0.20500000000000002,
+            "corruption": 0.22299999999999998
         },
         {
             "source": 52,
             "target": 39,
-            "value": 0.23600000000000065
+            "happiness": 0.23600000000000065,
+            "gdp": 0.01699999999999946,
+            "social_support": 0.08699999999999997,
+            "life_expectancy": 1.5870000000000033,
+            "freedom": 0.03400000000000003,
+            "generosity": 0.076,
+            "corruption": 0.21799999999999997
         },
         {
             "source": 47,
             "target": 50,
-            "value": 0.08399999999999963
+            "happiness": 0.08399999999999963,
+            "gdp": 0.07800000000000118,
+            "social_support": 0.025999999999999912,
+            "life_expectancy": 1.4500000000000028,
+            "freedom": 0.0010000000000000009,
+            "generosity": 0.034,
+            "corruption": 0.08600000000000008
         },
         {
             "source": 47,
             "target": 66,
-            "value": 0.4029999999999996
+            "happiness": 0.4029999999999996,
+            "gdp": 0.5279999999999987,
+            "social_support": 0.027000000000000024,
+            "life_expectancy": 1.8500000000000085,
+            "freedom": 0.04800000000000004,
+            "generosity": 0.156,
+            "corruption": 0.08100000000000007
         },
         {
             "source": 47,
             "target": 44,
-            "value": 0.019000000000000128
+            "happiness": 0.019000000000000128,
+            "gdp": 0.4870000000000001,
+            "social_support": 0.04400000000000004,
+            "life_expectancy": 1.862000000000009,
+            "freedom": 0.08799999999999997,
+            "generosity": 0.297,
+            "corruption": 0.1090000000000001
         },
         {
             "source": 47,
             "target": 21,
-            "value": 0.5250000000000004
+            "happiness": 0.5250000000000004,
+            "gdp": 0.2469999999999999,
+            "social_support": 0.03399999999999992,
+            "life_expectancy": 2.102000000000004,
+            "freedom": 0.15600000000000003,
+            "generosity": 0.107,
+            "corruption": 0.15400000000000003
         },
         {
             "source": 50,
             "target": 23,
-            "value": 0.548
+            "happiness": 0.548,
+            "gdp": 0.08000000000000007,
+            "social_support": 0.09499999999999997,
+            "life_expectancy": 0.44899999999999807,
+            "freedom": 0.09799999999999998,
+            "generosity": 0.11299999999999999,
+            "corruption": 0.09000000000000008
         },
         {
             "source": 50,
             "target": 44,
-            "value": 0.10299999999999976
+            "happiness": 0.10299999999999976,
+            "gdp": 0.5650000000000013,
+            "social_support": 0.06999999999999995,
+            "life_expectancy": 0.41200000000000614,
+            "freedom": 0.08699999999999997,
+            "generosity": 0.263,
+            "corruption": 0.02300000000000002
         },
         {
             "source": 50,
             "target": 28,
-            "value": 0.42799999999999994
+            "happiness": 0.42799999999999994,
+            "gdp": 0.06600000000000072,
+            "social_support": 0.010000000000000009,
+            "life_expectancy": 1.3379999999999939,
+            "freedom": 0.0050000000000000044,
+            "generosity": 0.043,
+            "corruption": 0.05900000000000005
         },
         {
             "source": 50,
             "target": 21,
-            "value": 0.609
+            "happiness": 0.609,
+            "gdp": 0.1689999999999987,
+            "social_support": 0.008000000000000007,
+            "life_expectancy": 3.5520000000000067,
+            "freedom": 0.15500000000000003,
+            "generosity": 0.073,
+            "corruption": 0.06799999999999995
         },
         {
             "source": 50,
             "target": 91,
-            "value": 0.9700000000000006
+            "happiness": 0.9700000000000006,
+            "gdp": 1.1050000000000004,
+            "social_support": 0.06499999999999995,
+            "life_expectancy": 2.950000000000003,
+            "freedom": 0.03700000000000003,
+            "generosity": 0.299,
+            "corruption": 0.06800000000000006
         },
         {
             "source": 83,
             "target": 54,
-            "value": 0.7349999999999994
+            "happiness": 0.7349999999999994,
+            "gdp": 0.7840000000000007,
+            "social_support": 0.0050000000000000044,
+            "life_expectancy": 2.6140000000000043,
+            "freedom": 0.0030000000000000027,
+            "generosity": 0.371,
+            "corruption": 0.118
         },
         {
             "source": 3,
             "target": 122,
-            "value": 3.3529999999999998
+            "happiness": 3.3529999999999998,
+            "gdp": 1.5089999999999986,
+            "social_support": 0.21399999999999997,
+            "life_expectancy": 5.097000000000008,
+            "freedom": 0.039000000000000035,
+            "generosity": 0.127,
+            "corruption": 0.020999999999999908
         },
         {
             "source": 3,
             "target": 135,
-            "value": 5.0809999999999995
+            "happiness": 5.0809999999999995,
+            "gdp": 1.1609999999999996,
+            "social_support": 0.4129999999999999,
+            "life_expectancy": 6.548000000000002,
+            "freedom": 0.3350000000000001,
+            "generosity": 0.118,
+            "corruption": 0.18300000000000005
         },
         {
             "source": 3,
             "target": 98,
-            "value": 2.5649999999999995
+            "happiness": 2.5649999999999995,
+            "gdp": 1.923,
+            "social_support": 0.08399999999999996,
+            "life_expectancy": 1.703000000000003,
+            "freedom": 0.1150000000000001,
+            "generosity": 0.10900000000000001,
+            "corruption": 0.128
         },
         {
             "source": 125,
             "target": 116,
-            "value": 0.3360000000000003
+            "happiness": 0.3360000000000003,
+            "gdp": 0.3550000000000004,
+            "social_support": 0.17900000000000005,
+            "life_expectancy": 0.6109999999999971,
+            "freedom": 0.17000000000000004,
+            "generosity": 0.419,
+            "corruption": 0.11599999999999999
         },
         {
             "source": 125,
             "target": 77,
-            "value": 1.3240000000000007
+            "happiness": 1.3240000000000007,
+            "gdp": 0.5030000000000001,
+            "social_support": 0.14,
+            "life_expectancy": 1.0700000000000003,
+            "freedom": 0.08899999999999997,
+            "generosity": 0.074,
+            "corruption": 0.009000000000000008
         },
         {
             "source": 125,
             "target": 107,
-            "value": 0.5190000000000001
+            "happiness": 0.5190000000000001,
+            "gdp": 0.2190000000000012,
+            "social_support": 0.007000000000000006,
+            "life_expectancy": 3.4639999999999986,
+            "freedom": 0.131,
+            "generosity": 0.064,
+            "corruption": 0.013000000000000012
         },
         {
             "source": 97,
             "target": 100,
-            "value": 0.0649999999999995
+            "happiness": 0.0649999999999995,
+            "gdp": 0.5119999999999987,
+            "social_support": 0.06000000000000005,
+            "life_expectancy": 3.184999999999995,
+            "freedom": 0.05300000000000005,
+            "generosity": 0.178,
+            "corruption": 0.129
         },
         {
             "source": 97,
             "target": 122,
-            "value": 0.8209999999999997
+            "happiness": 0.8209999999999997,
+            "gdp": 0.03200000000000003,
+            "social_support": 0.01100000000000001,
+            "life_expectancy": 4.184999999999995,
+            "freedom": 0.124,
+            "generosity": 0.145,
+            "corruption": 0.18899999999999995
         },
         {
             "source": 97,
             "target": 29,
-            "value": 1.5220000000000002
+            "happiness": 1.5220000000000002,
+            "gdp": 1.616999999999999,
+            "social_support": 0.16600000000000004,
+            "life_expectancy": 0.9840000000000018,
+            "freedom": 0.248,
+            "generosity": 0.076,
+            "corruption": 0.18500000000000005
         },
         {
             "source": 97,
             "target": 105,
-            "value": 0.32699999999999996
+            "happiness": 0.32699999999999996,
+            "gdp": 1.2089999999999996,
+            "social_support": 0.07800000000000007,
+            "life_expectancy": 5.2479999999999976,
+            "freedom": 0.17100000000000004,
+            "generosity": 0.072,
+            "corruption": 0.08099999999999996
         },
         {
             "source": 100,
             "target": 107,
-            "value": 0.3210000000000006
+            "happiness": 0.3210000000000006,
+            "gdp": 1.0700000000000003,
+            "social_support": 0.17700000000000005,
+            "life_expectancy": 9.286999999999992,
+            "freedom": 0.17300000000000004,
+            "generosity": 0.16499999999999998,
+            "corruption": 0.040000000000000036
         },
         {
             "source": 100,
             "target": 105,
-            "value": 0.26200000000000045
+            "happiness": 0.26200000000000045,
+            "gdp": 0.697000000000001,
+            "social_support": 0.018000000000000016,
+            "life_expectancy": 2.0630000000000024,
+            "freedom": 0.118,
+            "generosity": 0.25,
+            "corruption": 0.04800000000000004
         },
         {
             "source": 32,
             "target": 21,
-            "value": 0.2450000000000001
+            "happiness": 0.2450000000000001,
+            "gdp": 0.04600000000000115,
+            "social_support": 0.06899999999999995,
+            "life_expectancy": 0.9979999999999905,
+            "freedom": 0.20200000000000007,
+            "generosity": 0.088,
+            "corruption": 0.07099999999999995
         },
         {
             "source": 122,
             "target": 98,
-            "value": 0.7880000000000003
+            "happiness": 0.7880000000000003,
+            "gdp": 0.4140000000000015,
+            "social_support": 0.13,
+            "life_expectancy": 6.800000000000011,
+            "freedom": 0.07600000000000007,
+            "generosity": 0.017999999999999988,
+            "corruption": 0.1489999999999999
         },
         {
             "source": 122,
             "target": 29,
-            "value": 2.343
+            "happiness": 2.343,
+            "gdp": 1.584999999999999,
+            "social_support": 0.15500000000000003,
+            "life_expectancy": 3.2009999999999934,
+            "freedom": 0.124,
+            "generosity": 0.06899999999999999,
+            "corruption": 0.0039999999999998925
         },
         {
             "source": 110,
             "target": 128,
-            "value": 0.7930000000000001
+            "happiness": 0.7930000000000001,
+            "gdp": 0.601,
+            "social_support": 0.03699999999999992,
+            "life_expectancy": 0.902000000000001,
+            "freedom": 0.14200000000000002,
+            "generosity": 0.10599999999999998,
+            "corruption": 0.29799999999999993
         },
         {
             "source": 110,
             "target": 112,
-            "value": 0.054999999999999716
+            "happiness": 0.054999999999999716,
+            "gdp": 0.742,
+            "social_support": 0.10400000000000009,
+            "life_expectancy": 0.4139999999999944,
+            "freedom": 0.0050000000000000044,
+            "generosity": 0.174,
+            "corruption": 0.0050000000000000044
         },
         {
             "source": 61,
             "target": 43,
-            "value": 0.31899999999999995
+            "happiness": 0.31899999999999995,
+            "gdp": 1.6799999999999997,
+            "social_support": 0.020000000000000018,
+            "life_expectancy": 1.0499999999999972,
+            "freedom": 0.08100000000000007,
+            "generosity": 0.181,
+            "corruption": 0.18300000000000005
         },
         {
             "source": 61,
             "target": 79,
-            "value": 0.4950000000000001
+            "happiness": 0.4950000000000001,
+            "gdp": 0.24900000000000055,
+            "social_support": 0.07500000000000007,
+            "life_expectancy": 4.626000000000005,
+            "freedom": 0.10200000000000009,
+            "generosity": 0.241,
+            "corruption": 0.382
         },
         {
             "source": 61,
             "target": 53,
-            "value": 0.18900000000000006
+            "happiness": 0.18900000000000006,
+            "gdp": 0.46199999999999974,
+            "social_support": 0.03600000000000003,
+            "life_expectancy": 1.551000000000002,
+            "freedom": 0.0039999999999998925,
+            "generosity": 0.049000000000000016,
+            "corruption": 0.266
         },
         {
             "source": 114,
             "target": 88,
-            "value": 0.718
+            "happiness": 0.718,
+            "gdp": 0.577,
+            "social_support": 0.06799999999999995,
+            "life_expectancy": 0.9540000000000006,
+            "freedom": 0.038999999999999924,
+            "generosity": 0.018000000000000002,
+            "corruption": 0.15400000000000003
         },
         {
             "source": 114,
             "target": 59,
-            "value": 1.4500000000000002
+            "happiness": 1.4500000000000002,
+            "gdp": 1.3659999999999997,
+            "social_support": 0.127,
+            "life_expectancy": 6.550000000000004,
+            "freedom": 0.10799999999999998,
+            "generosity": 0.21599999999999997,
+            "corruption": 0.05300000000000005
         },
         {
             "source": 114,
             "target": 64,
-            "value": 1.37
+            "happiness": 1.37,
+            "gdp": 0.902000000000001,
+            "social_support": 0.07399999999999995,
+            "life_expectancy": 3.6019999999999968,
+            "freedom": 0.019000000000000017,
+            "generosity": 0.077,
+            "corruption": 0.09799999999999998
         },
         {
             "source": 43,
             "target": 69,
-            "value": 0.48300000000000054
+            "happiness": 0.48300000000000054,
+            "gdp": 0.04400000000000048,
+            "social_support": 0.04200000000000004,
+            "life_expectancy": 0.855000000000004,
+            "freedom": 0.134,
+            "generosity": 0.03,
+            "corruption": 0.08000000000000007
         },
         {
             "source": 43,
             "target": 53,
-            "value": 0.1299999999999999
+            "happiness": 0.1299999999999999,
+            "gdp": 1.218,
+            "social_support": 0.05600000000000005,
+            "life_expectancy": 0.5010000000000048,
+            "freedom": 0.08499999999999996,
+            "generosity": 0.23,
+            "corruption": 0.08299999999999996
         },
         {
             "source": 88,
             "target": 116,
-            "value": 0.7389999999999999
+            "happiness": 0.7389999999999999,
+            "gdp": 0.5579999999999998,
+            "social_support": 0.10799999999999998,
+            "life_expectancy": 0.44200000000000017,
+            "freedom": 0.19200000000000006,
+            "generosity": 0.4,
+            "corruption": 0.04499999999999993
         },
         {
             "source": 88,
             "target": 59,
-            "value": 0.7320000000000002
+            "happiness": 0.7320000000000002,
+            "gdp": 0.7889999999999997,
+            "social_support": 0.19499999999999995,
+            "life_expectancy": 7.504000000000005,
+            "freedom": 0.06900000000000006,
+            "generosity": 0.19799999999999998,
+            "corruption": 0.20700000000000007
         },
         {
             "source": 88,
             "target": 64,
-            "value": 0.6520000000000001
+            "happiness": 0.6520000000000001,
+            "gdp": 0.32500000000000107,
+            "social_support": 0.1419999999999999,
+            "life_expectancy": 4.555999999999997,
+            "freedom": 0.019999999999999907,
+            "generosity": 0.095,
+            "corruption": 0.05600000000000005
         },
         {
             "source": 124,
             "target": 134,
-            "value": 0.9039999999999999
+            "happiness": 0.9039999999999999,
+            "gdp": 0.11699999999999999,
+            "social_support": 0.040999999999999925,
+            "life_expectancy": 1.8000000000000043,
+            "freedom": 0.07499999999999996,
+            "generosity": 0.049,
+            "corruption": 0.028000000000000025
         },
         {
             "source": 19,
             "target": 40,
-            "value": 0.5499999999999998
+            "happiness": 0.5499999999999998,
+            "gdp": 0.1980000000000004,
+            "social_support": 0.0019999999999998908,
+            "life_expectancy": 0.9969999999999999,
+            "freedom": 0.06999999999999995,
+            "generosity": 0.089,
+            "corruption": 0.02499999999999991
         },
         {
             "source": 19,
             "target": 38,
-            "value": 0.5030000000000001
+            "happiness": 0.5030000000000001,
+            "gdp": 0.11500000000000021,
+            "social_support": 0.013999999999999901,
+            "life_expectancy": 1.652000000000001,
+            "freedom": 0.017000000000000015,
+            "generosity": 0.11399999999999999,
+            "corruption": 0.06900000000000006
         },
         {
             "source": 19,
             "target": 69,
-            "value": 1.1020000000000003
+            "happiness": 1.1020000000000003,
+            "gdp": 0.35799999999999876,
+            "social_support": 0.04999999999999993,
+            "life_expectancy": 2.450000000000003,
+            "freedom": 0.029000000000000026,
+            "generosity": 0.11499999999999999,
+            "corruption": 0.0040000000000000036
         },
         {
             "source": 40,
             "target": 69,
-            "value": 0.5520000000000005
+            "happiness": 0.5520000000000005,
+            "gdp": 0.15999999999999837,
+            "social_support": 0.04800000000000004,
+            "life_expectancy": 1.453000000000003,
+            "freedom": 0.09899999999999998,
+            "generosity": 0.026000000000000002,
+            "corruption": 0.028999999999999915
         },
         {
             "source": 62,
             "target": 23,
-            "value": 0.7700000000000005
+            "happiness": 0.7700000000000005,
+            "gdp": 0.8399999999999999,
+            "social_support": 0.009000000000000008,
+            "life_expectancy": 1.7519999999999953,
+            "freedom": 0.016000000000000014,
+            "generosity": 0.09199999999999998,
+            "corruption": 0.028000000000000025
         },
         {
             "source": 62,
             "target": 91,
-            "value": 0.7480000000000002
+            "happiness": 0.7480000000000002,
+            "gdp": 0.1850000000000005,
+            "social_support": 0.02100000000000002,
+            "life_expectancy": 0.7490000000000094,
+            "freedom": 0.04499999999999993,
+            "generosity": 0.32,
+            "corruption": 0.006000000000000005
         },
         {
             "source": 66,
             "target": 44,
-            "value": 0.4219999999999997
+            "happiness": 0.4219999999999997,
+            "gdp": 0.04099999999999859,
+            "social_support": 0.017000000000000015,
+            "life_expectancy": 0.012000000000000455,
+            "freedom": 0.039999999999999925,
+            "generosity": 0.141,
+            "corruption": 0.028000000000000025
         },
         {
             "source": 86,
             "target": 44,
-            "value": 0.8900000000000006
+            "happiness": 0.8900000000000006,
+            "gdp": 0.1509999999999998,
+            "social_support": 0.06799999999999995,
+            "life_expectancy": 0.5879999999999939,
+            "freedom": 0.07599999999999996,
+            "generosity": 0.07299999999999998,
+            "corruption": 0.08600000000000008
         },
         {
             "source": 119,
             "target": 102,
-            "value": 0.5259999999999998
+            "happiness": 0.5259999999999998,
+            "gdp": 0.935999999999999,
+            "social_support": 0.051000000000000045,
+            "life_expectancy": 5.072000000000003,
+            "freedom": 0.09099999999999997,
+            "generosity": 0.015000000000000001,
+            "corruption": 0.18899999999999995
         },
         {
             "source": 119,
             "target": 108,
-            "value": 0.30299999999999994
+            "happiness": 0.30299999999999994,
+            "gdp": 0.5640000000000001,
+            "social_support": 0.0030000000000000027,
+            "life_expectancy": 1.1469999999999985,
+            "freedom": 0.07500000000000007,
+            "generosity": 0.06,
+            "corruption": 0.11199999999999999
         },
         {
             "source": 119,
             "target": 101,
-            "value": 0.657
+            "happiness": 0.657,
+            "gdp": 0.4999999999999991,
+            "social_support": 0.03600000000000003,
+            "life_expectancy": 4.596000000000004,
+            "freedom": 0.05900000000000005,
+            "generosity": 0.039,
+            "corruption": 0.0
         },
         {
             "source": 116,
             "target": 59,
-            "value": 1.471
+            "happiness": 1.471,
+            "gdp": 1.3469999999999995,
+            "social_support": 0.08699999999999997,
+            "life_expectancy": 7.062000000000005,
+            "freedom": 0.123,
+            "generosity": 0.202,
+            "corruption": 0.252
         },
         {
             "source": 60,
             "target": 69,
-            "value": 0.17900000000000027
+            "happiness": 0.17900000000000027,
+            "gdp": 0.838000000000001,
+            "social_support": 0.04400000000000004,
+            "life_expectancy": 4.447000000000003,
+            "freedom": 0.018000000000000016,
+            "generosity": 0.22,
+            "corruption": 0.04799999999999993
         },
         {
             "source": 102,
             "target": 101,
-            "value": 0.13100000000000023
+            "happiness": 0.13100000000000023,
+            "gdp": 0.43599999999999994,
+            "social_support": 0.015000000000000013,
+            "life_expectancy": 0.4759999999999991,
+            "freedom": 0.15000000000000002,
+            "generosity": 0.024,
+            "corruption": 0.18899999999999995
         },
         {
             "source": 130,
             "target": 96,
-            "value": 1.4589999999999996
+            "happiness": 1.4589999999999996,
+            "gdp": 0.18599999999999994,
+            "social_support": 0.16099999999999992,
+            "life_expectancy": 6.945,
+            "freedom": 0.10099999999999998,
+            "generosity": 0.042,
+            "corruption": 0.08899999999999997
         },
         {
             "source": 130,
             "target": 128,
-            "value": 0.19899999999999984
+            "happiness": 0.19899999999999984,
+            "gdp": 0.5550000000000006,
+            "social_support": 0.122,
+            "life_expectancy": 0.9260000000000019,
+            "freedom": 0.08799999999999997,
+            "generosity": 0.177,
+            "corruption": 0.19499999999999995
         },
         {
             "source": 130,
             "target": 127,
-            "value": 0.4870000000000001
+            "happiness": 0.4870000000000001,
+            "gdp": 0.7720000000000002,
+            "social_support": 0.16299999999999992,
+            "life_expectancy": 3.443000000000005,
+            "freedom": 0.041000000000000036,
+            "generosity": 0.093,
+            "corruption": 0.06899999999999995
         },
         {
             "source": 35,
             "target": 14,
-            "value": 0.5640000000000001
+            "happiness": 0.5640000000000001,
+            "gdp": 1.1980000000000004,
+            "social_support": 0.11499999999999999,
+            "life_expectancy": 0.04999999999999716,
+            "freedom": 0.05599999999999994,
+            "generosity": 0.231,
+            "corruption": 0.07900000000000007
         },
         {
             "source": 54,
             "target": 59,
-            "value": 0.1689999999999996
+            "happiness": 0.1689999999999996,
+            "gdp": 0.41800000000000104,
+            "social_support": 0.07499999999999996,
+            "life_expectancy": 2.7879999999999967,
+            "freedom": 0.027000000000000024,
+            "generosity": 0.12899999999999998,
+            "corruption": 0.15200000000000002
         },
         {
             "source": 96,
             "target": 84,
-            "value": 0.3210000000000006
+            "happiness": 0.3210000000000006,
+            "gdp": 2.362,
+            "social_support": 0.21500000000000008,
+            "life_expectancy": 5.458999999999996,
+            "freedom": 0.121,
+            "generosity": 0.134,
+            "corruption": 0.242
         },
         {
             "source": 96,
             "target": 128,
-            "value": 1.2599999999999998
+            "happiness": 1.2599999999999998,
+            "gdp": 0.7410000000000005,
+            "social_support": 0.038999999999999924,
+            "life_expectancy": 7.871000000000002,
+            "freedom": 0.013000000000000012,
+            "generosity": 0.135,
+            "corruption": 0.10599999999999998
         },
         {
             "source": 96,
             "target": 127,
-            "value": 0.9719999999999995
+            "happiness": 0.9719999999999995,
+            "gdp": 0.9580000000000002,
+            "social_support": 0.0020000000000000018,
+            "life_expectancy": 3.5019999999999953,
+            "freedom": 0.05999999999999994,
+            "generosity": 0.051000000000000004,
+            "corruption": 0.15799999999999992
         },
         {
             "source": 96,
             "target": 133,
-            "value": 1.7499999999999996
+            "happiness": 1.7499999999999996,
+            "gdp": 0.5250000000000004,
+            "social_support": 0.0020000000000000018,
+            "life_expectancy": 2.519999999999996,
+            "freedom": 0.19699999999999995,
+            "generosity": 0.093,
+            "corruption": 0.10599999999999998
         },
         {
             "source": 104,
             "target": 84,
-            "value": 0.6440000000000001
+            "happiness": 0.6440000000000001,
+            "gdp": 0.3569999999999993,
+            "social_support": 0.12,
+            "life_expectancy": 0.13799999999999812,
+            "freedom": 0.06099999999999994,
+            "generosity": 0.03900000000000001,
+            "corruption": 0.07200000000000006
         },
         {
             "source": 104,
             "target": 127,
-            "value": 0.649
+            "happiness": 0.649,
+            "gdp": 1.0470000000000006,
+            "social_support": 0.09300000000000008,
+            "life_expectancy": 1.8190000000000026,
+            "freedom": 0.122,
+            "generosity": 0.224,
+            "corruption": 0.01200000000000001
         },
         {
             "source": 108,
             "target": 113,
-            "value": 0.10400000000000009
+            "happiness": 0.10400000000000009,
+            "gdp": 0.16999999999999993,
+            "social_support": 0.132,
+            "life_expectancy": 3.424999999999997,
+            "freedom": 0.11099999999999999,
+            "generosity": 0.189,
+            "corruption": 0.07300000000000006
         },
         {
             "source": 108,
             "target": 94,
-            "value": 0.47999999999999954
+            "happiness": 0.47999999999999954,
+            "gdp": 1.4050000000000002,
+            "social_support": 0.15000000000000002,
+            "life_expectancy": 1.658999999999999,
+            "freedom": 0.07000000000000006,
+            "generosity": 0.040999999999999995,
+            "corruption": 0.17700000000000005
         },
         {
             "source": 94,
             "target": 113,
-            "value": 0.5839999999999996
+            "happiness": 0.5839999999999996,
+            "gdp": 1.2350000000000003,
+            "social_support": 0.018000000000000016,
+            "life_expectancy": 1.7659999999999982,
+            "freedom": 0.040999999999999925,
+            "generosity": 0.14800000000000002,
+            "corruption": 0.10399999999999998
         },
         {
             "source": 6,
             "target": 69,
-            "value": 1.6540000000000008
+            "happiness": 1.6540000000000008,
+            "gdp": 0.8779999999999983,
+            "social_support": 0.05399999999999994,
+            "life_expectancy": 6.552999999999997,
+            "freedom": 0.22799999999999998,
+            "generosity": 0.17099999999999999,
+            "corruption": 0.518
         },
         {
             "source": 6,
             "target": 5,
-            "value": 0.07999999999999918
+            "happiness": 0.07999999999999918,
+            "gdp": 0.20500000000000007,
+            "social_support": 0.0040000000000000036,
+            "life_expectancy": 0.6500000000000057,
+            "freedom": 0.0010000000000000009,
+            "generosity": 0.02400000000000002,
+            "corruption": 0.08099999999999996
         },
         {
             "source": 38,
             "target": 69,
-            "value": 0.5990000000000002
+            "happiness": 0.5990000000000002,
+            "gdp": 0.24299999999999855,
+            "social_support": 0.03600000000000003,
+            "life_expectancy": 4.102000000000004,
+            "freedom": 0.04600000000000004,
+            "generosity": 0.0010000000000000009,
+            "corruption": 0.06500000000000006
         },
         {
             "source": 38,
             "target": 28,
-            "value": 0.20900000000000052
+            "happiness": 0.20900000000000052,
+            "gdp": 0.09999999999999964,
+            "social_support": 0.027999999999999914,
+            "life_expectancy": 0.21100000000001273,
+            "freedom": 0.01200000000000001,
+            "generosity": 0.015,
+            "corruption": 0.16200000000000003
         },
         {
             "source": 38,
             "target": 91,
-            "value": 1.189
+            "happiness": 1.189,
+            "gdp": 1.1389999999999993,
+            "social_support": 0.04700000000000004,
+            "life_expectancy": 4.499000000000009,
+            "freedom": 0.030000000000000027,
+            "generosity": 0.271,
+            "corruption": 0.17100000000000004
         },
         {
             "source": 23,
             "target": 44,
-            "value": 0.4450000000000003
+            "happiness": 0.4450000000000003,
+            "gdp": 0.4850000000000012,
+            "social_support": 0.025000000000000022,
+            "life_expectancy": 0.03699999999999193,
+            "freedom": 0.01100000000000001,
+            "generosity": 0.376,
+            "corruption": 0.1130000000000001
         },
         {
             "source": 23,
             "target": 91,
-            "value": 1.5180000000000007
+            "happiness": 1.5180000000000007,
+            "gdp": 1.0250000000000004,
+            "social_support": 0.030000000000000027,
+            "life_expectancy": 2.5010000000000048,
+            "freedom": 0.06099999999999994,
+            "generosity": 0.412,
+            "corruption": 0.02200000000000002
         },
         {
             "source": 69,
             "target": 91,
-            "value": 0.5899999999999999
+            "happiness": 0.5899999999999999,
+            "gdp": 0.8960000000000008,
+            "social_support": 0.01100000000000001,
+            "life_expectancy": 0.39700000000000557,
+            "freedom": 0.07600000000000007,
+            "generosity": 0.27,
+            "corruption": 0.10599999999999998
         },
         {
             "source": 28,
             "target": 91,
-            "value": 1.3980000000000006
+            "happiness": 1.3980000000000006,
+            "gdp": 1.0389999999999997,
+            "social_support": 0.07499999999999996,
+            "life_expectancy": 4.287999999999997,
+            "freedom": 0.04200000000000004,
+            "generosity": 0.256,
+            "corruption": 0.009000000000000008
         },
         {
             "source": 79,
             "target": 53,
-            "value": 0.6840000000000002
+            "happiness": 0.6840000000000002,
+            "gdp": 0.7110000000000003,
+            "social_support": 0.039000000000000035,
+            "life_expectancy": 3.075000000000003,
+            "freedom": 0.10599999999999998,
+            "generosity": 0.29000000000000004,
+            "corruption": 0.11599999999999999
         },
         {
             "source": 128,
             "target": 112,
-            "value": 0.7380000000000004
+            "happiness": 0.7380000000000004,
+            "gdp": 0.14100000000000001,
+            "social_support": 0.14100000000000001,
+            "life_expectancy": 0.48800000000000665,
+            "freedom": 0.137,
+            "generosity": 0.06799999999999999,
+            "corruption": 0.30299999999999994
         },
         {
             "source": 128,
             "target": 127,
-            "value": 0.28800000000000026
+            "happiness": 0.28800000000000026,
+            "gdp": 0.21699999999999964,
+            "social_support": 0.040999999999999925,
+            "life_expectancy": 4.369000000000007,
+            "freedom": 0.04699999999999993,
+            "generosity": 0.08399999999999999,
+            "corruption": 0.2639999999999999
         },
         {
             "source": 84,
             "target": 133,
-            "value": 2.071
+            "happiness": 2.071,
+            "gdp": 1.8369999999999997,
+            "social_support": 0.21700000000000008,
+            "life_expectancy": 2.939,
+            "freedom": 0.07599999999999996,
+            "generosity": 0.040999999999999995,
+            "corruption": 0.136
         },
         {
             "source": 127,
             "target": 133,
-            "value": 0.778
+            "happiness": 0.778,
+            "gdp": 0.43299999999999983,
+            "social_support": 0.0040000000000000036,
+            "life_expectancy": 0.9819999999999993,
+            "freedom": 0.137,
+            "generosity": 0.14400000000000002,
+            "corruption": 0.051999999999999935
         }
     ]
 }
