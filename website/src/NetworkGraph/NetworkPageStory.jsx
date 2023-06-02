@@ -6,9 +6,9 @@ const NetworkPageStory = () => {
 
             <h2>Network Graph</h2>
             <p>
-                Here is the network graph of all the countries connected with their neighbours. A larger flag signifies a higher value for the selected variable.
+                Here is the network graph of all the countries connected with their neighbours. Larger flag signifies a higher value for the selected variable.
                 <br /><br />
-                The color of the link between two neighbouring countries's indicates the difference in happiness between the two of them. A color gradient indicating the difference is available in the bottom right corner of the graph.
+                The color of the link between two neighbouring countries indicates the difference in happiness between the two of them. A color gradient indicating the difference is available in the bottom right corner of the graph.
                 <br /><br />
                 You can compare country's happiness score in comparison with it's neighbours.
                 <br /><br />

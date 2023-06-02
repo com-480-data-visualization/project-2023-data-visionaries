@@ -3,9 +3,9 @@ import style from "./Introduction.module.css"
 const IntroductionPage = () => {
     return (
         <div className={style.introduction}>
-            <h2>World happiness report</h2>
+            <h2>World Happiness Report</h2>
             <div>
-                <p className={style.text}>Welcome to our World Happiness Visualization.</p>
+                <p className={style.text}>Welcome to our World Happiness Report Visualization.</p>
                 <br /><br />Here you can:
                 <ul>
                     <li>explore happiness levels all over the world</li>
