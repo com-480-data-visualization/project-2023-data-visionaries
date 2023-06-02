@@ -86,13 +86,30 @@ Moreover, what makes our project original is interactive visualization of the ha
 
 **10% of the final grade**
 
-PDF document for milestone 2 is available in the folder `Milestone2`.
+PDF document for milestone 2 is available in the folder [`Milestone2`](https://github.com/com-480-data-visualization/project-2023-data-visionaries/tree/master/Milestone2).
 
 
 ## Milestone 3 (4th June, 5pm)
 
 **80% of the final grade**
 
+### Screencast and process book
+
+Screencast and the PDF document for the process book are available in the folder [`Milestone 3`](https://github.com/com-480-data-visualization/project-2023-data-visionaries/tree/master/Milestone3).
+
+### Running the development version of the website
+
+In order to run the development version of the website, clone the repository, go into the `website` folder and run `npm install` followed by `npm run dev`. The development server will start and the URL of the local website will be visible in the terminal.
+
+### Building the production version of the website
+
+In order to build the production version of the website, clone the repository, go into the `website` folder and run `npm install` followed by `npm run build`. Production build of the website will be located in the `website/dist/` folder. 
+
+To make the website public, copy the contents of the `website/dist` folder to a static hosting service of your choice.
+
+### Website
+
+The website is hosted by Github Pages and is available [here](https://com-480-data-visualization.github.io/project-2023-data-visionaries/).
 
 ## Late policy
 
