@@ -8,6 +8,20 @@
     justify-content: center;
 }
 
-.text {
-    color: #eee
+@media only screen and (min-width: 600px) {
+    .text {
+        color: #eee;
+        width: 65%;
+        margin: auto;
+        text-align: justify;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .text {
+        color: #eee;
+        width: 40%;
+        margin: auto;
+        text-align: justify;
+    }
 }
