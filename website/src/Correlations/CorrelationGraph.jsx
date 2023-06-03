@@ -20,7 +20,7 @@ const CorrelationGraph = ({ width, height }) => {
         "corruption": "#3F0059"
     }
 
-    const gdp = <p>Gross domestic product (GDP) per capita is a financial metric that breaks down a country's economic output per person. It is a global measure of the prosperity of nations and is used by economists, along with GDP, to analyze the prosperity of a country based on its economic growth. <br /><br />Since GDP per capita considers both a country's GDP and its population, small, rich countries and more developed industrial countries tend to have the highest GDP per capita.</p>;
+    const gdp = <p>Gross domestic product (GDP) per capita is a financial metric that breaks down a country's economic output per person. It is a global measure of the prosperity of nations and is used by economists to analyze the prosperity of a country based on its economic growth. <br /><br />Since GDP per capita considers both country's GDP and its population, small and rich countries and more developed industrial countries tend to have the highest GDP per capita.</p>;
     const ss = <div>Social support is a metric that indicates if individuals have someone to count on in times of trouble. It is calculated as national average of the binary responses to the GWP question
         <p className={style.question} style={{ color: colors[variable] }}>
             “If you were in trouble, do you have relatives or friends you can count on to help you whenever you need them, or not?”</p>
@@ -37,7 +37,6 @@ const CorrelationGraph = ({ width, height }) => {
         <p className={style.question} style={{ color: colors[variable] }}>“Is corruption widespread throughout the government or not”</p> <p style={{ textAlign: "center" }}>and</p> <p className={style.question} style={{ color: colors[variable] }}>“Is corruption widespread within businesses or
             not?” </p>
     </div>;
-    const happy = <p>Happiness score is subjective well-being of individuals in one country. The score is measured using survey released by Gallup World Poll. The final score is the national average response to the question of life evaluations. The question asked in the survey is: "Please imagine a ladder, with steps numbered from 0 at the bottom to 10 at the top. The top of the ladder represents the best possible life for you and the bottom of the ladder represents the worst possible life for you. On which step of the ladder would you say you personally feel you stand at this time?" </p>
     const texts = {
         "gdp": gdp,
         "social_support": ss,
