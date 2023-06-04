@@ -111,6 +111,10 @@ To make the website public, copy the contents of the `website/dist` folder to a 
 
 The website is hosted by Github Pages and is available [here](https://com-480-data-visualization.github.io/project-2023-data-visionaries/).
 
+### Data
+
+The data is available in the folder `website/src/data`.
+
 ## Late policy
 
 - < 24h: 80% of the grade for the milestone
